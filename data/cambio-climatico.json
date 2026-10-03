@@ -1,0 +1,613 @@
+{
+  "id": "cambio-climatico",
+  "orden": 2,
+  "titulo": "Cambio climático",
+  "reacciones": {
+    "acierto": [
+      "Bueno... eso habría que verlo.",
+      "¿Y eso de dónde lo sacas? Ah, de Nature. Vale.",
+      "Pásame el turrón, anda.",
+      "Yo solo digo lo que leo por ahí.",
+      "Hmm. Cambiemos de tema: ¿y el fútbol?",
+      "Eso será en otros sitios. Aquí no."
+    ],
+    "fallo": [
+      "¡Ja! ¿Lo ves? Es que no te enteras.",
+      "Te lo dije. Sírveme más vino.",
+      "Esto lo sé yo de un vídeo que vi el otro día.",
+      "A mí no me la cuelan.",
+      "Lo que yo diga, que para eso soy ingeniero de la vida."
+    ]
+  },
+  "preguntas": [
+    {
+      "id": "cc-01-escarcha",
+      "mito": "¿Calentamiento global? Pues esta mañana había escarcha en el coche.",
+      "falacia": "Anécdota frente a tendencia",
+      "opciones": [
+        {
+          "texto": "La escarcha de tu coche no es el clima del planeta.",
+          "correcta": true
+        },
+        {
+          "texto": "Ya, pero en verano hace muchísimo calor.",
+          "correcta": false,
+          "por_que": "Contestas a una anécdota con otra anécdota. Un día suelto no prueba nada, ni en un sentido ni en otro."
+        },
+        {
+          "texto": "Es que el cambio climático hace que haga más frío en todas partes.",
+          "correcta": false,
+          "por_que": "Falso: la media global sube. Puede haber olas de frío locales, pero no más frío en todas partes."
+        },
+        {
+          "texto": "Tú qué sabrás, si no terminaste la ESO.",
+          "correcta": false,
+          "por_que": "Un ataque personal no desmonta nada. Solo le da munición."
+        }
+      ],
+      "explicacion": "Un día frío en un sitio no dice nada de la tendencia global. 2024 fue el año más cálido medido, y los diez últimos años son los diez más cálidos de la serie. El tiempo es lo que pasa hoy en tu calle; el clima es la media de décadas en todo el planeta. La Organización Meteorológica Mundial, con seis bases de datos independientes, situó 2024 en unos 1,55 °C por encima de la época preindustrial.",
+      "fuente": {
+        "texto": "OMM (2025). 2024, el año más cálido registrado",
+        "url": "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level"
+      }
+    },
+    {
+      "id": "cc-02-termometros-ciudad",
+      "mito": "Los termómetros están todos en ciudades, rodeados de asfalto. Así cualquiera.",
+      "falacia": "Sesgo de medición sin comprobar",
+      "opciones": [
+        {
+          "texto": "Lo comprobaron: en el campo se calienta igual.",
+          "correcta": true
+        },
+        {
+          "texto": "Las ciudades también son parte del planeta, así que cuentan.",
+          "correcta": false,
+          "por_que": "Esquivas la pregunta: si hubiera un sesgo urbano, sí falsearía la media global."
+        },
+        {
+          "texto": "Los termómetros de ahora son digitales y no fallan.",
+          "correcta": false,
+          "por_que": "Irrelevante: él no habla del aparato, sino de dónde está colocado."
+        },
+        {
+          "texto": "Eso pasará en Madrid, aquí en el pueblo no.",
+          "correcta": false,
+          "por_que": "Otra anécdota local. La cuestión es la media global."
+        }
+      ],
+      "explicacion": "El proyecto Berkeley Earth, financiado en parte por escépticos, separó más de 16.000 estaciones \"muy rurales\" de un total de unas 39.000. El efecto urbano sobre la tendencia global resultó casi nulo. Además, el calentamiento se ve también en océanos y satélites, donde no hay asfalto.",
+      "fuente": {
+        "texto": "Wickham et al. (2013), Berkeley Earth. Resumen en Carbon Brief",
+        "url": "https://www.carbonbrief.org/best-reconfirm-warming-is-happening/"
+      }
+    },
+    {
+      "id": "cc-03-glaciacion-70s",
+      "mito": "En los setenta los científicos decían que venía una glaciación. ¡Y ahora dicen lo contrario!",
+      "falacia": "Falso recuerdo",
+      "opciones": [
+        {
+          "texto": "Eso lo decían las revistas, no los científicos.",
+          "correcta": true
+        },
+        {
+          "texto": "La ciencia cambia de opinión y eso está bien.",
+          "correcta": false,
+          "por_que": "Suena razonable, pero le das por bueno un hecho falso: ese consenso sobre la glaciación nunca existió."
+        },
+        {
+          "texto": "Es que en los setenta no tenían ordenadores.",
+          "correcta": false,
+          "por_que": "Sí los tenían, y además no responde a la cuestión."
+        },
+        {
+          "texto": "La glaciación vendrá, pero después del calentamiento.",
+          "correcta": false,
+          "por_que": "No hay base para esto, y además le das la razón en lo de los setenta."
+        }
+      ],
+      "explicacion": "Peterson, Connolley y Fleck revisaron la literatura científica de la época: solo un puñado de artículos proyectaba enfriamiento, frente a muchos más que proyectaban calentamiento por CO₂. El mito nace de reportajes de prensa como uno famoso de Newsweek en 1975.",
+      "fuente": {
+        "texto": "Peterson et al. (2008). Bull. Amer. Meteor. Soc. 89(9)",
+        "url": "https://doi.org/10.1175/2008BAMS2370.1"
+      }
+    },
+    {
+      "id": "cc-04-antartida-hielo",
+      "mito": "Pues yo he leído que la Antártida tiene más hielo que nunca.",
+      "falacia": "Selección interesada de datos",
+      "opciones": [
+        {
+          "texto": "La Antártida está perdiendo hielo, no ganándolo.",
+          "correcta": true
+        },
+        {
+          "texto": "La Antártida da igual, lo que importa es el Ártico.",
+          "correcta": false,
+          "por_que": "Falso: el hielo antártico que está sobre tierra es justo el que más subiría el nivel del mar."
+        },
+        {
+          "texto": "Eso será el hielo marino, que no cuenta para nada.",
+          "correcta": false,
+          "por_que": "Mal argumento: además, el hielo marino antártico ha marcado mínimos récord en 2023 y 2024."
+        },
+        {
+          "texto": "Seguro que lo leíste en un foro.",
+          "correcta": false,
+          "por_que": "Burlarse de la fuente no sustituye a dar el dato."
+        }
+      ],
+      "explicacion": "Los satélites muestran que los casquetes polares pasaron de perder unas 105 a unas 372 gigatoneladas de hielo al año entre principios de los 90 y 2016-2020. El estudio IMBIE combina 50 estimaciones independientes por satélite. La Antártida pierde hielo sobre todo en su parte occidental; la oriental está cerca del equilibrio y es la más incierta, que es justo el trozo que se suele citar.",
+      "fuente": {
+        "texto": "Otosaka et al. (2023). Earth Syst. Sci. Data 15",
+        "url": "https://doi.org/10.5194/essd-15-1597-2023"
+      }
+    },
+    {
+      "id": "cc-05-clima-siempre-cambio",
+      "mito": "El clima siempre ha cambiado, chaval. Antes de que existiéramos ya había glaciaciones.",
+      "falacia": "Non sequitur",
+      "opciones": [
+        {
+          "texto": "Que antes cambiara solo no significa que ahora también.",
+          "correcta": true
+        },
+        {
+          "texto": "Antes de los humanos el clima no cambiaba.",
+          "correcta": false,
+          "por_que": "Falso: cambiaba por la órbita terrestre, volcanes, el Sol... El cuñado tiene razón en esa parte."
+        },
+        {
+          "texto": "Las glaciaciones son un invento de los geólogos.",
+          "correcta": false,
+          "por_que": "Están perfectamente documentadas. Acabas de perder credibilidad."
+        },
+        {
+          "texto": "Ya, pero ahora hay más contaminación.",
+          "correcta": false,
+          "por_que": "Demasiado vago: no explica qué causa el calentamiento actual ni cómo se sabe."
+        }
+      ],
+      "explicacion": "También hay incendios naturales, y eso no prueba que nadie provoque incendios. Que el clima cambiara antes por causas naturales no dice nada sobre la causa actual. El IPCC estima que prácticamente todo el calentamiento observado desde 1850-1900 se debe a la actividad humana, y la velocidad actual no tiene precedentes en miles de años.",
+      "fuente": {
+        "texto": "IPCC (2021). AR6 Grupo de Trabajo I, Resumen para responsables de políticas",
+        "url": "https://www.ipcc.ch/report/ar6/wg1/"
+      }
+    },
+    {
+      "id": "cc-06-edad-media",
+      "mito": "En la Edad Media hacía más calor que ahora. ¡Los vikingos cultivaban Groenlandia!",
+      "falacia": "Generalizar un dato regional",
+      "opciones": [
+        {
+          "texto": "Aquel calor medieval no fue en todo el planeta.",
+          "correcta": true
+        },
+        {
+          "texto": "Los vikingos nunca llegaron a Groenlandia.",
+          "correcta": false,
+          "por_que": "Sí llegaron, hacia el año 985. Error histórico."
+        },
+        {
+          "texto": "En la Edad Media no había termómetros, así que no se puede saber.",
+          "correcta": false,
+          "por_que": "Sí se puede: se reconstruye con anillos de árboles, sedimentos, corales y testigos de hielo."
+        },
+        {
+          "texto": "Si se llama Groenlandia, tierra verde, será por algo.",
+          "correcta": false,
+          "por_que": "Le das la razón. El nombre fue márketing de Erik el Rojo para atraer colonos; el interior ya era hielo."
+        }
+      ],
+      "explicacion": "Ese calor fue regional y llegó en épocas distintas según la zona. En cambio, el siglo XX fue el periodo más cálido de los últimos 2.000 años en más del 98% del planeta. Neukom y colaboradores analizaron reconstrucciones de los últimos dos milenios y no encontraron periodos cálidos o fríos sincronizados en todo el planeta antes de la era industrial. El calentamiento actual es el primero que ocurre a la vez en casi todas partes.",
+      "fuente": {
+        "texto": "Neukom et al. (2019). Nature 571",
+        "url": "https://doi.org/10.1038/s41586-019-1401-2"
+      }
+    },
+    {
+      "id": "cc-07-sol",
+      "mito": "Es el Sol, hombre. ¿Qué va a ser si no?",
+      "falacia": "Causa falsa",
+      "opciones": [
+        {
+          "texto": "El Sol lleva décadas flojeando y aun así nos calentamos.",
+          "correcta": true
+        },
+        {
+          "texto": "El Sol no influye para nada en el clima.",
+          "correcta": false,
+          "por_que": "Falso: influye, y mucho. Lo que pasa es que ahora no es el responsable del calentamiento."
+        },
+        {
+          "texto": "El Sol está cada vez más cerca de la Tierra.",
+          "correcta": false,
+          "por_que": "Falso, y además ese no es el mecanismo."
+        },
+        {
+          "texto": "Se nota que tú tomas mucho el sol.",
+          "correcta": false,
+          "por_que": "Chiste fácil. El cuñado se ríe y sigue a lo suyo."
+        }
+      ],
+      "explicacion": "Desde los años 80 la energía que llega del Sol ha bajado ligeramente, mientras la Tierra se sigue calentando: si fuera el Sol, irían en la misma dirección. Las curvas de actividad solar y de temperatura global se separan desde hace décadas. Además, si fuera el Sol se calentaría toda la atmósfera, pero la estratosfera se está enfriando: es la firma de los gases de efecto invernadero, que atrapan el calor abajo.",
+      "fuente": {
+        "texto": "Lean y Rind (2008). Geophys. Res. Lett. Resumen en Skeptical Science",
+        "url": "https://skepticalscience.com/argument.php?a=18"
+      }
+    },
+    {
+      "id": "cc-08-volcanes",
+      "mito": "Un volcán echa más CO₂ en una erupción que la humanidad en toda su historia.",
+      "falacia": "Dato inventado",
+      "opciones": [
+        {
+          "texto": "Los humanos echamos muchísimo más CO₂ que los volcanes.",
+          "correcta": true
+        },
+        {
+          "texto": "Los volcanes no emiten CO₂, solo ceniza.",
+          "correcta": false,
+          "por_que": "Falso: sí emiten CO₂, solo que muchísimo menos que nosotros."
+        },
+        {
+          "texto": "Es verdad, pero los volcanes no los podemos controlar.",
+          "correcta": false,
+          "por_que": "Le das por bueno un dato falso."
+        },
+        {
+          "texto": "¿Y tú cuántos volcanes has visto?",
+          "correcta": false,
+          "por_que": "No haber visto un volcán no hace falsa su afirmación. Hace falta el dato."
+        }
+      ],
+      "explicacion": "En menos de tres días los humanos emitimos lo que todos los volcanes en un año. El volcanólogo Terrence Gerlach (Servicio Geológico de EE. UU.) estimó que las emisiones humanas multiplican por unas 135 las volcánicas. Además, el carbono fósil tiene una firma isotópica distinta, y es la que se mide creciendo en la atmósfera.",
+      "fuente": {
+        "texto": "Gerlach (2011). Eos 92(24)",
+        "url": "https://doi.org/10.1029/2011EO240001"
+      }
+    },
+    {
+      "id": "cc-09-co2-va-detras",
+      "mito": "En los hielos antiguos primero sube la temperatura y luego el CO₂. ¡Es consecuencia, no causa!",
+      "falacia": "Falso dilema",
+      "opciones": [
+        {
+          "texto": "Puede ser causa y consecuencia a la vez.",
+          "correcta": true
+        },
+        {
+          "texto": "Los hielos antiguos no son fiables.",
+          "correcta": false,
+          "por_que": "Son de los mejores registros del clima pasado. Mal camino."
+        },
+        {
+          "texto": "Antes no había fábricas, así que no se puede comparar.",
+          "correcta": false,
+          "por_que": "Sí se puede: la física es la misma. El CO₂ atrapa calor venga de donde venga."
+        },
+        {
+          "texto": "El CO₂ nunca ha cambiado de forma natural.",
+          "correcta": false,
+          "por_que": "Falso: ha variado mucho entre glaciaciones."
+        }
+      ],
+      "explicacion": "Un cambio en la órbita terrestre inicia el calentamiento, el océano suelta CO₂ y este lo amplifica. El desfase aparece en el registro de la Antártida, que refleja temperatura local. Shakun y colaboradores reconstruyeron la temperatura global con 80 registros y vieron que, durante la última desglaciación, el CO₂ iba por delante y era el principal impulsor del calentamiento.",
+      "fuente": {
+        "texto": "Shakun et al. (2012). Nature 484",
+        "url": "https://doi.org/10.1038/nature10915"
+      }
+    },
+    {
+      "id": "cc-10-co2-poco",
+      "mito": "El CO₂ es solo el 0,04% del aire. ¿Cómo va a calentar el planeta algo tan pequeño?",
+      "falacia": "Apelar a la pequeñez",
+      "opciones": [
+        {
+          "texto": "Poca cantidad no significa poco efecto.",
+          "correcta": true
+        },
+        {
+          "texto": "En realidad es el 4%, te has confundido de cifra.",
+          "correcta": false,
+          "por_que": "Falso: el 0,04% es correcto. Corriges lo que estaba bien."
+        },
+        {
+          "texto": "Por eso el problema de verdad es el metano, no el CO₂.",
+          "correcta": false,
+          "por_que": "El metano importa, pero el CO₂ es el principal responsable del calentamiento."
+        },
+        {
+          "texto": "Bueno, visto así, igual tienes razón.",
+          "correcta": false,
+          "por_que": "Te rindes ante un argumento que no se sostiene."
+        }
+      ],
+      "explicacion": "Algo escaso puede ser muy potente: unas gotas de tinta tiñen un vaso entero. John Tyndall midió en 1859 cómo el CO₂ absorbe el calor. La concentración ronda ya las 425 ppm, frente a unas 280 antes de la Revolución Industrial.",
+      "fuente": {
+        "texto": "Global Carbon Budget (2025)",
+        "url": "https://globalcarbonbudget.org/fossil-fuel-co2-emissions-hit-record-high-in-2025/"
+      }
+    },
+    {
+      "id": "cc-11-co2-plantas",
+      "mito": "El CO₂ es comida para las plantas. ¡Más CO₂, planeta más verde!",
+      "falacia": "Verdad a medias",
+      "opciones": [
+        {
+          "texto": "Crecen más, pero alimentan menos.",
+          "correcta": true
+        },
+        {
+          "texto": "Las plantas no usan CO₂, usan oxígeno.",
+          "correcta": false,
+          "por_que": "Falso: hacen la fotosíntesis con CO₂. Le acabas de dar un regalo."
+        },
+        {
+          "texto": "Pues que se coman las plantas todo el CO₂ y listo.",
+          "correcta": false,
+          "por_que": "Ya absorben una parte, pero no dan abasto con lo que emitimos."
+        },
+        {
+          "texto": "Tú lo que quieres es no hacer nada.",
+          "correcta": false,
+          "por_que": "Puede ser, pero eso no desmonta su argumento."
+        }
+      ],
+      "explicacion": "Con más CO₂ las plantas producen más azúcares, que diluyen el resto de nutrientes. Y las sequías y olas de calor dañan los cultivos mucho más de lo que les ayuda el CO₂. Myers y colaboradores cultivaron cereales y legumbres al aire libre con CO₂ elevado: en el trigo, el zinc bajó un 9,3%, el hierro un 5,1% y la proteína un 6,3%. Entre 2.000 y 3.000 millones de personas dependen de estos cultivos para obtener zinc y hierro.",
+      "fuente": {
+        "texto": "Myers et al. (2014). Nature 510",
+        "url": "https://doi.org/10.1038/nature13179"
+      }
+    },
+    {
+      "id": "cc-12-calorcito",
+      "mito": "Un poco de calorcito no ha matado nunca a nadie. Peor es el frío.",
+      "falacia": "Minimización",
+      "opciones": [
+        {
+          "texto": "Ese poco de calorcito sí mata gente.",
+          "correcta": true
+        },
+        {
+          "texto": "El frío no mata a nadie.",
+          "correcta": false,
+          "por_que": "Falso, el frío también mata. Pero no es la cuestión: el calor también, y cada vez más."
+        },
+        {
+          "texto": "Con aire acondicionado se arregla.",
+          "correcta": false,
+          "por_que": "No todo el mundo lo tiene, no protege a quien trabaja al aire libre y consume energía."
+        },
+        {
+          "texto": "Eso lo dices porque trabajas en una oficina.",
+          "correcta": false,
+          "por_que": "Ataque personal. No responde al argumento."
+        }
+      ],
+      "explicacion": "Solo en el verano de 2022 se estimaron unas 61.700 muertes por calor en Europa, más de 11.000 de ellas en España. El estudio de Ballester y colaboradores analizó más de 45 millones de defunciones en 35 países europeos. España tuvo una de las tasas más altas, unas 237 muertes por millón de habitantes.",
+      "fuente": {
+        "texto": "Ballester et al. (2023). Nature Medicine 29",
+        "url": "https://doi.org/10.1038/s41591-023-02419-z"
+      }
+    },
+    {
+      "id": "cc-13-consenso",
+      "mito": "No hay consenso. Hay montones de científicos que no se lo creen.",
+      "falacia": "Falso equilibrio",
+      "opciones": [
+        {
+          "texto": "Sí lo hay, y es aplastante.",
+          "correcta": true
+        },
+        {
+          "texto": "Esos científicos están todos comprados por las petroleras.",
+          "correcta": false,
+          "por_que": "Acusar sin pruebas no demuestra nada. Mejor da el dato del consenso."
+        },
+        {
+          "texto": "La ciencia no va de consensos.",
+          "correcta": false,
+          "por_que": "Esto lo diría él. El consenso no es una votación, pero refleja hacia dónde apunta la evidencia."
+        },
+        {
+          "texto": "El 100% de los científicos está de acuerdo.",
+          "correcta": false,
+          "por_que": "Exageración: es más del 99%, no el 100%. Te pilla en un renuncio."
+        }
+      ],
+      "explicacion": "En una muestra aleatoria de 3.000 estudios recientes sobre clima, solo 4 eran escépticos: el consenso supera el 99%. Lynas y colaboradores revisaron más de 88.000 artículos sobre clima publicados entre 2012 y 2020. Que existan unos pocos disidentes no convierte el tema en un debate al 50%.",
+      "fuente": {
+        "texto": "Lynas et al. (2021). Environ. Res. Lett. 16",
+        "url": "https://doi.org/10.1088/1748-9326/ac2966"
+      }
+    },
+    {
+      "id": "cc-14-modelos",
+      "mito": "Los modelos climáticos no aciertan nunca. Siempre exageran.",
+      "falacia": "Afirmación sin comprobar",
+      "opciones": [
+        {
+          "texto": "Cuando se han puesto a prueba, han acertado bastante.",
+          "correcta": true
+        },
+        {
+          "texto": "Los modelos son perfectos.",
+          "correcta": false,
+          "por_que": "Ningún modelo es perfecto. Te pilla con una exageración."
+        },
+        {
+          "texto": "Los modelos no hacen falta, basta con mirar por la ventana.",
+          "correcta": false,
+          "por_que": "Eso es caer en la anécdota, el mismo error del cuñado."
+        },
+        {
+          "texto": "Exageran, pero más vale pasarse que quedarse corto.",
+          "correcta": false,
+          "por_que": "Le das por bueno que exageran, y no es cierto."
+        }
+      ],
+      "explicacion": "Los modelos publicados entre 1970 y 2007 no exageraban de forma sistemática. Hausfather y colaboradores compararon 17 proyecciones antiguas con lo que pasó después. Usando las emisiones que realmente hubo, 14 de 17 fueron coherentes con las observaciones.",
+      "fuente": {
+        "texto": "Hausfather et al. (2020). Geophys. Res. Lett. 47",
+        "url": "https://doi.org/10.1029/2019GL085378"
+      }
+    },
+    {
+      "id": "cc-15-tiempo-vs-clima",
+      "mito": "Si no aciertan el tiempo del fin de semana, ¿cómo van a saber el clima de 2100?",
+      "falacia": "Falsa analogía",
+      "opciones": [
+        {
+          "texto": "El tiempo y el clima no se predicen igual.",
+          "correcta": true
+        },
+        {
+          "texto": "Es que la AEMET lo hace fatal.",
+          "correcta": false,
+          "por_que": "Le das la razón y además no es cierto."
+        },
+        {
+          "texto": "El tiempo y el clima son lo mismo.",
+          "correcta": false,
+          "por_que": "Al contrario, la clave es que son cosas distintas."
+        },
+        {
+          "texto": "Porque para el clima usan ordenadores más grandes.",
+          "correcta": false,
+          "por_que": "No es cuestión de tamaño: son problemas de naturaleza distinta."
+        }
+      ],
+      "explicacion": "No sabes qué saldrá en la próxima tirada de un dado, pero sí que la media de mil tiradas será 3,5. La predicción del tiempo depende de condiciones iniciales caóticas y pierde precisión en días. El clima depende del balance de energía del planeta: cuánto entra y cuánto sale. Por eso se puede proyectar a décadas, como demuestra el historial de los modelos.",
+      "fuente": {
+        "texto": "IPCC (2021). AR6 Grupo de Trabajo I",
+        "url": "https://www.ipcc.ch/report/ar6/wg1/"
+      }
+    },
+    {
+      "id": "cc-16-espana-no-pinta",
+      "mito": "España no pinta nada. Que lo arreglen China e India, que son los que contaminan.",
+      "falacia": "Difusión de responsabilidad",
+      "opciones": [
+        {
+          "texto": "Si todos piensan así, no lo arregla nadie.",
+          "correcta": true
+        },
+        {
+          "texto": "China no contamina tanto.",
+          "correcta": false,
+          "por_que": "Falso: es el mayor emisor anual del mundo."
+        },
+        {
+          "texto": "España es el país que más contamina de Europa.",
+          "correcta": false,
+          "por_que": "Falso. Te acaba de pillar."
+        },
+        {
+          "texto": "Tú lo que tienes es manía a los chinos.",
+          "correcta": false,
+          "por_que": "Ataque personal. No desmonta el argumento."
+        }
+      ],
+      "explicacion": "El margen es mínimo para todos: al ritmo actual, el presupuesto de carbono para no pasar de 1,5 °C se agota en unos cuatro años. Todos los países son pequeños comparados con el total, así que el argumento sirve de excusa para cualquiera. Además, China e India están ralentizando el crecimiento de sus emisiones gracias a las renovables.",
+      "fuente": {
+        "texto": "Global Carbon Budget (2025)",
+        "url": "https://globalcarbonbudget.org/fossil-fuel-co2-emissions-hit-record-high-in-2025/"
+      }
+    },
+    {
+      "id": "cc-17-emisiones-bajan",
+      "mito": "Total, si las emisiones ya están bajando solas.",
+      "falacia": "Dato falso",
+      "opciones": [
+        {
+          "texto": "No bajan: siguen batiendo récords.",
+          "correcta": true
+        },
+        {
+          "texto": "Bajan, pero muy despacio.",
+          "correcta": false,
+          "por_que": "Falso: siguen subiendo."
+        },
+        {
+          "texto": "Desde la pandemia no han vuelto a subir.",
+          "correcta": false,
+          "por_que": "Falso: hace tiempo que superaron el nivel de antes de la pandemia."
+        },
+        {
+          "texto": "Pues genial, problema resuelto.",
+          "correcta": false,
+          "por_que": "Te lo has creído."
+        }
+      ],
+      "explicacion": "En 2025 las emisiones fósiles marcaron un nuevo récord, unos 38.100 millones de toneladas de CO₂. El Global Carbon Budget proyecta para 2025 un aumento del 1,1% de las emisiones fósiles, con subidas en carbón, petróleo y gas. Crecen más despacio que la década anterior, pero crecen.",
+      "fuente": {
+        "texto": "Global Carbon Budget (2025)",
+        "url": "https://globalcarbonbudget.org/fossil-fuel-co2-emissions-hit-record-high-in-2025/"
+      }
+    },
+    {
+      "id": "cc-18-subvenciones",
+      "mito": "Los científicos dicen eso por las subvenciones. Si dijeran que no pasa nada, se quedaban sin trabajo.",
+      "falacia": "Teoría de la conspiración",
+      "opciones": [
+        {
+          "texto": "Hasta los científicos de una petrolera llegaron a lo mismo.",
+          "correcta": true
+        },
+        {
+          "texto": "Los científicos trabajan gratis.",
+          "correcta": false,
+          "por_que": "Falso, y no responde."
+        },
+        {
+          "texto": "Eso es una conspiranoia y punto.",
+          "correcta": false,
+          "por_que": "Ponerle etiqueta no lo refuta. Hace falta un dato."
+        },
+        {
+          "texto": "Las petroleras siempre han querido frenar el cambio climático.",
+          "correcta": false,
+          "por_que": "Falso: durante décadas financiaron campañas para sembrar dudas."
+        }
+      ],
+      "explicacion": "Supran y colaboradores analizaron las proyecciones internas de ExxonMobil entre 1977 y 2003: predijeron el calentamiento con una precisión comparable a la de los científicos independientes. Si hasta quien tenía todos los incentivos para negarlo llegó a la misma conclusión, la tesis de las subvenciones se cae.",
+      "fuente": {
+        "texto": "Supran et al. (2023). Science 379",
+        "url": "https://doi.org/10.1126/science.abk0063"
+      }
+    },
+    {
+      "id": "cc-19-pausa-1998",
+      "mito": "Desde 1998 no se ha calentado nada. Hay una pausa.",
+      "falacia": "Elegir el punto de partida",
+      "opciones": [
+        {
+          "texto": "Empezar a contar en 1998 es hacer trampa.",
+          "correcta": true
+        },
+        {
+          "texto": "1998 no fue un año especialmente cálido.",
+          "correcta": false,
+          "por_que": "Sí lo fue, por eso lo elige. El truco está en usarlo como punto de partida."
+        },
+        {
+          "texto": "Se paró, pero ya ha vuelto a empezar.",
+          "correcta": false,
+          "por_que": "Le das por buena una pausa que no existió en la tendencia de fondo."
+        },
+        {
+          "texto": "Eso lo has visto en un vídeo de YouTube.",
+          "correcta": false,
+          "por_que": "Desacreditar la fuente no aporta datos."
+        }
+      ],
+      "explicacion": "1998 tuvo un El Niño muy fuerte, y los años 2015 a 2024 son los diez más cálidos jamás medidos. Si coges un año excepcionalmente caliente como inicio, cualquier tendencia parece plana durante unos años. Con series de 30 años o más, el calentamiento sigue sin interrupción.",
+      "fuente": {
+        "texto": "OMM (2025). 2024, el año más cálido registrado",
+        "url": "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level"
+      }
+    }
+  ]
+}

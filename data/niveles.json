@@ -1,0 +1,33 @@
+{
+  "niveles": [
+    {
+      "id": "terraplanismo",
+      "orden": 1,
+      "titulo": "La Tierra es plana",
+      "descripcion": "Para calentar motores",
+      "disponible": false
+    },
+    {
+      "id": "cambio-climatico",
+      "orden": 2,
+      "titulo": "Cambio climático",
+      "descripcion": "10 rondas, 3 copas de paciencia",
+      "disponible": true,
+      "fichero": "data/cambio-climatico.json"
+    },
+    {
+      "id": "vacunas-homeopatia",
+      "orden": 3,
+      "titulo": "Vacunas y homeopatía",
+      "descripcion": "El cuñado se pone serio",
+      "disponible": false
+    },
+    {
+      "id": "energia",
+      "orden": 4,
+      "titulo": "Energía",
+      "descripcion": "Nivel experto: nucleares, renovables y la factura de la luz",
+      "disponible": false
+    }
+  ]
+}

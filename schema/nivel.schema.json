@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Nivel de Bate al cuñado",
+  "type": "object",
+  "required": ["id", "orden", "titulo", "preguntas"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "orden": { "type": "integer", "minimum": 1 },
+    "titulo": { "type": "string" },
+    "reacciones": {
+      "type": "object",
+      "properties": {
+        "acierto": { "type": "array", "items": { "type": "string" }, "description": "Lo que dice el cuñado cuando le desmontas" },
+        "fallo": { "type": "array", "items": { "type": "string" }, "description": "Lo que dice el cuñado cuando gana" }
+      }
+    },
+    "preguntas": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "mito", "falacia", "opciones", "explicacion", "fuente"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "mito": { "type": "string", "description": "Frase del cuñado" },
+          "falacia": { "type": "string", "description": "Nombre corto del truco lógico" },
+          "opciones": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "contains": { "type": "object", "properties": { "correcta": { "const": true } } },
+            "minContains": 1,
+            "maxContains": 1,
+            "items": {
+              "type": "object",
+              "required": ["texto", "correcta"],
+              "properties": {
+                "texto": { "type": "string", "description": "Réplica corta, del mismo tono y longitud que las demás" },
+                "correcta": { "type": "boolean" },
+                "por_que": { "type": "string", "description": "Obligatorio en las incorrectas: por qué no sirve" }
+              },
+              "if": { "properties": { "correcta": { "const": false } } },
+              "then": { "required": ["por_que"] }
+            }
+          },
+          "explicacion": { "type": "string", "description": "Desarrollo con los datos, se muestra tras responder" },
+          "fuente": {
+            "type": "object",
+            "required": ["texto", "url"],
+            "properties": { "texto": { "type": "string" }, "url": { "type": "string", "format": "uri" } }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bate al cuñado</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍷</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6E3E7; --check:rgba(150,30,60,.07); --surface:#FFFFFF; --ink:#2B0B16; --muted:#6E4553;
+  --accent:#9C6B00; --accent-strong:#F2C94C; --line:#E2BCC6;
+  --ok:#1F7A4D; --ok-bg:#DDF3E6; --bad:#B3261E; --bad-bg:#FBE1DE;
+  --bubble:#FFFDF8; --bubble-ink:#2B0B16; --shirt:#24385E;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#2A0A14; --check:rgba(255,255,255,.035); --surface:#3D1423; --ink:#F8E9EC; --muted:#CFA9B5;
+    --accent:#F2C94C; --line:#5C2236; --ok:#86DFAE; --ok-bg:#16402B; --bad:#FF9B91; --bad-bg:#4C1818;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#2A0A14; --check:rgba(255,255,255,.035); --surface:#3D1423; --ink:#F8E9EC; --muted:#CFA9B5;
+  --accent:#F2C94C; --line:#5C2236; --ok:#86DFAE; --ok-bg:#16402B; --bad:#FF9B91; --bad-bg:#4C1818;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0;min-height:100%;color:var(--ink);background-color:var(--bg);
+  background-image:
+    repeating-linear-gradient(0deg,var(--check) 0 22px,transparent 22px 44px),
+    repeating-linear-gradient(90deg,var(--check) 0 22px,transparent 22px 44px);
+  font-family:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;
+}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent-strong);outline-offset:3px;border-radius:6px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 18px 40px}
+.screen[hidden]{display:none}
+
+/* Menú */
+.title{font-size:clamp(48px,13vw,96px);line-height:.88;font-weight:800;letter-spacing:-.035em;margin:28px 0 14px;font-variation-settings:"opsz" 96}
+.title span{display:block}
+.lede{font-size:19px;color:var(--muted);max-width:34ch;margin:0 0 30px}
+.menu-hero{display:grid;grid-template-columns:1fr 150px;gap:10px;align-items:end}
+.menu-hero svg{width:150px;height:auto}
+.levels{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.level{display:flex;align-items:center;gap:16px;width:100%;text-align:left;padding:16px 18px;border-radius:14px;
+  background:var(--surface);border:2px solid var(--line)}
+.level .n{font-weight:800;font-size:28px;width:34px;color:var(--muted)}
+.level .t{font-weight:600;font-size:19px;display:block}
+.level .d{color:var(--muted);font-size:15px}
+.level.play{border-color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
+.level.play .n{color:var(--ink)}
+.level.play:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ink)}
+.level[disabled]{opacity:.6;cursor:not-allowed}
+.level .tag{margin-left:auto;font-size:14px;color:var(--muted);white-space:nowrap}
+.level.play .tag{color:var(--ink);font-weight:600}
+
+/* Juego */
+.hud{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:15px;color:var(--muted)}
+.hud .round{font-weight:600;color:var(--ink)}
+.ego{flex:1;min-width:180px}
+.ego-label{display:flex;justify-content:space-between;margin-bottom:4px}
+.ego-bar{height:12px;border-radius:99px;background:var(--line);overflow:hidden}
+.ego-fill{height:100%;background:var(--accent-strong);border-right:2px solid var(--ink);transition:width .5s ease}
+.cups{font-size:22px;letter-spacing:2px}
+.cups .gone{filter:grayscale(1);opacity:.3}
+.quit{background:none;border:0;color:var(--muted);text-decoration:underline;padding:4px}
+
+.stage{display:grid;grid-template-columns:130px 1fr;gap:6px;align-items:end;margin:22px 0 22px}
+.stage svg{width:130px;height:auto}
+.bubble{position:relative;background:var(--bubble);color:var(--bubble-ink);border:3px solid var(--ink);border-radius:22px;
+  padding:18px 22px;font-size:clamp(22px,4.6vw,31px);line-height:1.18;font-weight:800;letter-spacing:-.015em;
+  box-shadow:6px 6px 0 var(--ink);margin-bottom:56px}
+.bubble::before{content:"";position:absolute;left:-22px;bottom:18px;border:12px solid transparent;border-right:20px solid var(--ink);border-left:0}
+.bubble::after{content:"";position:absolute;left:-15px;bottom:21px;border:9px solid transparent;border-right:15px solid var(--bubble);border-left:0}
+.bubble.react{font-size:clamp(18px,3.6vw,22px);font-weight:600}
+.prompt{margin:0 0 10px;color:var(--muted);font-size:15px}
+.opts{display:grid;gap:10px}
+.opt{display:flex;gap:14px;align-items:flex-start;text-align:left;padding:14px 16px;border-radius:12px;background:var(--surface);
+  border:2px solid var(--line);font-size:17px;line-height:1.4}
+.opt .k{flex:none;width:28px;height:28px;border-radius:50%;border:2px solid currentColor;display:grid;place-items:center;font-weight:800;font-size:14px;color:var(--muted)}
+.opt:not([disabled]):hover{border-color:var(--ink)}
+.opt[disabled]{cursor:default}
+.opt.right{border-color:var(--ok);background:var(--ok-bg)}
+.opt.right .k{color:var(--ok)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.opt.wrong .k{color:var(--bad)}
+.opt.dim{opacity:.5}
+
+.feedback{margin-top:18px;padding:18px 20px;border-radius:14px;background:var(--surface);border:2px solid var(--ink)}
+.feedback h3{margin:0 0 6px;font-size:22px;line-height:1.2}
+.feedback.good h3{color:var(--ok)}
+.feedback.bad h3{color:var(--bad)}
+.feedback p{margin:0 0 10px}
+.why{color:var(--muted)}
+.trick{display:inline-block;margin:2px 0 12px;padding:4px 12px;border-radius:99px;background:var(--accent-strong);color:#2B0B16;font-weight:600;font-size:15px}
+.source{font-size:15px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px;margin-top:4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 24px;border-radius:12px;border:2px solid var(--ink);
+  background:var(--ink);color:var(--bg);font-weight:600;font-size:17px;margin-top:6px}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:hover{opacity:.9}
+
+/* Final */
+.verdict{font-size:clamp(36px,9vw,64px);line-height:.95;font-weight:800;letter-spacing:-.03em;margin:10px 0 12px}
+.stats{display:flex;gap:28px;flex-wrap:wrap;margin:18px 0 24px}
+.stat b{display:block;font-size:40px;line-height:1;font-weight:800}
+.stat span{color:var(--muted);font-size:15px}
+.review{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:8px}
+.review li{background:var(--surface);border:2px solid var(--line);border-left-width:8px;border-radius:10px;padding:10px 14px;font-size:15px}
+.review li.ok{border-left-color:var(--ok)} .review li.ko{border-left-color:var(--bad)}
+.review q{font-weight:600;display:block;margin-bottom:2px;quotes:"«" "»"}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* Cuñado */
+.mood{display:none}
+svg[data-mood="smug"] .m-smug, svg[data-mood="shock"] .m-shock, svg[data-mood="gloat"] .m-gloat{display:inline}
+@media (prefers-reduced-motion: no-preference){
+  .bump{animation:bump .45s ease}
+  @keyframes bump{30%{transform:translateY(-6px) rotate(-3deg)}60%{transform:translateY(2px) rotate(2deg)}}
+}
+@media (max-width:520px){
+  .stage{grid-template-columns:86px 1fr}
+  .stage svg{width:86px}
+  .menu-hero{grid-template-columns:1fr 100px}
+  .menu-hero svg{width:100px}
+  .bubble{padding:14px 16px;margin-bottom:34px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- MENÚ -->
+  <section class="screen" id="menu">
+    <div class="menu-hero">
+      <div>
+        <h1 class="title"><span>Bate</span><span>al cuñado</span></h1>
+        <p class="lede">Es Nochebuena. Tu cuñado ha descubierto YouTube y tiene opiniones. Desmonta sus argumentos con datos antes de que llegue el turrón.</p>
+      </div>
+      <div id="menuCunado"></div>
+    </div>
+    <ol class="levels" id="levels"></ol>
+    <p class="lede" id="loadError" hidden></p>
+  </section>
+
+  <!-- JUEGO -->
+  <section class="screen" id="game" hidden>
+    <div class="hud">
+      <span class="round" id="round">Ronda 1 de 10</span>
+      <div class="ego">
+        <div class="ego-label"><span>Ego del cuñado</span><span id="egoNum">100%</span></div>
+        <div class="ego-bar" role="progressbar" aria-label="Ego del cuñado" aria-valuemin="0" aria-valuemax="100" id="egoBar"><div class="ego-fill" id="egoFill" style="width:100%"></div></div>
+      </div>
+      <span class="cups" id="cups" aria-label="Paciencia"></span>
+      <button class="quit" id="quit">Salir</button>
+    </div>
+    <div class="stage">
+      <div id="gameCunado"></div>
+      <div class="bubble" id="bubble" aria-live="polite"></div>
+    </div>
+    <p class="prompt" id="prompt">¿Qué le contestas? (también puedes pulsar 1, 2, 3 o 4)</p>
+    <div class="opts" id="opts"></div>
+    <div id="feedback"></div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="screen" id="end" hidden>
+    <div class="stage">
+      <div id="endCunado"></div>
+      <div class="bubble react" id="endBubble"></div>
+    </div>
+    <h2 class="verdict" id="verdict"></h2>
+    <p id="verdictSub" class="lede"></p>
+    <div class="stats">
+      <div class="stat"><b id="sOk">0</b><span>argumentos desmontados</span></div>
+      <div class="stat"><b id="sKo">0</b><span>veces que se salió con la suya</span></div>
+      <div class="stat"><b id="sEgo">0%</b><span>ego final del cuñado</span></div>
+    </div>
+    <h3>Lo que ha salido en la cena</h3>
+    <ul class="review" id="review"></ul>
+    <div class="actions">
+      <button class="btn" id="again">Jugar otra vez</button>
+      <button class="btn ghost" id="toMenu">Volver al menú</button>
+    </div>
+  </section>
+</div>
+
+<script>
+const CUNADO_SVG = `
+<svg viewBox="0 0 200 230" xmlns="http://www.w3.org/2000/svg" data-mood="smug" role="img" aria-label="El cuñado">
+  <g stroke="#2B0B16" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- cuernos de reno -->
+    <path d="M62 52 L48 18 M52 30 L36 26 M50 22 L58 10" fill="none" stroke="#8A5A2B" stroke-width="6"/>
+    <path d="M138 52 L152 18 M148 30 L164 26 M150 22 L142 10" fill="none" stroke="#8A5A2B" stroke-width="6"/>
+    <!-- cuerpo -->
+    <path d="M28 230 C30 180 60 160 100 160 C140 160 170 180 172 230 Z" fill="var(--shirt)"/>
+    <path d="M86 160 L100 182 L114 160" fill="#F4F4F4"/>
+    <!-- cabeza -->
+    <ellipse cx="100" cy="100" rx="52" ry="58" fill="#F2C3A0"/>
+    <path d="M50 92 C46 70 56 56 64 54 M150 92 C154 70 144 56 136 54" fill="none" stroke="#5A3A25" stroke-width="9"/>
+    <ellipse cx="48" cy="104" rx="8" ry="12" fill="#F2C3A0"/>
+    <ellipse cx="152" cy="104" rx="8" ry="12" fill="#F2C3A0"/>
+    <!-- mofletes -->
+    <circle cx="70" cy="122" r="8" fill="#E89A87" stroke="none"/>
+    <circle cx="130" cy="122" r="8" fill="#E89A87" stroke="none"/>
+    <!-- nariz -->
+    <path d="M100 100 C92 116 96 122 106 120" fill="none"/>
+    <!-- bigote -->
+    <path d="M74 132 C84 124 96 126 100 130 C104 126 116 124 126 132 C118 140 106 136 100 134 C94 136 82 140 74 132 Z" fill="#5A3A25"/>
+    <!-- SMUG -->
+    <g class="mood m-smug">
+      <path d="M68 78 L88 82 M112 80 L134 70" fill="none"/>
+      <path d="M72 96 h12 M116 94 h12" fill="none" stroke-width="5"/>
+      <path d="M88 146 C98 150 110 148 116 140" fill="none"/>
+    </g>
+    <!-- SHOCK -->
+    <g class="mood m-shock">
+      <path d="M68 70 C74 64 84 64 90 68 M110 68 C116 64 126 64 132 70" fill="none"/>
+      <circle cx="80" cy="94" r="6" fill="#2B0B16"/>
+      <circle cx="120" cy="94" r="6" fill="#2B0B16"/>
+      <ellipse cx="100" cy="150" rx="9" ry="11" fill="#7A1F2B"/>
+      <path d="M160 70 C164 78 164 84 160 88" fill="none" stroke="#5AA9E6" stroke-width="5"/>
+    </g>
+    <!-- GLOAT -->
+    <g class="mood m-gloat">
+      <path d="M68 80 L90 76 M110 76 L132 80" fill="none"/>
+      <path d="M72 96 C76 90 84 90 88 96 M112 96 C116 90 124 90 128 96" fill="none"/>
+      <path d="M80 142 C90 158 112 158 122 142 Z" fill="#7A1F2B"/>
+    </g>
+    <!-- copa de vino -->
+    <g transform="translate(150 150)">
+      <path d="M0 0 h28 C28 22 20 30 14 30 C8 30 0 22 0 0 Z" fill="#F7EEF0" fill-opacity=".85"/>
+      <path d="M3 12 h22 C23 24 18 28 14 28 C10 28 5 24 3 12 Z" fill="#8E1B3A" stroke="none"/>
+      <path d="M14 30 v18 M4 48 h20" fill="none"/>
+    </g>
+  </g>
+</svg>`;
+
+let ROUNDS = 10; const CUPS = 3, HIT = 10, HEAL = 5;
+let state, level, R_OK = [], R_KO = [];
+const $ = id => document.getElementById(id);
+const pick = a => a[Math.floor(Math.random()*a.length)];
+const shuffle = a => { a=[...a]; for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; };
+const esc = s => s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+["menuCunado","gameCunado","endCunado"].forEach(id=>$(id).innerHTML=CUNADO_SVG);
+const setMood = (id,m) => { const s=$(id).querySelector("svg"); s.dataset.mood=m; s.classList.remove("bump"); void s.offsetWidth; s.classList.add("bump"); };
+
+function show(id){ ["menu","game","end"].forEach(s=>$(s).hidden = s!==id); window.scrollTo(0,0); }
+
+async function loadLevel(meta){
+  const res = await fetch(meta.fichero);
+  if(!res.ok) throw new Error(`No se pudo cargar ${meta.fichero}`);
+  const data = await res.json();
+  // Formato JSON -> formato interno [texto, correcta(1/0), por_que]
+  level = { meta, Q: data.preguntas.map(p=>({
+    m:p.mito, f:p.falacia, e:p.explicacion, s:[p.fuente.texto,p.fuente.url],
+    o:p.opciones.map(o=>[o.texto, o.correcta?1:0, o.por_que||""]) })) };
+  R_OK = data.reacciones?.acierto?.length ? data.reacciones.acierto : ["Bueno... eso habría que verlo."];
+  R_KO = data.reacciones?.fallo?.length ? data.reacciones.fallo : ["¡Ja! ¿Lo ves?"];
+}
+
+async function play(meta){
+  try { await loadLevel(meta); start(); }
+  catch(err){ const p=$("loadError"); p.hidden=false; p.textContent = err.message + ". Abre el juego con un servidor local (ver README)."; }
+}
+
+function start(){
+  state = {qs:shuffle(level.Q).slice(0,Math.min(ROUNDS,level.Q.length)), i:0, ego:100, cups:CUPS, ok:0, ko:0, log:[]};
+  show("game"); render();
+}
+
+function hud(){
+  $("round").textContent = `Ronda ${state.i+1} de ${state.qs.length}`;
+  $("egoFill").style.width = state.ego+"%";
+  $("egoNum").textContent = state.ego+"%";
+  $("egoBar").setAttribute("aria-valuenow", state.ego);
+  $("cups").innerHTML = Array.from({length:CUPS},(_,k)=>`<span class="${k<state.cups?"":"gone"}">🍷</span>`).join("");
+  $("cups").setAttribute("aria-label", `Paciencia: ${state.cups} de ${CUPS} copas`);
+}
+
+function render(){
+  const q = state.qs[state.i];
+  hud();
+  setMood("gameCunado","smug");
+  const b=$("bubble"); b.classList.remove("react"); b.textContent = q.m;
+  $("prompt").hidden = false;
+  $("feedback").innerHTML = "";
+  state.opts = shuffle(q.o);
+  $("opts").innerHTML = state.opts.map((o,k)=>`<button class="opt" data-k="${k}"><span class="k">${k+1}</span><span>${esc(o[0])}</span></button>`).join("");
+  $("opts").querySelectorAll(".opt").forEach(btn=>btn.addEventListener("click",()=>answer(+btn.dataset.k)));
+  state.answered = false;
+  $("opts").querySelector(".opt").focus({preventScroll:true});
+}
+
+function answer(k){
+  if(state.answered) return;
+  state.answered = true;
+  const q = state.qs[state.i], chosen = state.opts[k], good = chosen[1]===1;
+  const btns = [...$("opts").querySelectorAll(".opt")];
+  btns.forEach((b,j)=>{ b.disabled=true; const o=state.opts[j];
+    if(o[1]===1) b.classList.add("right"); else if(j===k) b.classList.add("wrong"); else b.classList.add("dim"); });
+  if(good){ state.ok++; state.ego=Math.max(0,state.ego-HIT); setMood("gameCunado","shock"); }
+  else { state.ko++; state.cups--; state.ego=Math.min(100,state.ego+HEAL); setMood("gameCunado","gloat"); }
+  state.log.push({q,good});
+  hud();
+  const b=$("bubble"); b.classList.add("react"); b.textContent = good ? pick(R_OK) : pick(R_KO);
+  $("prompt").hidden = true;
+  const last = state.cups<=0 || state.i===state.qs.length-1;
+  $("feedback").innerHTML = `
+    <div class="feedback ${good?"good":"bad"}">
+      <h3>${good?"Argumento desmontado":"El cuñado se viene arriba"}</h3>
+      ${good?"":`<p class="why">${esc(chosen[2]||"")}</p>`}
+      <span class="trick">Truco del cuñado: ${esc(q.f)}</span>
+      <p>${esc(q.e)}</p>
+      <p class="source">Fuente: <a href="${q.s[1]}" target="_blank" rel="noopener">${esc(q.s[0])}</a></p>
+      <button class="btn" id="next">${last?"Ver resultado":"Siguiente argumento"}</button>
+    </div>`;
+  $("next").addEventListener("click", next);
+  $("next").focus({preventScroll:true});
+  $("feedback").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth", block:"nearest"});
+}
+
+function next(){
+  if(state.cups<=0 || state.i===state.qs.length-1) return end();
+  state.i++; render();
+}
+
+function end(){
+  show("end");
+  let v, sub, mood, line;
+  if(state.cups<=0){ v="Te mandan a fregar los platos"; sub="Te has quedado sin paciencia antes del postre. Revisa sus trucos y vuelve a por la revancha."; mood="gloat"; line="Ya lo decía yo. Venga, que esos platos no se friegan solos."; }
+  else if(state.ego<=30){ v="Cuñado fuera de combate"; sub="Se ha ido al salón a ver el discurso sin decir ni mu. Nochebuena salvada."; mood="shock"; line="...¿Alguien quiere más polvorones?"; }
+  else if(state.ego<=60){ v="Empate técnico"; sub="Le has cerrado varias bocas, pero aún le quedan argumentos para la cena de Nochevieja."; mood="smug"; line="Bueno, cada uno tiene su opinión, ¿no?"; }
+  else { v="El cuñado sigue en su salsa"; sub="Esta vez ganó él. Lee los trucos que usó y vuelve a intentarlo."; mood="gloat"; line="Si es que en esta familia el único que lee soy yo."; }
+  setMood("endCunado",mood);
+  $("endBubble").textContent=line; $("verdict").textContent=v; $("verdictSub").textContent=sub;
+  $("sOk").textContent=state.ok; $("sKo").textContent=state.ko; $("sEgo").textContent=state.ego+"%";
+  $("review").innerHTML = state.log.map(({q,good})=>`<li class="${good?"ok":"ko"}"><q>${esc(q.m)}</q>${good?"Desmontado":"Se salió con la suya"}. Truco: ${esc(q.f)}. <a href="${q.s[1]}" target="_blank" rel="noopener">Fuente</a></li>`).join("");
+}
+
+document.addEventListener("keydown",e=>{
+  if($("game").hidden || state.answered) return;
+  const n = parseInt(e.key,10);
+  if(n>=1 && n<=4) answer(n-1);
+});
+async function renderMenu(){
+  try{
+    const {niveles} = await (await fetch("data/niveles.json")).json();
+    $("levels").innerHTML = niveles.sort((a,b)=>a.orden-b.orden).map(n=>`
+      <li><button class="level ${n.disponible?"play":""}" data-id="${n.id}" ${n.disponible?"":"disabled"}>
+        <span class="n">${n.orden}</span>
+        <span><span class="t">${esc(n.titulo)}</span><span class="d">${esc(n.descripcion||"")}</span></span>
+        <span class="tag">${n.disponible?"Jugar":"Próximamente"}</span></button></li>`).join("");
+    $("levels").querySelectorAll(".level.play").forEach(b=>b.addEventListener("click",()=>play(niveles.find(n=>n.id===b.dataset.id))));
+  }catch(err){
+    const p=$("loadError"); p.hidden=false;
+    p.textContent="No se pudieron cargar los niveles. Abre el juego con un servidor local (ver README).";
+  }
+}
+renderMenu();
+$("quit").addEventListener("click",()=>show("menu"));
+$("again").addEventListener("click",start);
+$("toMenu").addEventListener("click",()=>show("menu"));
+show("menu");
+</script>
+</body>
+</html>
