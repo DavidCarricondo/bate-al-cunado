@@ -11,6 +11,10 @@ const PRECACHE = [
   "images/cunao-barra-normal.webp",
   "images/cunao-barra-lost.webp",
   "images/cunao-barra-win.webp",
+  "images/cunao-barra-menu.webp",
+  "images/placeholder-terraplanismo.webp",
+  "images/placeholder-vacunas-homeopatia.webp",
+  "images/placeholder-energia.webp",
   "icons/icon-192.png",
   "icons/icon-512.png",
 ];
