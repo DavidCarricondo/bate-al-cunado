@@ -11,17 +11,20 @@
     "acierto": [
       "Bueno... eso habría que verlo.",
       "¿Y eso de dónde lo sacas? Ah, de Nature. Vale.",
-      "Pásame el turrón, anda.",
+      "Jefe, ponme otra caña, que esto va para largo.",
       "Yo solo digo lo que leo por ahí.",
-      "Hmm. Cambiemos de tema: ¿y el fútbol?",
-      "Eso será en otros sitios. Aquí no."
+      "Hmm. Cambiemos de tema: ¿has visto el partido?",
+      "Eso será en otros sitios. Aquí no.",
+      "Bah, eso lo dices porque no has vivido."
     ],
     "fallo": [
       "¡Ja! ¿Lo ves? Es que no te enteras.",
-      "Te lo dije. Sírveme más vino.",
+      "Te lo dije. Esta ronda la pagas tú.",
+      "Paco, ¿a que tengo razón? ¡Pues eso!",
       "Esto lo sé yo de un vídeo que vi el otro día.",
       "A mí no me la cuelan.",
-      "Lo que yo diga, que para eso soy ingeniero de la vida."
+      "Lo que yo diga, que para eso soy ingeniero de la vida.",
+      "Ponme un vermú, que me lo he ganado."
     ]
   },
   "preguntas": [

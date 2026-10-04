@@ -3,14 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Bate al cuñado</title>
+<title>Bate al cuñao</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍷</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<script>try{const t=localStorage.getItem("tema"); if(t) document.documentElement.dataset.theme=t;}catch(e){}</script>
 <style>
 :root{
-  --bg:#F6E3E7; --check:rgba(150,30,60,.07); --surface:#FFFFFF; --ink:#2B0B16; --muted:#6E4553;
+  --bg:#FFFFFF; --surface:#FFFFFF; --ink:#2B0B16; --muted:#6E4553;
   --accent:#9C6B00; --accent-strong:#F2C94C; --line:#E2BCC6;
   --ok:#1F7A4D; --ok-bg:#DDF3E6; --bad:#B3261E; --bad-bg:#FBE1DE;
   --bubble:#FFFDF8; --bubble-ink:#2B0B16; --shirt:#24385E;
@@ -19,21 +20,18 @@
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#2A0A14; --check:rgba(255,255,255,.035); --surface:#3D1423; --ink:#F8E9EC; --muted:#CFA9B5;
+    --bg:#000000; --surface:#2A0D18; --ink:#F8E9EC; --muted:#CFA9B5;
     --accent:#F2C94C; --line:#5C2236; --ok:#86DFAE; --ok-bg:#16402B; --bad:#FF9B91; --bad-bg:#4C1818;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#2A0A14; --check:rgba(255,255,255,.035); --surface:#3D1423; --ink:#F8E9EC; --muted:#CFA9B5;
+  --bg:#000000; --surface:#2A0D18; --ink:#F8E9EC; --muted:#CFA9B5;
   --accent:#F2C94C; --line:#5C2236; --ok:#86DFAE; --ok-bg:#16402B; --bad:#FF9B91; --bad-bg:#4C1818;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
 body{
-  margin:0;min-height:100%;color:var(--ink);background-color:var(--bg);
-  background-image:
-    repeating-linear-gradient(0deg,var(--check) 0 22px,transparent 22px 44px),
-    repeating-linear-gradient(90deg,var(--check) 0 22px,transparent 22px 44px);
+  margin:0;min-height:100%;color:var(--ink);background:var(--bg);
   font-family:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;
 }
@@ -43,24 +41,67 @@ a{color:var(--accent)}
 .wrap{max-width:760px;margin:0 auto;padding:20px 18px 40px}
 .screen[hidden]{display:none}
 
-/* Menú */
-.title{font-size:clamp(48px,13vw,96px);line-height:.88;font-weight:800;letter-spacing:-.035em;margin:28px 0 14px;font-variation-settings:"opsz" 96}
+/* Pantallas con foto de fondo (menú principal y selección de nivel) */
+#bg{position:fixed;inset:0;z-index:-1;background:#2A0A14 center 30%/cover no-repeat;transition:background-image .35s ease}
+#bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(20,4,10,.6) 0,rgba(20,4,10,0) 20%,rgba(20,4,10,0) 40%,rgba(20,4,10,.9) 80%)}
+#bg[hidden]{display:none}
+.hero{min-height:100vh;min-height:100dvh;margin:-20px -18px -40px;padding:16px 18px calc(28px + env(safe-area-inset-bottom,0px));
+  display:flex;flex-direction:column;color:#FFFDF8}
+.home{justify-content:flex-end}
+.title{font-size:clamp(52px,15vw,104px);line-height:.88;font-weight:800;letter-spacing:-.035em;margin:0 0 26px;font-variation-settings:"opsz" 96;
+  color:#FFFDF8;text-shadow:0 3px 0 #2B0B16,0 8px 28px rgba(0,0,0,.55)}
 .title span{display:block}
 .lede{font-size:19px;color:var(--muted);max-width:34ch;margin:0 0 30px}
-.menu-hero{display:grid;grid-template-columns:1fr 150px;gap:10px;align-items:end}
-.menu-hero svg{width:150px;height:auto}
-.levels{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.level{display:flex;align-items:center;gap:16px;width:100%;text-align:left;padding:16px 18px;border-radius:14px;
-  background:var(--surface);border:2px solid var(--line)}
-.level .n{font-weight:800;font-size:28px;width:34px;color:var(--muted)}
-.level .t{font-weight:600;font-size:19px;display:block}
-.level .d{color:var(--muted);font-size:15px}
-.level.play{border-color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
-.level.play .n{color:var(--ink)}
-.level.play:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ink)}
-.level[disabled]{opacity:.6;cursor:not-allowed}
-.level .tag{margin-left:auto;font-size:14px;color:var(--muted);white-space:nowrap}
-.level.play .tag{color:var(--ink);font-weight:600}
+.menu-btns{display:grid;gap:12px;max-width:420px;width:100%}
+.mbtn{min-height:58px;padding:12px 20px;border-radius:14px;border:2px solid #2B0B16;background:#FFFDF8;color:#2B0B16;
+  font-weight:800;font-size:21px;box-shadow:4px 4px 0 #2B0B16}
+.mbtn.primary{background:var(--accent-strong)}
+.mbtn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 #2B0B16}
+
+/* Cabecera de las pantallas secundarias */
+.topbar{display:flex;align-items:center;gap:14px;margin:0 0 20px}
+.topbar h2{margin:0;font-size:26px;line-height:1.1;font-weight:800;letter-spacing:-.02em}
+.back{flex:none;min-height:44px;padding:6px 16px;border-radius:99px;border:2px solid currentColor;background:transparent;font-weight:600}
+.hero .topbar{text-shadow:0 2px 10px rgba(0,0,0,.6)}
+.hero .back{background:rgba(20,4,10,.45)}
+
+/* Selección de nivel */
+.levels-screen{justify-content:space-between}
+.pick{display:grid;gap:12px;max-width:560px;width:100%}
+.lvls{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.lvls li{display:flex}
+.lvl{display:flex;align-items:flex-start;gap:8px;width:100%;min-height:60px;padding:9px 12px;border-radius:12px;text-align:left;
+  border:2px solid rgba(255,253,248,.55);background:rgba(20,4,10,.6);color:#FFFDF8;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.lvl .n{font-weight:800;font-size:18px;line-height:1.25}
+.lvl .t{font-weight:600;font-size:16px;line-height:1.25}
+.lvl .tag{display:block;font-size:12px;font-weight:400;opacity:.8}
+.lvl[aria-pressed="true"]{background:#FFFDF8;color:#2B0B16;border-color:#2B0B16;box-shadow:3px 3px 0 #2B0B16}
+.detail{background:var(--surface);color:var(--ink);border:2px solid #2B0B16;border-radius:14px;padding:16px 18px;box-shadow:4px 4px 0 #2B0B16}
+.detail h3{margin:0 0 6px;font-size:22px;line-height:1.15}
+.detail p{margin:0 0 6px}
+.detail .meta{color:var(--muted);font-size:14px;margin-bottom:12px}
+.detail .btn{width:100%;min-height:54px;font-size:19px;margin:0}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.err{color:#FFFDF8;background:rgba(179,38,30,.85);border-radius:10px;padding:10px 14px;margin:0}
+
+/* Ajustes */
+.setting h3{margin:0 0 10px;font-size:19px}
+.seg{display:grid;grid-template-columns:1fr 1fr;max-width:420px;border:2px solid var(--ink);border-radius:14px;overflow:hidden}
+.seg label{position:relative}
+.seg input{position:absolute;inset:0;opacity:0;margin:0}
+.seg span{display:block;text-align:center;padding:14px;font-weight:600;cursor:pointer;background:var(--surface)}
+.seg input:checked+span{background:var(--ink);color:var(--bg)}
+.seg input:focus-visible+span{outline:3px solid var(--accent-strong);outline-offset:-5px}
+
+/* Fuentes */
+.src-group{margin:0 0 28px}
+.src-group h3{margin:0 0 10px;font-size:22px}
+.src-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.src-list li{background:var(--surface);border:2px solid var(--line);border-left:8px solid var(--accent-strong);border-radius:10px;padding:10px 14px;font-size:15px}
+.src-list a{font-weight:600;overflow-wrap:anywhere}
+.src-list .about{display:block;color:var(--muted);margin-top:4px}
+.src-list q{quotes:"«" "»"}
 
 /* Juego */
 .hud{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:15px;color:var(--muted)}
@@ -136,8 +177,6 @@ svg[data-mood="smug"] .m-smug, svg[data-mood="shock"] .m-shock, svg[data-mood="g
 @media (max-width:520px){
   .stage{grid-template-columns:86px 1fr}
   .stage svg{width:86px}
-  .menu-hero{grid-template-columns:1fr 100px}
-  .menu-hero svg{width:100px}
   .bubble{padding:14px 16px;margin-bottom:34px}
   .stage.photo{margin-top:12px}
   .stage.photo .bubble{margin-top:10px;box-shadow:4px 4px 0 var(--ink)}
@@ -147,17 +186,45 @@ svg[data-mood="smug"] .m-smug, svg[data-mood="shock"] .m-shock, svg[data-mood="g
 <body>
 <div class="wrap">
 
-  <!-- MENÚ -->
-  <section class="screen" id="menu">
-    <div class="menu-hero">
-      <div>
-        <h1 class="title"><span>Bate</span><span>al cuñado</span></h1>
-        <p class="lede">Es Nochebuena. Tu cuñado ha descubierto YouTube y tiene opiniones. Desmonta sus argumentos con datos antes de que llegue el turrón.</p>
-      </div>
-      <div id="menuCunado"></div>
+  <div id="bg" hidden></div>
+
+  <!-- MENÚ PRINCIPAL -->
+  <section class="screen hero home" id="home">
+    <h1 class="title"><span>Bate</span><span>al cuñao</span></h1>
+    <nav class="menu-btns" aria-label="Menú principal">
+      <button class="mbtn primary" data-go="levels">Jugar</button>
+      <button class="mbtn" data-go="setup">Setup</button>
+      <button class="mbtn" data-go="sources">Fuentes</button>
+    </nav>
+  </section>
+
+  <!-- SELECCIÓN DE NIVEL -->
+  <section class="screen hero levels-screen" id="levels" hidden>
+    <div class="topbar"><button class="back" data-go="home">← Volver</button><h2>Elige nivel</h2></div>
+    <div class="pick">
+      <ul class="lvls" id="lvls"></ul>
+      <div class="detail" id="detail" aria-live="polite" hidden></div>
+      <p class="err" id="loadError" hidden></p>
     </div>
-    <ol class="levels" id="levels"></ol>
-    <p class="lede" id="loadError" hidden></p>
+  </section>
+
+  <!-- SETUP -->
+  <section class="screen" id="setup" hidden>
+    <div class="topbar"><button class="back" data-go="home">← Volver</button><h2>Setup</h2></div>
+    <fieldset class="setting" style="border:0;padding:0;margin:0">
+      <legend><h3>Tema</h3></legend>
+      <div class="seg">
+        <label><input type="radio" name="tema" value="light"><span>Claro</span></label>
+        <label><input type="radio" name="tema" value="dark"><span>Oscuro</span></label>
+      </div>
+    </fieldset>
+  </section>
+
+  <!-- FUENTES -->
+  <section class="screen" id="sources" hidden>
+    <div class="topbar"><button class="back" data-go="home">← Volver</button><h2>Fuentes</h2></div>
+    <p class="lede">Los estudios e informes en los que se apoya cada respuesta, ordenados por tema.</p>
+    <div id="srcBody"><p class="lede">Cargando…</p></div>
   </section>
 
   <!-- JUEGO -->
@@ -193,7 +260,7 @@ svg[data-mood="smug"] .m-smug, svg[data-mood="shock"] .m-shock, svg[data-mood="g
       <div class="stat"><b id="sKo">0</b><span>veces que se salió con la suya</span></div>
       <div class="stat"><b id="sEgo">0%</b><span>ego final del cuñado</span></div>
     </div>
-    <h3>Lo que ha salido en la cena</h3>
+    <h3>Lo que ha salido en la barra</h3>
     <ul class="review" id="review"></ul>
     <div class="actions">
       <button class="btn" id="again">Jugar otra vez</button>
@@ -260,7 +327,7 @@ const pick = a => a[Math.floor(Math.random()*a.length)];
 const shuffle = a => { a=[...a]; for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; };
 const esc = s => s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
-["menuCunado","gameCunado","endCunado"].forEach(id=>$(id).innerHTML=CUNADO_SVG);
+["gameCunado","endCunado"].forEach(id=>$(id).innerHTML=CUNADO_SVG);
 // Estado de ánimo -> imagen del nivel (acierto/fallo desde el punto de vista del jugador)
 const MOOD_IMG = {smug:"normal", shock:"acierto", gloat:"fallo"};
 // Pone la foto del nivel (o el dibujo por defecto si el nivel no trae imágenes)
@@ -275,17 +342,44 @@ const setMood = (id,m) => {
   s.classList.remove("bump"); void s.offsetWidth; s.classList.add("bump");
 };
 
-function show(id){ ["menu","game","end"].forEach(s=>$(s).hidden = s!==id); window.scrollTo(0,0); }
+const MENU_BG = "images/cunao-barra-menu.webp";
+const SCREENS = ["home","levels","setup","sources","game","end"];
+let NIVELES = [], sel = null;
+const setBg = url => { $("bg").style.backgroundImage = `url("${url}")`; };
+
+// Cambia de pantalla. "push" crea una entrada en el historial para que el botón atrás del móvil funcione.
+function show(id, mode="push"){
+  SCREENS.forEach(s=>$(s).hidden = s!==id);
+  const hero = id==="home" || id==="levels";
+  $("bg").hidden = !hero;
+  if(hero) setBg(id==="levels" && sel ? sel.fondo || MENU_BG : MENU_BG);
+  if(id==="sources") renderSources();
+  if(mode==="push") history.pushState({s:id}, "", id==="home" ? location.pathname : "#"+id);
+  else if(mode==="replace") history.replaceState({s:id}, "", "#"+id);
+  window.scrollTo(0,0);
+}
+addEventListener("popstate", e=>{
+  const s = e.state?.s || "home";
+  show(s==="game" || s==="end" ? "levels" : s, "none");
+});
+
+// Cada fichero de nivel se descarga una sola vez (lo usan el juego y la pantalla de fuentes)
+const CACHE = {};
+function fetchLevel(meta){
+  return CACHE[meta.id] ??= fetch(meta.fichero).then(r=>{
+    if(!r.ok) throw new Error(`No se pudo cargar ${meta.fichero}`);
+    return r.json();
+  }).catch(err=>{ delete CACHE[meta.id]; throw err; });
+}
 
 async function loadLevel(meta){
-  const res = await fetch(meta.fichero);
-  if(!res.ok) throw new Error(`No se pudo cargar ${meta.fichero}`);
-  const data = await res.json();
+  const data = await fetchLevel(meta);
   // Formato JSON -> formato interno [texto, correcta(1/0), por_que]
   level = { meta, Q: data.preguntas.map(p=>({
     m:p.mito, f:p.falacia, e:p.explicacion, s:[p.fuente.texto,p.fuente.url],
     o:p.opciones.map(o=>[o.texto, o.correcta?1:0, o.por_que||""]) })) };
   level.img = data.cunao || null;
+  level.finales = data.finales || null;
   // Precarga para que el cambio de cara sea instantáneo
   if(level.img) ["normal","acierto","fallo"].forEach(k=>{ new Image().src = level.img[k]; });
   R_OK = data.reacciones?.acierto?.length ? data.reacciones.acierto : ["Bueno... eso habría que verlo."];
@@ -299,7 +393,8 @@ async function play(meta){
 
 function start(){
   state = {qs:shuffle(level.Q).slice(0,Math.min(ROUNDS,level.Q.length)), i:0, ego:100, cups:CUPS, ok:0, ko:0, log:[]};
-  show("game"); render();
+  $("loadError").hidden = true;
+  show("game", $("end").hidden ? "push" : "replace"); render();
 }
 
 function hud(){
@@ -323,6 +418,7 @@ function render(){
   $("opts").querySelectorAll(".opt").forEach(btn=>btn.addEventListener("click",()=>answer(+btn.dataset.k)));
   state.answered = false;
   $("opts").querySelector(".opt").focus({preventScroll:true});
+  window.scrollTo(0,0);
 }
 
 function answer(k){
@@ -350,7 +446,7 @@ function answer(k){
     </div>`;
   $("next").addEventListener("click", next);
   $("next").focus({preventScroll:true});
-  $("feedback").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth", block:"nearest"});
+  window.scrollTo({top:0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
 }
 
 function next(){
@@ -358,15 +454,20 @@ function next(){
   state.i++; render();
 }
 
+const FINALES = {
+  sin_paciencia: {titulo:"Te toca pagar la ronda", texto:"Te has quedado sin paciencia antes de la segunda caña. Revisa sus trucos y vuelve a por la revancha.", frase:"Ya lo decía yo. Venga, que esta ronda la pagas tú."},
+  fuera_de_combate: {titulo:"Cuñado fuera de combate", texto:"Ha pedido la cuenta y se ha ido sin decir ni mu. El bar vuelve a estar en paz.", frase:"...Paco, cóbrame, que tengo prisa."},
+  empate: {titulo:"Empate técnico", texto:"Le has cerrado varias bocas, pero mañana vuelve a la barra con argumentos nuevos.", frase:"Bueno, cada uno tiene su opinión, ¿no?"},
+  gana_cunao: {titulo:"El cuñado sigue en su salsa", texto:"Esta vez ganó él. Lee los trucos que usó y vuelve a intentarlo.", frase:"Si es que en este bar el único que lee soy yo."}
+};
+
 function end(){
-  show("end");
-  let v, sub, mood, line;
-  if(state.cups<=0){ v="Te mandan a fregar los platos"; sub="Te has quedado sin paciencia antes del postre. Revisa sus trucos y vuelve a por la revancha."; mood="gloat"; line="Ya lo decía yo. Venga, que esos platos no se friegan solos."; }
-  else if(state.ego<=30){ v="Cuñado fuera de combate"; sub="Se ha ido al salón a ver el discurso sin decir ni mu. Nochebuena salvada."; mood="shock"; line="...¿Alguien quiere más polvorones?"; }
-  else if(state.ego<=60){ v="Empate técnico"; sub="Le has cerrado varias bocas, pero aún le quedan argumentos para la cena de Nochevieja."; mood="smug"; line="Bueno, cada uno tiene su opinión, ¿no?"; }
-  else { v="El cuñado sigue en su salsa"; sub="Esta vez ganó él. Lee los trucos que usó y vuelve a intentarlo."; mood="gloat"; line="Si es que en esta familia el único que lee soy yo."; }
+  show("end","replace");
+  const [key, mood] = state.cups<=0 ? ["sin_paciencia","gloat"] : state.ego<=30 ? ["fuera_de_combate","shock"]
+    : state.ego<=60 ? ["empate","smug"] : ["gana_cunao","gloat"];
+  const f = {...FINALES[key], ...level.finales?.[key]};
   setMood("endCunado",mood);
-  $("endBubble").textContent=line; $("verdict").textContent=v; $("verdictSub").textContent=sub;
+  $("endBubble").textContent=f.frase; $("verdict").textContent=f.titulo; $("verdictSub").textContent=f.texto;
   $("sOk").textContent=state.ok; $("sKo").textContent=state.ko; $("sEgo").textContent=state.ego+"%";
   $("review").innerHTML = state.log.map(({q,good})=>`<li class="${good?"ok":"ko"}"><q>${esc(q.m)}</q>${good?"Desmontado":"Se salió con la suya"}. Truco: ${esc(q.f)}. <a href="${q.s[1]}" target="_blank" rel="noopener">Fuente</a></li>`).join("");
 }
@@ -376,25 +477,78 @@ document.addEventListener("keydown",e=>{
   const n = parseInt(e.key,10);
   if(n>=1 && n<=4) answer(n-1);
 });
-async function renderMenu(){
+async function loadNiveles(){
   try{
-    const {niveles} = await (await fetch("data/niveles.json")).json();
-    $("levels").innerHTML = niveles.sort((a,b)=>a.orden-b.orden).map(n=>`
-      <li><button class="level ${n.disponible?"play":""}" data-id="${n.id}" ${n.disponible?"":"disabled"}>
-        <span class="n">${n.orden}</span>
-        <span><span class="t">${esc(n.titulo)}</span><span class="d">${esc(n.descripcion||"")}</span></span>
-        <span class="tag">${n.disponible?"Jugar":"Próximamente"}</span></button></li>`).join("");
-    $("levels").querySelectorAll(".level.play").forEach(b=>b.addEventListener("click",()=>play(niveles.find(n=>n.id===b.dataset.id))));
+    const res = await fetch("data/niveles.json");
+    NIVELES = (await res.json()).niveles.sort((a,b)=>a.orden-b.orden);
   }catch(err){
     const p=$("loadError"); p.hidden=false;
     p.textContent="No se pudieron cargar los niveles. Abre el juego con un servidor local (ver README).";
+    return;
+  }
+  NIVELES.forEach(n=>{ if(n.fondo) new Image().src = n.fondo; });
+  $("lvls").innerHTML = NIVELES.map(n=>`
+    <li><button class="lvl" data-id="${n.id}" aria-pressed="false">
+      <span class="n">${n.orden}</span><span class="t">${esc(n.titulo)}${n.disponible?"":`<span class="tag">Próximamente</span>`}</span>
+      </button></li>`).join("");
+  $("lvls").querySelectorAll(".lvl").forEach(b=>b.addEventListener("click",()=>selectLevel(NIVELES.find(n=>n.id===b.dataset.id))));
+}
+
+function selectLevel(n){
+  sel = n;
+  $("lvls").querySelectorAll(".lvl").forEach(b=>b.setAttribute("aria-pressed", b.dataset.id===n.id));
+  setBg(n.fondo || MENU_BG);
+  $("loadError").hidden = true;
+  const d = $("detail"); d.hidden = false;
+  d.innerHTML = `<h3>${esc(n.titulo)}</h3>
+    <p>${esc(n.resumen||"")}</p>
+    <p class="meta">${esc(n.descripcion||"")}</p>
+    <button class="btn" id="startBtn" ${n.disponible?"":"disabled"}>${n.disponible?"Empezar":"Próximamente"}</button>`;
+  if(n.disponible) $("startBtn").addEventListener("click",()=>play(n));
+}
+
+// Todas las fuentes de las preguntas, agrupadas por tema y sin repetir
+let sourcesDone = false;
+async function renderSources(){
+  if(sourcesDone) return;
+  const body = $("srcBody");
+  await nivelesReady;
+  try{
+    const groups = await Promise.all(NIVELES.filter(n=>n.disponible && n.fichero).map(async n=>{
+      const byUrl = new Map();
+      for(const p of (await fetchLevel(n)).preguntas){
+        const e = byUrl.get(p.fuente.url) || {texto:p.fuente.texto, url:p.fuente.url, mitos:[]};
+        e.mitos.push(p.mito); byUrl.set(p.fuente.url, e);
+      }
+      return {n, fuentes:[...byUrl.values()]};
+    }));
+    body.innerHTML = groups.map(({n,fuentes})=>`
+      <section class="src-group"><h3>${esc(n.titulo)}</h3><ul class="src-list">
+        ${fuentes.map(f=>`<li><a href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.texto)}</a>
+          <span class="about">Desmonta: ${f.mitos.map(m=>`<q>${esc(m)}</q>`).join(" · ")}</span></li>`).join("")}
+      </ul></section>`).join("") || `<p class="lede">Todavía no hay fuentes.</p>`;
+    sourcesDone = true;
+  }catch(err){
+    body.innerHTML = `<p class="lede">No se pudieron cargar las fuentes. Abre el juego con un servidor local (ver README).</p>`;
   }
 }
-renderMenu();
-$("quit").addEventListener("click",()=>show("menu"));
+
+// Tema claro/oscuro: si no se ha elegido, sigue al sistema
+const temaActual = document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+document.querySelectorAll('input[name="tema"]').forEach(r=>{
+  r.checked = r.value===temaActual;
+  r.addEventListener("change",()=>{
+    document.documentElement.dataset.theme = r.value;
+    try{ localStorage.setItem("tema", r.value); }catch(e){}
+  });
+});
+
+document.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>show(b.dataset.go)));
+$("quit").addEventListener("click",()=>history.state?.s==="game" ? history.back() : show("levels"));
 $("again").addEventListener("click",start);
-$("toMenu").addEventListener("click",()=>show("menu"));
-show("menu");
+$("toMenu").addEventListener("click",()=>show("home"));
+const nivelesReady = loadNiveles();
+show("home","none"); history.replaceState({s:"home"}, "", location.pathname);
 </script>
 </body>
 </html>
