@@ -2,6 +2,11 @@
   "id": "cambio-climatico",
   "orden": 2,
   "titulo": "Cambio climático",
+  "cunao": {
+    "normal": "images/cunao-barra-normal.webp",
+    "acierto": "images/cunao-barra-lost.webp",
+    "fallo": "images/cunao-barra-win.webp"
+  },
   "reacciones": {
     "acierto": [
       "Bueno... eso habría que verlo.",
