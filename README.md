@@ -9,6 +9,7 @@ index.html                  Juego completo (HTML + CSS + JS, sin dependencias)
 data/niveles.json           Lista de niveles del menú
 data/cambio-climatico.json  Banco de preguntas del nivel 2
 schema/nivel.schema.json    Esquema JSON para validar los ficheros de nivel
+images/                     Imágenes del cuñado por nivel (normal / pierde / gana)
 ```
 
 ## Ejecutar en local
@@ -27,6 +28,7 @@ y abre http://localhost:8000.
 
 1. Crea `data/<id-del-nivel>.json` siguiendo `schema/nivel.schema.json`.
 2. En `data/niveles.json`, pon `"disponible": true` y `"fichero": "data/<id-del-nivel>.json"` en ese nivel.
+3. (Opcional) Añade el bloque `cunao` al JSON del nivel con tres imágenes: `normal` (por defecto), `acierto` (cuando el jugador acierta: el cuñado pierde) y `fallo` (cuando falla: el cuñado gana). Si no hay bloque `cunao`, se usa el dibujo SVG. Usa imágenes 5:3 en WebP de ~1000 px de ancho (unos 120 KB) para que carguen rápido en el móvil.
 
 Validación opcional:
 

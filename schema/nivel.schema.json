@@ -7,6 +7,16 @@
     "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
     "orden": { "type": "integer", "minimum": 1 },
     "titulo": { "type": "string" },
+    "cunao": {
+      "type": "object",
+      "description": "Imágenes del cuñado para este nivel. Si falta, se usa el dibujo por defecto.",
+      "required": ["normal", "acierto", "fallo"],
+      "properties": {
+        "normal": { "type": "string", "description": "Imagen por defecto, mientras suelta el bulo" },
+        "acierto": { "type": "string", "description": "Imagen cuando el jugador acierta (el cuñado pierde)" },
+        "fallo": { "type": "string", "description": "Imagen cuando el jugador falla (el cuñado gana)" }
+      }
+    },
     "reacciones": {
       "type": "object",
       "properties": {
