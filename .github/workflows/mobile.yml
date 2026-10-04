@@ -1,0 +1,129 @@
+# En cada merge a main:
+#  1. Publica el juego en GitHub Pages (instalable como app desde el navegador del móvil, Android e iPhone).
+#  2. Compila el APK de Android y lo adjunta a una nueva GitHub Release.
+# En las pull requests solo comprueba que el APK compila.
+name: Móvil
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: mobile-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  APP_VERSION: 1.0.${{ github.run_number }}
+
+jobs:
+  web:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Preparar www/
+        run: npm run build
+        env:
+          VERSION: ${{ github.sha }}
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: www
+      - id: deploy
+        uses: actions/deploy-pages@v4
+
+  android:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: gradle
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Generar proyecto Android
+        run: |
+          npm run build
+          npx cap add android
+          # versionCode tiene que crecer en cada build para que Android acepte la actualización
+          sed -i -E "s/versionCode [0-9]+/versionCode ${{ github.run_number }}/; s/versionName \"[^\"]*\"/versionName \"${APP_VERSION}\"/" android/app/build.gradle
+        env:
+          VERSION: ${{ github.sha }}
+
+      - name: Iconos y pantalla de carga
+        continue-on-error: true
+        run: npx @capacitor/assets generate --android --iconBackgroundColor '#F6E3E7' --iconBackgroundColorDark '#2A0A14' --splashBackgroundColor '#F6E3E7' --splashBackgroundColorDark '#2A0A14'
+
+      - name: Sincronizar
+        run: npx cap sync android
+
+      - name: Compilar APK
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          cd android
+          chmod +x gradlew
+          if [ -n "$ANDROID_KEYSTORE_BASE64" ]; then
+            ./gradlew --no-daemon assembleRelease
+            echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/release.jks"
+            BT=$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)
+            "$BT/zipalign" -p -f 4 app/build/outputs/apk/release/app-release-unsigned.apk "$RUNNER_TEMP/aligned.apk"
+            "$BT/apksigner" sign --ks "$RUNNER_TEMP/release.jks" \
+              --ks-pass env:ANDROID_KEYSTORE_PASSWORD --ks-key-alias "$ANDROID_KEY_ALIAS" \
+              --key-pass env:ANDROID_KEY_PASSWORD \
+              --out ../bate-al-cunado.apk "$RUNNER_TEMP/aligned.apk"
+            rm "$RUNNER_TEMP/release.jks"
+          else
+            echo "::warning::Sin secretos de firma: se genera un APK de depuración. Para actualizar habrá que desinstalar la versión anterior (ver README)."
+            ./gradlew --no-daemon assembleDebug
+            cp app/build/outputs/apk/debug/app-debug.apk ../bate-al-cunado.apk
+          fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bate-al-cunado-apk
+          path: bate-al-cunado.apk
+
+      - name: Publicar release
+        if: github.event_name != 'pull_request'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ env.APP_VERSION }}
+          name: Bate al cuñado ${{ env.APP_VERSION }}
+          target_commitish: ${{ github.sha }}
+          make_latest: true
+          files: bate-al-cunado.apk
+          body: |
+            ## Cómo instalarlo
+
+            **Android:** descarga `bate-al-cunado.apk` (abajo, en *Assets*) desde el móvil, ábrelo y acepta instalar apps de origen desconocido si te lo pide.
+
+            **iPhone / cualquier móvil:** abre https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/ en el navegador y elige *Añadir a pantalla de inicio* (Safari: botón Compartir). Funciona sin conexión una vez abierto.
+
+            Commit: ${{ github.sha }}

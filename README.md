@@ -5,7 +5,7 @@ Juego educativo: el cuñado suelta un bulo en la cena de Nochebuena y tú eliges
 ## Estructura
 
 ```
-index.html                  Juego completo (HTML + CSS + JS, sin dependencias)
+index.html                  Juego completo (HTML + CSS + JS, sin dependencias en runtime)
 data/niveles.json           Lista de niveles del menú
 data/cambio-climatico.json  Banco de preguntas del nivel 2
 schema/nivel.schema.json    Esquema JSON para validar los ficheros de nivel
@@ -23,6 +23,45 @@ npx serve .
 ```
 
 y abre http://localhost:8000.
+
+## Móvil
+
+Cada merge a `main` lanza [.github/workflows/mobile.yml](.github/workflows/mobile.yml), que:
+
+1. **Publica el juego en GitHub Pages** (https://davidcarricondo.github.io/bate-al-cunado/). Es una PWA: en el móvil se abre en el navegador y se instala con *Añadir a pantalla de inicio* (en iPhone, desde Safari → Compartir). Funciona sin conexión.
+2. **Compila un APK de Android** con [Capacitor](https://capacitorjs.com) y lo adjunta a una nueva [Release](https://github.com/DavidCarricondo/bate-al-cunado/releases/latest) (`v1.0.<n>`). Se descarga desde el móvil y se instala directamente.
+
+En las pull requests solo se comprueba que el APK compila (queda como artefacto del workflow).
+
+### Configuración inicial (una vez)
+
+- **Pages:** *Settings → Pages → Build and deployment → Source: GitHub Actions*.
+- **Firma del APK (recomendado):** sin firma propia el workflow genera un APK de depuración con una clave distinta en cada build, y para actualizar hay que desinstalar el anterior. Para que las actualizaciones se instalen encima, crea una clave y guárdala en *Settings → Secrets and variables → Actions*:
+
+  ```bash
+  keytool -genkeypair -v -keystore release.jks -alias bate -keyalg RSA -keysize 2048 -validity 10000
+  base64 -w0 release.jks   # -> ANDROID_KEYSTORE_BASE64
+  ```
+
+  Secretos: `ANDROID_KEYSTORE_BASE64`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS` (`bate`) y `ANDROID_KEY_PASSWORD`. Guarda `release.jks` fuera del repo: si se pierde, no se podrán publicar actualizaciones con la misma firma.
+
+### Ficheros
+
+```
+manifest.webmanifest   Manifiesto de la PWA (nombre, iconos, colores)
+sw.js                  Service worker (modo offline). Si añades niveles o imágenes, añádelos a PRECACHE
+icons/                 Iconos de la PWA
+assets/                Fuentes de iconos y pantalla de carga para Android (@capacitor/assets)
+capacitor.config.json  Configuración de la app Android
+scripts/build-web.mjs  Copia el juego a www/ (lo que se publica y se empaqueta)
+```
+
+Compilar el APK en local (Node 22+, JDK 21 y Android SDK):
+
+```bash
+npm ci && npm run build && npx cap add android && npx cap sync android
+cd android && ./gradlew assembleDebug
+```
 
 ## Añadir un nivel
 

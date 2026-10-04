@@ -3,7 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Bate al cuñado</title>
+<title>Bate al cuñao</title>
+<meta name="description" content="Desmonta los bulos del cuñao en la cena de Nochebuena con datos y fuentes científicas.">
+<meta name="theme-color" content="#2B0B16">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Bate al cuñao">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍷</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,8 +45,11 @@ body{
     repeating-linear-gradient(90deg,var(--check) 0 22px,transparent 22px 44px);
   font-family:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;
+  -webkit-text-size-adjust:100%;text-size-adjust:100%;overscroll-behavior-y:none;
+  -webkit-tap-highlight-color:transparent;
 }
-button{font:inherit;color:inherit;cursor:pointer}
+button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+button:active{transform:translate(1px,1px)}
 a{color:var(--accent)}
 :focus-visible{outline:3px solid var(--accent-strong);outline-offset:3px;border-radius:6px}
 .wrap{max-width:760px;margin:0 auto;padding:20px 18px 40px}
@@ -57,7 +69,7 @@ a{color:var(--accent)}
 .level .d{color:var(--muted);font-size:15px}
 .level.play{border-color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
 .level.play .n{color:var(--ink)}
-.level.play:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ink)}
+@media (hover:hover){ .level.play:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ink)} }
 .level[disabled]{opacity:.6;cursor:not-allowed}
 .level .tag{margin-left:auto;font-size:14px;color:var(--muted);white-space:nowrap}
 .level.play .tag{color:var(--ink);font-weight:600}
@@ -81,7 +93,7 @@ a{color:var(--accent)}
 .bubble::before{content:"";position:absolute;left:-22px;bottom:18px;border:12px solid transparent;border-right:20px solid var(--ink);border-left:0}
 .bubble::after{content:"";position:absolute;left:-15px;bottom:21px;border:9px solid transparent;border-right:15px solid var(--bubble);border-left:0}
 .bubble.react{font-size:clamp(18px,3.6vw,22px);font-weight:600}
-/* Cuñado con imagen: foto arriba y bocadillo redondo debajo, sin pico */
+/* cuñao con imagen: foto arriba y bocadillo redondo debajo, sin pico */
 .stage.photo{display:block;max-width:560px;margin:16px auto 22px}
 .scene{position:relative;aspect-ratio:5/3}
 .scene img{display:block;width:100%;height:100%;object-fit:cover;border:3px solid var(--ink);border-radius:18px;background:var(--line)}
@@ -92,7 +104,8 @@ a{color:var(--accent)}
 .opt{display:flex;gap:14px;align-items:flex-start;text-align:left;padding:14px 16px;border-radius:12px;background:var(--surface);
   border:2px solid var(--line);font-size:17px;line-height:1.4}
 .opt .k{flex:none;width:28px;height:28px;border-radius:50%;border:2px solid currentColor;display:grid;place-items:center;font-weight:800;font-size:14px;color:var(--muted)}
-.opt:not([disabled]):hover{border-color:var(--ink)}
+@media (hover:hover){ .opt:not([disabled]):hover{border-color:var(--ink)} }
+.opt:not([disabled]):active{border-color:var(--ink)}
 .opt[disabled]{cursor:default}
 .opt.right{border-color:var(--ok);background:var(--ok-bg)}
 .opt.right .k{color:var(--ok)}
@@ -111,7 +124,9 @@ a{color:var(--accent)}
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 24px;border-radius:12px;border:2px solid var(--ink);
   background:var(--ink);color:var(--bg);font-weight:600;font-size:17px;margin-top:6px}
 .btn.ghost{background:transparent;color:var(--ink)}
-.btn:hover{opacity:.9}
+@media (hover:hover){ .btn:hover{opacity:.9} }
+/* En pantallas táctiles no hay teclado: fuera la pista de 1-4 */
+@media (hover:none) and (pointer:coarse){ .kbd-hint{display:none} }
 
 /* Final */
 .verdict{font-size:clamp(36px,9vw,64px);line-height:.95;font-weight:800;letter-spacing:-.03em;margin:10px 0 12px}
@@ -124,7 +139,7 @@ a{color:var(--accent)}
 .review q{font-weight:600;display:block;margin-bottom:2px;quotes:"«" "»"}
 .actions{display:flex;gap:10px;flex-wrap:wrap}
 
-/* Cuñado */
+/* cuñao */
 .mood{display:none}
 svg[data-mood="smug"] .m-smug, svg[data-mood="shock"] .m-shock, svg[data-mood="gloat"] .m-gloat{display:inline}
 @media (prefers-reduced-motion: no-preference){
@@ -151,8 +166,8 @@ svg[data-mood="smug"] .m-smug, svg[data-mood="shock"] .m-shock, svg[data-mood="g
   <section class="screen" id="menu">
     <div class="menu-hero">
       <div>
-        <h1 class="title"><span>Bate</span><span>al cuñado</span></h1>
-        <p class="lede">Es Nochebuena. Tu cuñado ha descubierto YouTube y tiene opiniones. Desmonta sus argumentos con datos antes de que llegue el turrón.</p>
+        <h1 class="title"><span>Bate</span><span>al cuñao</span></h1>
+        <p class="lede">Es Nochebuena. Tu cuñao ha descubierto YouTube y tiene opiniones. Desmonta sus argumentos con datos antes de que llegue el turrón.</p>
       </div>
       <div id="menuCunado"></div>
     </div>
@@ -165,8 +180,8 @@ svg[data-mood="smug"] .m-smug, svg[data-mood="shock"] .m-shock, svg[data-mood="g
     <div class="hud">
       <span class="round" id="round">Ronda 1 de 10</span>
       <div class="ego">
-        <div class="ego-label"><span>Ego del cuñado</span><span id="egoNum">100%</span></div>
-        <div class="ego-bar" role="progressbar" aria-label="Ego del cuñado" aria-valuemin="0" aria-valuemax="100" id="egoBar"><div class="ego-fill" id="egoFill" style="width:100%"></div></div>
+        <div class="ego-label"><span>Ego del cuñao</span><span id="egoNum">100%</span></div>
+        <div class="ego-bar" role="progressbar" aria-label="Ego del cuñao" aria-valuemin="0" aria-valuemax="100" id="egoBar"><div class="ego-fill" id="egoFill" style="width:100%"></div></div>
       </div>
       <span class="cups" id="cups" aria-label="Paciencia"></span>
       <button class="quit" id="quit">Salir</button>
@@ -175,7 +190,7 @@ svg[data-mood="smug"] .m-smug, svg[data-mood="shock"] .m-shock, svg[data-mood="g
       <div id="gameCunado"></div>
       <div class="bubble" id="bubble" aria-live="polite"></div>
     </div>
-    <p class="prompt" id="prompt">¿Qué le contestas? (también puedes pulsar 1, 2, 3 o 4)</p>
+    <p class="prompt" id="prompt">¿Qué le contestas?<span class="kbd-hint"> (también puedes pulsar 1, 2, 3 o 4)</span></p>
     <div class="opts" id="opts"></div>
     <div id="feedback"></div>
   </section>
@@ -191,7 +206,7 @@ svg[data-mood="smug"] .m-smug, svg[data-mood="shock"] .m-shock, svg[data-mood="g
     <div class="stats">
       <div class="stat"><b id="sOk">0</b><span>argumentos desmontados</span></div>
       <div class="stat"><b id="sKo">0</b><span>veces que se salió con la suya</span></div>
-      <div class="stat"><b id="sEgo">0%</b><span>ego final del cuñado</span></div>
+      <div class="stat"><b id="sEgo">0%</b><span>ego final del cuñao</span></div>
     </div>
     <h3>Lo que ha salido en la cena</h3>
     <ul class="review" id="review"></ul>
@@ -204,7 +219,7 @@ svg[data-mood="smug"] .m-smug, svg[data-mood="shock"] .m-shock, svg[data-mood="g
 
 <script>
 const CUNADO_SVG = `
-<svg viewBox="0 0 200 230" xmlns="http://www.w3.org/2000/svg" data-mood="smug" role="img" aria-label="El cuñado">
+<svg viewBox="0 0 200 230" xmlns="http://www.w3.org/2000/svg" data-mood="smug" role="img" aria-label="El cuñao">
   <g stroke="#2B0B16" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
     <!-- cuernos de reno -->
     <path d="M62 52 L48 18 M52 30 L36 26 M50 22 L58 10" fill="none" stroke="#8A5A2B" stroke-width="6"/>
@@ -267,7 +282,7 @@ const MOOD_IMG = {smug:"normal", shock:"acierto", gloat:"fallo"};
 function mountCunado(id){
   const el=$(id), img=level.img;
   el.parentElement.classList.toggle("photo", !!img);
-  el.innerHTML = img ? `<div class="scene"><img src="${img.normal}" alt="El cuñado" decoding="async"></div>` : CUNADO_SVG;
+  el.innerHTML = img ? `<div class="scene"><img src="${img.normal}" alt="El cuñao" decoding="async"></div>` : CUNADO_SVG;
 }
 const setMood = (id,m) => {
   const img=$(id).querySelector(".scene img"), s=img || $(id).querySelector("svg");
@@ -341,9 +356,9 @@ function answer(k){
   const last = state.cups<=0 || state.i===state.qs.length-1;
   $("feedback").innerHTML = `
     <div class="feedback ${good?"good":"bad"}">
-      <h3>${good?"Argumento desmontado":"El cuñado se viene arriba"}</h3>
+      <h3>${good?"Argumento desmontado":"El cuñao se viene arriba"}</h3>
       ${good?"":`<p class="why">${esc(chosen[2]||"")}</p>`}
-      <span class="trick">Truco del cuñado: ${esc(q.f)}</span>
+      <span class="trick">Truco del cuñao: ${esc(q.f)}</span>
       <p>${esc(q.e)}</p>
       <p class="source">Fuente: <a href="${q.s[1]}" target="_blank" rel="noopener">${esc(q.s[0])}</a></p>
       <button class="btn" id="next">${last?"Ver resultado":"Siguiente argumento"}</button>
@@ -362,9 +377,9 @@ function end(){
   show("end");
   let v, sub, mood, line;
   if(state.cups<=0){ v="Te mandan a fregar los platos"; sub="Te has quedado sin paciencia antes del postre. Revisa sus trucos y vuelve a por la revancha."; mood="gloat"; line="Ya lo decía yo. Venga, que esos platos no se friegan solos."; }
-  else if(state.ego<=30){ v="Cuñado fuera de combate"; sub="Se ha ido al salón a ver el discurso sin decir ni mu. Nochebuena salvada."; mood="shock"; line="...¿Alguien quiere más polvorones?"; }
+  else if(state.ego<=30){ v="cuñao fuera de combate"; sub="Se ha ido al salón a ver el discurso sin decir ni mu. Nochebuena salvada."; mood="shock"; line="...¿Alguien quiere más polvorones?"; }
   else if(state.ego<=60){ v="Empate técnico"; sub="Le has cerrado varias bocas, pero aún le quedan argumentos para la cena de Nochevieja."; mood="smug"; line="Bueno, cada uno tiene su opinión, ¿no?"; }
-  else { v="El cuñado sigue en su salsa"; sub="Esta vez ganó él. Lee los trucos que usó y vuelve a intentarlo."; mood="gloat"; line="Si es que en esta familia el único que lee soy yo."; }
+  else { v="El cuñao sigue en su salsa"; sub="Esta vez ganó él. Lee los trucos que usó y vuelve a intentarlo."; mood="gloat"; line="Si es que en esta familia el único que lee soy yo."; }
   setMood("endCunado",mood);
   $("endBubble").textContent=line; $("verdict").textContent=v; $("verdictSub").textContent=sub;
   $("sOk").textContent=state.ok; $("sKo").textContent=state.ko; $("sEgo").textContent=state.ego+"%";
@@ -395,6 +410,15 @@ $("quit").addEventListener("click",()=>show("menu"));
 $("again").addEventListener("click",start);
 $("toMenu").addEventListener("click",()=>show("menu"));
 show("menu");
+
+// App Android (Capacitor): el botón Atrás vuelve al menú; desde el menú sale del juego
+const NativeApp = window.Capacitor?.Plugins?.App;
+NativeApp?.addListener("backButton", ()=>{ if($("menu").hidden) show("menu"); else NativeApp.exitApp(); });
+
+// Web: modo offline e instalable (la app nativa ya lleva los ficheros dentro)
+if("serviceWorker" in navigator && !window.Capacitor?.isNativePlatform?.() && location.protocol==="https:"){
+  addEventListener("load", ()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+}
 </script>
 </body>
 </html>
