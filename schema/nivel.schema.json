@@ -17,6 +17,16 @@
         "fallo": { "type": "string", "description": "Imagen cuando el jugador falla (el cuñado gana)" }
       }
     },
+    "finales": {
+      "type": "object",
+      "description": "Textos de la pantalla final propios del nivel. Lo que falte usa los textos de bar por defecto de index.html.",
+      "properties": {
+        "sin_paciencia": { "$ref": "#/$defs/final" },
+        "fuera_de_combate": { "$ref": "#/$defs/final" },
+        "empate": { "$ref": "#/$defs/final" },
+        "gana_cunao": { "$ref": "#/$defs/final" }
+      }
+    },
     "reacciones": {
       "type": "object",
       "properties": {
@@ -60,6 +70,16 @@
             "properties": { "texto": { "type": "string" }, "url": { "type": "string", "format": "uri" } }
           }
         }
+      }
+    }
+  },
+  "$defs": {
+    "final": {
+      "type": "object",
+      "properties": {
+        "titulo": { "type": "string" },
+        "texto": { "type": "string" },
+        "frase": { "type": "string", "description": "Lo que dice el cuñado en el bocadillo" }
       }
     }
   }
