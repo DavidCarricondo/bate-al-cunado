@@ -1,0 +1,19 @@
+{
+  "name": "Bate al cuñado",
+  "short_name": "Bate al cuñado",
+  "description": "Desmonta los bulos del cuñado en la cena de Nochebuena con datos y fuentes científicas.",
+  "lang": "es",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F6E3E7",
+  "theme_color": "#2B0B16",
+  "categories": ["games", "education"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
