@@ -2,6 +2,11 @@
   "id": "cambio-climatico",
   "orden": 2,
   "titulo": "Cambio climático",
+  "medallas": {
+    "bronce": 10,
+    "plata": 22,
+    "oro": 40
+  },
   "cunao": {
     "normal": "images/cunao-barra-normal.webp",
     "acierto": "images/cunao-barra-lost.webp",
