@@ -5,3 +5,21 @@ android/
 *.aab
 *.keystore
 *.jks
+local.properties
+
+# Gradle
+.gradle/
+**/build/
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp

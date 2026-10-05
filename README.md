@@ -90,9 +90,10 @@ npx ajv validate --spec=draft2020 -c ajv-formats -s schema/nivel.schema.json -d 
 ## Reglas de contenido
 
 - Exactamente 4 opciones por pregunta y una sola correcta.
-- La correcta es una réplica corta, del mismo tono y longitud que las incorrectas. Los datos van en `explicacion`.
+- La correcta es una réplica corta que lleva su propia justificación ("Crecen más, pero alimentan menos"), no una afirmación pelada. Los datos van en `explicacion`.
+- Ninguna opción debe delatarse por la longitud: la correcta puede ser algo más larga, pero no siempre la más larga. Las incorrectas deben ser tentadoras (concesiones, exageraciones, medias verdades), no disparates.
 - Toda opción incorrecta lleva `por_que`, que se muestra si el jugador la elige.
-- Cada pregunta cita una fuente verificable, preferiblemente revisada por pares (DOI).
+- Cada pregunta cita una `fuente` verificable, preferiblemente revisada por pares (DOI). Las fuentes de apoyo que no son artículos científicos (informes, organismos, divulgación) van en `fuentes_adicionales`, opcional.
 
 ## Parámetros de juego
 

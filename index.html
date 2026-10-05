@@ -391,6 +391,7 @@ async function loadLevel(meta){
   // Formato JSON -> formato interno [texto, correcta(1/0), por_que]
   level = { meta, Q: data.preguntas.map(p=>({
     m:p.mito, f:p.falacia, e:p.explicacion, s:[p.fuente.texto,p.fuente.url],
+    sx:(p.fuentes_adicionales||[]).map(f=>[f.texto,f.url]),
     o:p.opciones.map(o=>[o.texto, o.correcta?1:0, o.por_que||""]) })) };
   level.img = data.cunao || null;
   level.finales = data.finales || null;
@@ -455,7 +456,7 @@ function answer(k){
       ${good?"":`<p class="why">${esc(chosen[2]||"")}</p>`}
       <span class="trick">Truco del cuñado: ${esc(q.f)}</span>
       <p>${esc(q.e)}</p>
-      <p class="source">Fuente: <a href="${q.s[1]}" target="_blank" rel="noopener">${esc(q.s[0])}</a></p>
+      <p class="source">Fuente: <a href="${q.s[1]}" target="_blank" rel="noopener">${esc(q.s[0])}</a>${q.sx.length?`<br>Más información: ${q.sx.map(([t,u])=>`<a href="${u}" target="_blank" rel="noopener">${esc(t)}</a>`).join(" · ")}`:""}</p>
       <button class="btn" id="next">${last?"Ver resultado":"Siguiente argumento"}</button>
     </div>`;
   $("next").addEventListener("click", next);
@@ -531,8 +532,10 @@ async function renderSources(){
     const groups = await Promise.all(NIVELES.filter(n=>n.disponible && n.fichero).map(async n=>{
       const byUrl = new Map();
       for(const p of (await fetchLevel(n)).preguntas){
-        const e = byUrl.get(p.fuente.url) || {texto:p.fuente.texto, url:p.fuente.url, mitos:[]};
-        e.mitos.push(p.mito); byUrl.set(p.fuente.url, e);
+        for(const f of [p.fuente, ...(p.fuentes_adicionales||[])]){
+          const e = byUrl.get(f.url) || {texto:f.texto, url:f.url, mitos:[]};
+          e.mitos.push(p.mito); byUrl.set(f.url, e);
+        }
       }
       return {n, fuentes:[...byUrl.values()]};
     }));

@@ -616,6 +616,675 @@
         "texto": "OMM (2025). 2024, el año más cálido registrado",
         "url": "https://wmo.int/news/media-centre/wmo-confirms-2024-warmest-year-record-about-155degc-above-pre-industrial-level"
       }
+    },
+    {
+      "id": "cc-20-climategate",
+      "mito": "Lo del Climategate demostró que los científicos amañaban los datos.",
+      "falacia": "Sacar de contexto",
+      "opciones": [
+        {
+          "texto": "Lo investigaron varias veces y no encontraron ningún amaño.",
+          "correcta": true
+        },
+        {
+          "texto": "Esos correos eran falsos, nunca existieron.",
+          "correcta": false,
+          "por_que": "Los correos eran reales: se robaron de un servidor de la Universidad de East Anglia en 2009. Lo que no demostraban era fraude."
+        },
+        {
+          "texto": "Fue un caso aislado y echaron a los responsables.",
+          "correcta": false,
+          "por_que": "Nadie fue expulsado por fraude, porque no lo hubo. Y de paso le das por bueno el amaño."
+        },
+        {
+          "texto": "Aunque amañaran algo, el resto de datos sigue valiendo.",
+          "correcta": false,
+          "por_que": "Concedes un amaño que ninguna investigación encontró."
+        }
+      ],
+      "explicacion": "En 2009 se robaron y publicaron más de mil correos de la Unidad de Investigación Climática de la Universidad de East Anglia, justo antes de la cumbre de Copenhague. Frases como \"el truco de Mike\" se sacaron de contexto: en jerga científica, \"truco\" significa \"método\". Varias investigaciones en Reino Unido y EE. UU., entre ellas la del Parlamento británico y la de la Fundación Nacional de Ciencia, concluyeron que no hubo manipulación de datos. Eso sí, les reprocharon poca transparencia al compartir sus archivos.",
+      "fuente": {
+        "texto": "Physics Today (2011). La NSF exonera a Michael Mann",
+        "url": "https://physicstoday.aip.org/news/nsf-clears-michael-mann-of-climategate"
+      }
+    },
+    {
+      "id": "cc-21-osos-polares",
+      "mito": "Hay más osos polares que nunca. ¿Dónde está la catástrofe?",
+      "falacia": "Atribuir a la causa equivocada",
+      "opciones": [
+        {
+          "texto": "Si aumentaron fue por prohibir su caza, no por el clima.",
+          "correcta": true
+        },
+        {
+          "texto": "Los osos polares están ya casi extinguidos.",
+          "correcta": false,
+          "por_que": "Exageración: quedan unas 20 poblaciones. El problema es la tendencia."
+        },
+        {
+          "texto": "Se adaptarán a vivir en tierra firme.",
+          "correcta": false,
+          "por_que": "No pueden: cazan focas desde el hielo marino, y en tierra apenas encuentran comida."
+        },
+        {
+          "texto": "Viven en la Antártida, que no se derrite tanto.",
+          "correcta": false,
+          "por_que": "Los osos polares viven en el Ártico. En la Antártida no hay osos."
+        }
+      ],
+      "explicacion": "La recuperación de algunas poblaciones en el siglo XX se debió al acuerdo internacional de 1973 que limitó su caza. Hoy la amenaza es la pérdida del hielo marino desde el que cazan focas. La población del oeste de la bahía de Hudson, la mejor estudiada, cayó un 27% entre 2016 y 2021: quedan unos 618 osos, la mitad que en 1987.",
+      "fuente": {
+        "texto": "Polar Bears International (2022), a partir del censo del Gobierno de Nunavut",
+        "url": "https://polarbearsinternational.org/news-media/articles/steep-decline-in-western-hudson-bay-polar-bears"
+      }
+    },
+    {
+      "id": "cc-22-vapor-de-agua",
+      "mito": "El principal gas de efecto invernadero es el vapor de agua, no el CO₂. A ver si prohíben las ollas.",
+      "falacia": "Confundir amplificador con causa",
+      "opciones": [
+        {
+          "texto": "El vapor de agua amplifica, pero el que manda es el CO₂.",
+          "correcta": true
+        },
+        {
+          "texto": "El vapor de agua no es un gas de efecto invernadero.",
+          "correcta": false,
+          "por_que": "Sí lo es, y el más abundante. Te equivocas justo en lo que él tiene razón."
+        },
+        {
+          "texto": "Por eso habría que regar menos los campos.",
+          "correcta": false,
+          "por_que": "El riego no cambia el vapor de agua global: depende de la temperatura del aire."
+        },
+        {
+          "texto": "Las nubes enfrían, así que el vapor compensa al CO₂.",
+          "correcta": false,
+          "por_que": "Mezclas vapor y nubes. El efecto neto del vapor de agua es calentar."
+        }
+      ],
+      "explicacion": "La cantidad de vapor en el aire depende de la temperatura: si sobra, llueve en cuestión de días. El CO₂, en cambio, permanece siglos. Por eso el CO₂ actúa como termostato y el vapor de agua lo amplifica: más calor, más vapor, más calor. Sin el CO₂ y los demás gases que no se condensan, el vapor acabaría precipitando y la Tierra se congelaría.",
+      "fuente": {
+        "texto": "Lacis et al. (2010). Science 330",
+        "url": "https://doi.org/10.1126/science.1190653"
+      }
+    },
+    {
+      "id": "cc-23-marte",
+      "mito": "En Marte también se está calentando, y allí no hay coches. ¡Es el Sol!",
+      "falacia": "Falsa analogía",
+      "opciones": [
+        {
+          "texto": "Lo de Marte es cosa de su polvo, no del Sol.",
+          "correcta": true
+        },
+        {
+          "texto": "Marte no tiene atmósfera, así que no puede calentarse.",
+          "correcta": false,
+          "por_que": "Marte sí tiene atmósfera, aunque muy fina. Error que te deja en evidencia."
+        },
+        {
+          "texto": "En Marte también hay robots contaminando.",
+          "correcta": false,
+          "por_que": "Unos pocos robots no alteran el clima de un planeta."
+        },
+        {
+          "texto": "En Marte se está enfriando, no calentando.",
+          "correcta": false,
+          "por_que": "Afirmas lo contrario sin datos. Mejor explicar la causa de los cambios."
+        }
+      ],
+      "explicacion": "Los cambios observados en Marte son regionales y se explican por tormentas de polvo que oscurecen o aclaran su superficie: más oscura, más calor absorbido. Además, los datos de Marte son escasos. Y el argumento clave: la energía que emite el Sol no ha aumentado en las últimas décadas, así que no puede estar calentando ningún planeta.",
+      "fuente": {
+        "texto": "Fenton et al. (2007). Nature 446",
+        "url": "https://doi.org/10.1038/nature05718"
+      }
+    },
+    {
+      "id": "cc-24-rayos-cosmicos",
+      "mito": "Es por los rayos cósmicos, que forman menos nubes. Lo dijo un científico danés.",
+      "falacia": "Causa falsa",
+      "opciones": [
+        {
+          "texto": "Los rayos cósmicos no han cambiado como haría falta.",
+          "correcta": true
+        },
+        {
+          "texto": "Los rayos cósmicos los frena la capa de ozono.",
+          "correcta": false,
+          "por_que": "La capa de ozono frena la radiación ultravioleta, no los rayos cósmicos, que llegan a diario a la atmósfera."
+        },
+        {
+          "texto": "Los rayos cósmicos solo afectan a los astronautas.",
+          "correcta": false,
+          "por_que": "También llegan a la atmósfera. El problema es que su tendencia no cuadra."
+        },
+        {
+          "texto": "Las nubes no influyen en el clima.",
+          "correcta": false,
+          "por_que": "Influyen muchísimo. Lo que falla es su relación con los rayos cósmicos."
+        }
+      ],
+      "explicacion": "La hipótesis del danés Henrik Svensmark propone que los rayos cósmicos ayudan a formar nubes. Pero desde mediados de los 80 la actividad solar y los rayos cósmicos han evolucionado en la dirección que debería enfriar la Tierra, y la temperatura ha subido. Además, el experimento CLOUD del CERN encontró que su efecto sobre la formación de nubes es demasiado pequeño para explicar el calentamiento.",
+      "fuente": {
+        "texto": "Lockwood y Fröhlich (2007). Proc. R. Soc. A 463",
+        "url": "https://doi.org/10.1098/rspa.2007.1880"
+      }
+    },
+    {
+      "id": "cc-25-artico-recuperado",
+      "mito": "El hielo del Ártico se ha recuperado. Este año hay más que el anterior.",
+      "falacia": "Selección interesada de datos",
+      "opciones": [
+        {
+          "texto": "Un año no hace tendencia, y la tendencia es a la baja.",
+          "correcta": true
+        },
+        {
+          "texto": "En el Ártico ya no queda hielo en verano.",
+          "correcta": false,
+          "por_que": "Exagerado: aún queda hielo en verano, aunque mucho menos que antes."
+        },
+        {
+          "texto": "Ese hielo no importa, porque ya flota.",
+          "correcta": false,
+          "por_que": "Al derretirse no sube el mar, pero deja agua oscura que absorbe más sol y calienta más el Ártico."
+        },
+        {
+          "texto": "El hielo de este año es más fino y no cuenta.",
+          "correcta": false,
+          "por_que": "Puede ser más fino, pero no rebates el truco de comparar años sueltos."
+        }
+      ],
+      "explicacion": "La extensión del hielo ártico varía mucho de un año a otro, así que siempre habrá algún año mejor que el anterior. Es cierto que desde 2007 el mínimo de septiembre no ha seguido cayendo de forma clara, pero todos los años desde entonces están por debajo de cualquiera de los años 1979-2006: los 19 mínimos más bajos de la serie son, precisamente, los de 2007 a 2025. En conjunto, el hielo que sobrevive al verano se reduce en torno a un 12% por década desde que hay satélites.",
+      "fuente": {
+        "texto": "NSIDC (2025). El mínimo de 2025 entra entre los diez más bajos",
+        "url": "https://nsidc.org/sea-ice-today/analyses/2025-arctic-sea-ice-minimum-squeezes-ten-lowest-minimums"
+      },
+      "fuentes_adicionales": [
+        {
+          "texto": "NOAA Arctic Report Card 2025: hielo marino",
+          "url": "https://arctic.noaa.gov/report-card/report-card-2025/sea-ice-2025/"
+        }
+      ]
+    },
+    {
+      "id": "cc-26-nivel-del-mar",
+      "mito": "Llevo cuarenta años yendo a la misma playa y el mar está donde siempre.",
+      "falacia": "Anécdota frente a tendencia",
+      "opciones": [
+        {
+          "texto": "El mar sube despacio, pero cada vez más rápido.",
+          "correcta": true
+        },
+        {
+          "texto": "El mar no sube: lo que pasa es que la tierra se hunde.",
+          "correcta": false,
+          "por_que": "En algunos sitios la costa se hunde, pero los satélites miden una subida global."
+        },
+        {
+          "texto": "Ya ha subido un par de metros, pero no se nota.",
+          "correcta": false,
+          "por_que": "Exageración: ha subido unos 20 cm desde 1901. Te pilla."
+        },
+        {
+          "texto": "En el Mediterráneo no sube porque es un mar cerrado.",
+          "correcta": false,
+          "por_que": "El Mediterráneo está conectado al Atlántico y también sube."
+        }
+      ],
+      "explicacion": "Unos centímetros no se aprecian a simple vista en una playa con olas y mareas, pero se miden. Desde 1901 el nivel medio del mar ha subido unos 20 cm. Los satélites, desde 1993, registran unos 3 mm al año, y ese ritmo se está acelerando por el deshielo de Groenlandia y la Antártida.",
+      "fuente": {
+        "texto": "Nerem et al. (2018). PNAS 115",
+        "url": "https://doi.org/10.1073/pnas.1717312115"
+      }
+    },
+    {
+      "id": "cc-27-palo-de-hockey",
+      "mito": "La gráfica del palo de hockey está trucada. Eso ya se demostró.",
+      "falacia": "Desacreditar una prueba aislada",
+      "opciones": [
+        {
+          "texto": "Decenas de estudios independientes llegan a la misma forma.",
+          "correcta": true
+        },
+        {
+          "texto": "Esa gráfica es de Al Gore y él no es científico.",
+          "correcta": false,
+          "por_que": "La gráfica es de Mann, Bradley y Hughes (1998-1999). Al Gore solo la mostró."
+        },
+        {
+          "texto": "Se corrigió y ahora sale que no hay calentamiento.",
+          "correcta": false,
+          "por_que": "Falso: las revisiones posteriores confirmaron su forma general."
+        },
+        {
+          "texto": "Las gráficas siempre se pueden manipular.",
+          "correcta": false,
+          "por_que": "Le das la razón sin aportar nada."
+        }
+      ],
+      "explicacion": "El \"palo de hockey\" de Michael Mann y colaboradores mostraba temperaturas casi estables durante siglos y un repunte brusco en el siglo XX. Desde entonces, muchos equipos con métodos y datos distintos (anillos de árboles, corales, sedimentos, hielo) han reproducido esa forma. El consorcio internacional PAGES 2k la confirmó a escala continental en 2013.",
+      "fuente": {
+        "texto": "PAGES 2k Consortium (2013). Nature Geoscience 6",
+        "url": "https://doi.org/10.1038/ngeo1797"
+      }
+    },
+    {
+      "id": "cc-28-acidificacion",
+      "mito": "¿Acidificación de los océanos? Si el mar es básico, no ácido. Otro invento.",
+      "falacia": "Juego de palabras",
+      "opciones": [
+        {
+          "texto": "Sigue siendo básico, pero cada vez menos.",
+          "correcta": true
+        },
+        {
+          "texto": "El mar ya es tan ácido como el limón.",
+          "correcta": false,
+          "por_que": "Exageración: el pH del mar ronda 8,1, ligeramente básico."
+        },
+        {
+          "texto": "La acidez viene de los vertidos de las fábricas.",
+          "correcta": false,
+          "por_que": "La causa principal es el CO₂ que el océano absorbe del aire."
+        },
+        {
+          "texto": "A los peces les da igual el pH.",
+          "correcta": false,
+          "por_que": "Falso, y además desvías el tema: los más afectados son corales, moluscos y plancton con concha o esqueleto."
+        }
+      ],
+      "explicacion": "\"Acidificación\" significa que el pH baja, no que el mar se vuelva ácido. El océano absorbe parte del CO₂ que emitimos y forma ácido carbónico. Su pH ha pasado de alrededor de 8,2 a 8,1 desde la época preindustrial, lo que supone cerca de un 30% más de acidez. Eso dificulta a corales, mejillones, ostras y parte del plancton fabricar sus conchas y esqueletos.",
+      "fuente": {
+        "texto": "Doney et al. (2009). Annu. Rev. Mar. Sci. 1",
+        "url": "https://doi.org/10.1146/annurev.marine.010908.163834"
+      }
+    },
+    {
+      "id": "cc-29-siempre-hubo-extremos",
+      "mito": "Olas de calor y DANAs ha habido siempre. Mi abuelo ya hablaba de ellas.",
+      "falacia": "Confundir existencia con frecuencia",
+      "opciones": [
+        {
+          "texto": "Siempre las hubo, pero ahora son más frecuentes e intensas.",
+          "correcta": true
+        },
+        {
+          "texto": "Antes no había olas de calor, eso es de ahora.",
+          "correcta": false,
+          "por_que": "Sí que las había. Negarlo le da la razón al cuñado."
+        },
+        {
+          "texto": "Las DANAs de ahora las provoca el cambio climático.",
+          "correcta": false,
+          "por_que": "Exagerado: las DANAs son naturales. El calentamiento puede intensificar las lluvias que traen."
+        },
+        {
+          "texto": "Tu abuelo exageraba, como todos los de su época.",
+          "correcta": false,
+          "por_que": "El problema no es la memoria del abuelo, sino cómo ha cambiado la frecuencia."
+        }
+      ],
+      "explicacion": "Que un fenómeno ya existiera no significa que no haya cambiado. El IPCC concluye que los extremos de calor son más frecuentes e intensos desde los años 50 y que la influencia humana es su principal causa. En las DANAs, lo que más cambia es la lluvia que descargan: por cada grado de calentamiento el aire puede retener alrededor de un 7% más de vapor de agua, lo que intensifica las lluvias torrenciales.",
+      "fuente": {
+        "texto": "IPCC (2021). AR6 Grupo de Trabajo I, Resumen para responsables de políticas",
+        "url": "https://www.ipcc.ch/report/ar6/wg1/"
+      }
+    },
+    {
+      "id": "cc-30-peticion-oregon",
+      "mito": "Más de 31.000 científicos firmaron un manifiesto diciendo que el cambio climático es mentira.",
+      "falacia": "Falsa autoridad",
+      "opciones": [
+        {
+          "texto": "Solo 39 de esos firmantes eran climatólogos.",
+          "correcta": true
+        },
+        {
+          "texto": "Ese manifiesto no existe, te lo has inventado.",
+          "correcta": false,
+          "por_que": "Existe: es la petición de Oregón, de 1998. El problema es quién la firmó."
+        },
+        {
+          "texto": "Firmaron, pero luego se retractaron todos.",
+          "correcta": false,
+          "por_que": "No hay prueba de eso. Inventas un dato."
+        },
+        {
+          "texto": "Los científicos firman cualquier cosa.",
+          "correcta": false,
+          "por_que": "Generalización que también desacredita a los del consenso."
+        }
+      ],
+      "explicacion": "La petición de Oregón aceptaba a cualquiera con un título en ciencias, ingeniería o medicina, sin verificar los nombres, y llegaron a colarse firmas falsas. Según sus propios datos, solo 39 de unos 31.000 firmantes eran climatólogos, en torno al 0,1%. Casi un tercio eran ingenieros.",
+      "fuente": {
+        "texto": "Skeptical Science. La petición de Oregón (OISM)",
+        "url": "https://skepticalscience.com/OISM-Petition-Project-intermediate.htm"
+      }
+    },
+    {
+      "id": "cc-31-datos-ajustados",
+      "mito": "Los datos de temperatura los \"ajustan\" para que salga más calor.",
+      "falacia": "Sospecha sin comprobar",
+      "opciones": [
+        {
+          "texto": "Los ajustes, en conjunto, rebajan el calentamiento.",
+          "correcta": true
+        },
+        {
+          "texto": "No se ajusta ningún dato, se publican tal cual.",
+          "correcta": false,
+          "por_que": "Sí se ajustan, y por buenas razones. Negarlo te deja en evidencia."
+        },
+        {
+          "texto": "Ajustan un poco, pero no tanto como para notarse.",
+          "correcta": false,
+          "por_que": "Le das la razón en la dirección del ajuste, que es la contraria."
+        },
+        {
+          "texto": "Los satélites no se ajustan nunca, por eso son mejores.",
+          "correcta": false,
+          "por_que": "Falso: los datos de satélite necesitan ajustes aún mayores."
+        }
+      ],
+      "explicacion": "Los datos brutos se corrigen por cambios de instrumentos, de hora de lectura o de ubicación de las estaciones. La corrección más grande es la de los océanos: antes se medía el agua con cubos, que se enfriaban al subirlos a cubierta. Con los datos ajustados, el calentamiento global desde 1880 sale menor que con los brutos, justo lo contrario de lo que dice el cuñado.",
+      "fuente": {
+        "texto": "Hausfather (2017). Carbon Brief: cómo afectan los ajustes a los registros de temperatura",
+        "url": "https://www.carbonbrief.org/explainer-how-data-adjustments-affect-global-temperature-records/"
+      }
+    },
+    {
+      "id": "cc-32-el-nino",
+      "mito": "Esto es El Niño. Cuando se pase, todo volverá a la normalidad.",
+      "falacia": "Confundir oscilación con tendencia",
+      "opciones": [
+        {
+          "texto": "El Niño sube y baja; el calentamiento solo sube.",
+          "correcta": true
+        },
+        {
+          "texto": "El Niño no existe, es un invento de los meteorólogos.",
+          "correcta": false,
+          "por_que": "Existe y afecta al clima global de un año a otro."
+        },
+        {
+          "texto": "El Niño lo provoca el cambio climático.",
+          "correcta": false,
+          "por_que": "No: es un fenómeno natural mucho más antiguo."
+        },
+        {
+          "texto": "Cuando llegue La Niña, se enfriará todo de nuevo.",
+          "correcta": false,
+          "por_que": "La Niña baja la temperatura un año, pero no deshace la tendencia."
+        }
+      ],
+      "explicacion": "El Niño y La Niña redistribuyen calor entre el océano y la atmósfera: unos años suben la temperatura global y otros la bajan, pero no añaden calor a largo plazo. Si se elimina estadísticamente su efecto, junto con el de volcanes y Sol, el calentamiento sigue ahí al mismo ritmo. Además, el calor acumulado en el océano no deja de crecer.",
+      "fuente": {
+        "texto": "Foster y Rahmstorf (2011). Environ. Res. Lett. 6",
+        "url": "https://doi.org/10.1088/1748-9326/6/4/044022"
+      }
+    },
+    {
+      "id": "cc-33-co2-saturado",
+      "mito": "El CO₂ ya está saturado. Por mucho que añadas, no calienta más.",
+      "falacia": "Física a medias",
+      "opciones": [
+        {
+          "texto": "No está saturado, y los satélites lo miden.",
+          "correcta": true
+        },
+        {
+          "texto": "Está saturado, pero el metano no.",
+          "correcta": false,
+          "por_que": "Le das por buena la saturación del CO₂, que es falsa."
+        },
+        {
+          "texto": "Cuanto más CO₂, más calienta en proporción directa.",
+          "correcta": false,
+          "por_que": "No es proporcional: el efecto crece cada vez más despacio, pero sigue creciendo."
+        },
+        {
+          "texto": "La saturación solo ocurre en los laboratorios.",
+          "correcta": false,
+          "por_que": "Respuesta sin base física. Te pilla."
+        }
+      ],
+      "explicacion": "En el centro de su banda de absorción, el CO₂ ya absorbe casi todo. Pero en los bordes de la banda y en las capas altas de la atmósfera su efecto sigue aumentando: el calor escapa al espacio desde más arriba, donde hace más frío, y por eso escapa menos. Los satélites miden desde los años 70 que sale menos radiación justo en las longitudes de onda del CO₂.",
+      "fuente": {
+        "texto": "Harries et al. (2001). Nature 410",
+        "url": "https://doi.org/10.1038/35066553"
+      }
+    },
+    {
+      "id": "cc-34-humanos-pequenos",
+      "mito": "El planeta es enorme. ¿De verdad crees que cuatro humanos podemos cambiarlo?",
+      "falacia": "Argumento de incredulidad",
+      "opciones": [
+        {
+          "texto": "Cuatro humanos no, pero ocho mil millones sí.",
+          "correcta": true
+        },
+        {
+          "texto": "Somos la especie más dañina del universo.",
+          "correcta": false,
+          "por_que": "Frase grandilocuente sin ningún dato. Al cuñado le resbala."
+        },
+        {
+          "texto": "Hay que reducir la población para salvar el clima.",
+          "correcta": false,
+          "por_que": "No responde y abre otro debate que no viene al caso."
+        },
+        {
+          "texto": "Es enorme, sí, pero ya se arreglará solo.",
+          "correcta": false,
+          "por_que": "Le das la razón."
+        }
+      ],
+      "explicacion": "Que algo nos parezca increíble no lo hace falso. Quemamos unos 38.000 millones de toneladas de CO₂ fósil al año, y la concentración de CO₂ en el aire ha subido más de un 50% desde la Revolución Industrial. Ya cambiamos el planeta antes: el agujero de la capa de ozono lo causaron gases que emitíamos en cantidades mucho menores.",
+      "fuente": {
+        "texto": "Global Carbon Budget (2025)",
+        "url": "https://globalcarbonbudget.org/fossil-fuel-co2-emissions-hit-record-high-in-2025/"
+      }
+    },
+    {
+      "id": "cc-35-glaciares-crecen",
+      "mito": "He visto en Facebook que hay glaciares que están creciendo.",
+      "falacia": "Selección interesada de datos",
+      "opciones": [
+        {
+          "texto": "Alguno crece, pero en conjunto se derriten a toda velocidad.",
+          "correcta": true
+        },
+        {
+          "texto": "Ningún glaciar del mundo está creciendo, es un bulo.",
+          "correcta": false,
+          "por_que": "Falso: algunos crecen por nevadas locales. Te pilla."
+        },
+        {
+          "texto": "Crecen porque el cambio climático trae más nieve.",
+          "correcta": false,
+          "por_que": "Le das la razón y además lo generalizas."
+        },
+        {
+          "texto": "En España no hay glaciares, así que da igual.",
+          "correcta": false,
+          "por_que": "Hay pequeños glaciares en el Pirineo, y se están extinguiendo."
+        }
+      ],
+      "explicacion": "Entre 2000 y 2019 los glaciares del mundo perdieron unas 267.000 millones de toneladas de hielo al año, y la pérdida se está acelerando. Que unos pocos ganen masa por nevadas locales no cambia el balance global. Lo tenemos en casa: el glaciar de la Maladeta, en el Pirineo, ha perdido desde 1992 el equivalente a más de 22 metros de agua de espesor, casi todo a partir de 1998.",
+      "fuente": {
+        "texto": "Hugonnet et al. (2021). Nature 592",
+        "url": "https://doi.org/10.1038/s41586-021-03436-z"
+      },
+      "fuentes_adicionales": [
+        {
+          "texto": "MITECO. Balance de masa del glaciar de la Maladeta",
+          "url": "https://www.miteco.gob.es/content/dam/miteco/es/agua/publicaciones/grafico-balance-masa-maladeta_tcm30-540627.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cc-36-ipcc-alarmista",
+      "mito": "El IPCC es un chiringuito alarmista. Siempre exageran para meter miedo.",
+      "falacia": "Ataque a la fuente",
+      "opciones": [
+        {
+          "texto": "Si acaso, se han quedado cortos con el hielo y el mar.",
+          "correcta": true
+        },
+        {
+          "texto": "El IPCC no se ha equivocado nunca en nada.",
+          "correcta": false,
+          "por_que": "Exageración: ha tenido errores puntuales, como una fecha mal citada sobre los glaciares del Himalaya."
+        },
+        {
+          "texto": "Es un organismo de la ONU, así que es neutral.",
+          "correcta": false,
+          "por_que": "Apelar a la autoridad no responde a si exageran o no."
+        },
+        {
+          "texto": "Exageran un poco, pero por una buena causa.",
+          "correcta": false,
+          "por_que": "Le das la razón."
+        }
+      ],
+      "explicacion": "El IPCC resume la literatura científica por consenso entre miles de expertos y gobiernos, lo que tiende a moderar sus conclusiones. Un análisis de sus predicciones encontró que, cuando se equivocan, suele ser por quedarse cortos: el deshielo del Ártico y la subida del mar han ido más rápido de lo previsto en informes anteriores.",
+      "fuente": {
+        "texto": "Brysse et al. (2013). Global Environmental Change 23",
+        "url": "https://doi.org/10.1016/j.gloenvcha.2012.10.008"
+      }
+    },
+    {
+      "id": "cc-37-mas-co2-en-el-pasado",
+      "mito": "Hace millones de años había mucho más CO₂ que ahora y la vida siguió tan pancha.",
+      "falacia": "Falsa comparación",
+      "opciones": [
+        {
+          "texto": "Entonces el Sol era más débil, y hubo extinciones masivas.",
+          "correcta": true
+        },
+        {
+          "texto": "Nunca ha habido tanto CO₂ en la historia de la Tierra.",
+          "correcta": false,
+          "por_que": "Falso: hace cientos de millones de años hubo mucho más."
+        },
+        {
+          "texto": "Ya, pero entonces no había humanos a los que afectara.",
+          "correcta": false,
+          "por_que": "Le das por bueno que la vida siguió tan pancha, y no fue así: hubo extinciones masivas."
+        },
+        {
+          "texto": "Por eso se extinguieron los dinosaurios.",
+          "correcta": false,
+          "por_que": "Falso: los dinosaurios cayeron por el impacto de un asteroide."
+        }
+      ],
+      "explicacion": "El Sol brilla cada vez más: hace 400 millones de años emitía alrededor de un 4% menos de energía, así que hacía falta más CO₂ para la misma temperatura. Teniendo eso en cuenta, el CO₂ y la temperatura van de la mano en todo el registro geológico. Y la vida no siguió tan pancha: varios cambios rápidos de CO₂ coinciden con extinciones masivas, como la del final del Pérmico.",
+      "fuente": {
+        "texto": "Royer et al. (2004). GSA Today 14",
+        "url": "https://doi.org/10.1130/1052-5173(2004)014%3C4:CAAPDO%3E2.0.CO;2"
+      }
+    },
+    {
+      "id": "cc-38-satelites",
+      "mito": "Los satélites, que son lo más fiable, dicen que no se está calentando.",
+      "falacia": "Dato desactualizado",
+      "opciones": [
+        {
+          "texto": "Todas las series de satélite muestran calentamiento.",
+          "correcta": true
+        },
+        {
+          "texto": "Los satélites no miden la temperatura.",
+          "correcta": false,
+          "por_que": "Sí la miden, de forma indirecta, en la troposfera."
+        },
+        {
+          "texto": "Los satélites son de la NASA y la NASA miente.",
+          "correcta": false,
+          "por_que": "Respondes a una conspiración con otra."
+        },
+        {
+          "texto": "Los satélites solo miden desde 2010, son pocos datos.",
+          "correcta": false,
+          "por_que": "Falso: las series de satélite empiezan en 1979, más de cuatro décadas de datos."
+        }
+      ],
+      "explicacion": "Los satélites miden la temperatura de la troposfera de forma indirecta y necesitan grandes correcciones, por ejemplo por el desvío de sus órbitas. Hace décadas, errores en esas correcciones mostraban poco calentamiento. Hoy todas las series, incluida la de la Universidad de Alabama (UAH), gestionada por científicos escépticos, muestran un calentamiento claro desde 1979.",
+      "fuente": {
+        "texto": "Mears y Wentz (2017). Journal of Climate 30",
+        "url": "https://doi.org/10.1175/JCLI-D-16-0768.1"
+      }
+    },
+    {
+      "id": "cc-39-incendios-piromanos",
+      "mito": "Los incendios los provocan los pirómanos, no el cambio climático.",
+      "falacia": "Falso dilema",
+      "opciones": [
+        {
+          "texto": "Alguien enciende la cerilla, pero el clima prepara la yesca.",
+          "correcta": true
+        },
+        {
+          "texto": "Los incendios los causa el sol al pegar en cristales.",
+          "correcta": false,
+          "por_que": "Mito: las causas naturales son pocas. La mayoría son humanas."
+        },
+        {
+          "texto": "En España casi no hay incendios provocados.",
+          "correcta": false,
+          "por_que": "Falso: más del 60% de los incendios en España tiene origen humano, por negligencia o intencionado."
+        },
+        {
+          "texto": "Si encerráramos a los pirómanos, se acabarían los incendios.",
+          "correcta": false,
+          "por_que": "Seguirían las negligencias y los rayos, y el monte igual de seco."
+        }
+      ],
+      "explicacion": "Es verdad que en España más del 60% de los incendios tiene origen humano, por negligencia o de forma intencionada, y que los naturales, como los rayos, son pocos. Pero que un fuego prenda y se descontrole depende de lo seca que esté la vegetación, del calor y del viento. El propio Ministerio señala la sequía y las olas de calor como factores decisivos en los peores años. El cambio climático alarga las temporadas de incendios y multiplica los días con condiciones extremas, y el abandono rural acumula combustible en el monte.",
+      "fuente": {
+        "texto": "Jones et al. (2022). Reviews of Geophysics 60",
+        "url": "https://doi.org/10.1029/2020RG000726"
+      },
+      "fuentes_adicionales": [
+        {
+          "texto": "MAPA (2019). Los incendios forestales en España. Decenio 2006-2015, cap. 7",
+          "url": "https://www.miteco.gob.es/content/dam/miteco/es/biodiversidad/temas/incendios-forestales/incendios-decenio-2006-2015_tcm30-521617.pdf"
+        }
+      ]
+    },
+    {
+      "id": "cc-40-sensibilidad-baja",
+      "mito": "Aunque se duplique el CO₂, la temperatura apenas subirá medio grado.",
+      "falacia": "Elegir la estimación que conviene",
+      "opciones": [
+        {
+          "texto": "Las mejores estimaciones dicen unos tres grados.",
+          "correcta": true
+        },
+        {
+          "texto": "Si se duplica el CO₂, subirá unos diez grados.",
+          "correcta": false,
+          "por_que": "Exageración sin base: el rango probable está entre 2,5 y 4 °C."
+        },
+        {
+          "texto": "Nadie sabe cuánto subiría, así que no se puede decir nada.",
+          "correcta": false,
+          "por_que": "Le das la razón: hay una estimación sólida y bien acotada."
+        },
+        {
+          "texto": "Medio grado ya es muchísimo.",
+          "correcta": false,
+          "por_que": "Aceptas su cifra, que es falsa."
+        }
+      ],
+      "explicacion": "La sensibilidad climática es cuánto se calienta el planeta si se duplica el CO₂. Se estima por tres vías independientes: la física del clima, el registro histórico y los climas del pasado, y las tres coinciden. El IPCC sitúa el rango probable entre 2,5 y 4 °C, con 3 °C como mejor estimación. Las cifras de medio grado salen de estudios aislados que ignoran las retroalimentaciones.",
+      "fuente": {
+        "texto": "Sherwood et al. (2020). Reviews of Geophysics 58",
+        "url": "https://doi.org/10.1029/2019RG000678"
+      }
     }
   ]
 }
