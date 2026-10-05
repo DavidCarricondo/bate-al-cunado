@@ -79,6 +79,7 @@ cd android && ./gradlew assembleDebug
      "gana_cunao": { "titulo": "El cuñado sigue en su salsa", "texto": "Esta vez ganó él. Lee los trucos que usó y vuelve a intentarlo.", "frase": "Si es que en esta familia el único que lee soy yo." }
    }
    ```
+5. (Opcional) Añade `medallas` con las preguntas dominadas necesarias para cada una, por ejemplo `{ "bronce": 10, "plata": 22, "oro": 40 }`. Si falta `oro`, son todas las preguntas del nivel. Los `id` de las preguntas no deben cambiar una vez publicadas: el progreso de los jugadores se guarda por `id`.
 
 Validación opcional:
 
@@ -90,10 +91,21 @@ npx ajv validate --spec=draft2020 -c ajv-formats -s schema/nivel.schema.json -d 
 ## Reglas de contenido
 
 - Exactamente 4 opciones por pregunta y una sola correcta.
-- La correcta es una réplica corta, del mismo tono y longitud que las incorrectas. Los datos van en `explicacion`.
+- La correcta es una réplica corta que lleva su propia justificación ("Crecen más, pero alimentan menos"), no una afirmación pelada. Los datos van en `explicacion`.
+- Ninguna opción debe delatarse por la longitud: la correcta puede ser algo más larga, pero no siempre la más larga. Las incorrectas deben ser tentadoras (concesiones, exageraciones, medias verdades), no disparates.
 - Toda opción incorrecta lleva `por_que`, que se muestra si el jugador la elige.
-- Cada pregunta cita una fuente verificable, preferiblemente revisada por pares (DOI).
+- Cada pregunta cita una `fuente` verificable, preferiblemente revisada por pares (DOI). Las fuentes de apoyo que no son artículos científicos (informes, organismos, divulgación) van en `fuentes_adicionales`, opcional.
 
 ## Parámetros de juego
 
-En `index.html`: `ROUNDS` (rondas por partida, 10), `CUPS` (fallos permitidos, 3), `HIT` (ego que pierde el cuñado por acierto, 10) y `HEAL` (ego que recupera por fallo, 5).
+En `index.html`: `ROUNDS` (rondas por partida, 10), `CUPS` (fallos permitidos, 3), `HIT` (ego que pierde el cuñado por acierto, 10), `HEAL` (ego que recupera por fallo, 5) y `NUEVAS` (preguntas sin dominar por partida, 6; el resto son de repaso).
+
+## Progreso y medallas
+
+El progreso se guarda solo en el dispositivo (`localStorage`, clave `progreso`), sin cuentas ni servidor:
+
+- Una partida se gana si se llega al final de las 10 rondas con alguna copa (como mucho 2 fallos). Solo las partidas ganadas guardan algo: sus aciertos pasan a ser preguntas dominadas.
+- Cada partida trae 6 preguntas sin dominar y 4 de repaso. Si no quedan bastantes de un tipo, se completa con el otro.
+- Fallar una pregunta ya dominada no la quita (el juego avisa para repasarla), y las medallas no se pierden nunca.
+- En la app Android el progreso dura hasta desinstalarla o borrar sus datos. En la web, el navegador puede borrarlo (Safari lo hace tras 7 días sin visitar la página si no está instalada como app).
+- Para probarlo sin jugar, en la consola del navegador: `localStorage.setItem("progreso", JSON.stringify({v:1, niveles:{"cambio-climatico":{dominadas:["cc-01-escarcha"], medallas:{}, partidas:1, victorias:1}}}))`. Se borra desde Setup.

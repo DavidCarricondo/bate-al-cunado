@@ -105,6 +105,25 @@ a{color:var(--accent)}
 .seg input:checked+span{background:var(--ink);color:var(--bg)}
 .seg input:focus-visible+span{outline:3px solid var(--accent-strong);outline-offset:-5px}
 
+.setting+.setting{margin-top:28px}
+.hint{margin:0 0 10px;color:var(--muted);font-size:15px}
+
+/* Progreso y medallas */
+.prog{margin:4px 0 14px}
+.prog-head{display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:600;font-size:15px}
+.medals{font-size:22px;letter-spacing:2px;white-space:nowrap}
+.medals .off{filter:grayscale(1);opacity:.3}
+.prog-bar{position:relative;height:10px;border-radius:99px;background:var(--line);margin:6px 0 4px}
+.prog-bar>div{height:100%;border-radius:99px;background:var(--ok)}
+.prog-bar i{position:absolute;top:-3px;bottom:-3px;width:2px;margin-left:-1px;background:var(--ink);opacity:.5}
+.prog-next{margin:0;color:var(--muted);font-size:14px}
+.prog-msg{margin:0 0 12px}
+.medal-won{display:flex;align-items:center;gap:14px;margin:0 0 16px;padding:12px 16px;border:2px solid var(--ink);border-radius:14px;
+  background:var(--accent-strong);color:#2B0B16;box-shadow:4px 4px 0 var(--ink);font-size:17px}
+.medal-won span{font-size:44px;line-height:1}
+.note{color:var(--accent);font-weight:600}
+.tag-dom{display:inline-block;padding:0 8px;border-radius:99px;border:1px solid currentColor;font-size:12px;font-weight:600;color:var(--muted)}
+
 /* Fuentes */
 .src-group{margin:0 0 28px}
 .src-group h3{margin:0 0 10px;font-size:22px}
@@ -232,6 +251,11 @@ svg[data-mood="smug"] .m-smug, svg[data-mood="shock"] .m-shock, svg[data-mood="g
         <label><input type="radio" name="tema" value="dark"><span>Oscuro</span></label>
       </div>
     </fieldset>
+    <div class="setting">
+      <h3>Progreso</h3>
+      <p class="hint">Tus preguntas dominadas y tus medallas se guardan solo en este dispositivo.</p>
+      <button class="btn ghost" id="resetProg">Borrar progreso</button>
+    </div>
   </section>
 
   <!-- FUENTES -->
@@ -274,6 +298,7 @@ svg[data-mood="smug"] .m-smug, svg[data-mood="shock"] .m-shock, svg[data-mood="g
       <div class="stat"><b id="sKo">0</b><span>veces que se salió con la suya</span></div>
       <div class="stat"><b id="sEgo">0%</b><span>ego final del cuñado</span></div>
     </div>
+    <div id="progress"></div>
     <h3>Lo que ha salido en la barra</h3>
     <ul class="review" id="review"></ul>
     <div class="actions">
@@ -367,6 +392,7 @@ function show(id, mode="push"){
   const hero = id==="home" || id==="levels";
   $("bg").hidden = !hero;
   if(hero) setBg(id==="levels" && sel ? sel.fondo || MENU_BG : MENU_BG);
+  if(id==="levels" && sel) selectLevel(sel); // refresca el progreso al volver de una partida
   if(id==="sources") renderSources();
   if(mode==="push") history.pushState({s:id}, "", id==="home" ? location.pathname : "#"+id);
   else if(mode==="replace") history.replaceState({s:id}, "", "#"+id);
@@ -386,14 +412,69 @@ function fetchLevel(meta){
   }).catch(err=>{ delete CACHE[meta.id]; throw err; });
 }
 
+// Progreso local (solo en este dispositivo): preguntas dominadas y medallas por nivel.
+// Solo cuenta una partida ganada, es decir, llegar al final con alguna copa.
+const NUEVAS = 6; // preguntas sin dominar por partida; el resto son de repaso
+const MEDALLAS = [["bronce","🥉","Bronce"],["plata","🥈","Plata"],["oro","🥇","Oro"]];
+function leerProgreso(){
+  try{ const p = JSON.parse(localStorage.getItem("progreso")); if(p?.v===1 && p.niveles && typeof p.niveles==="object") return p; }catch(e){}
+  return {v:1, niveles:{}};
+}
+function progresoNivel(id){
+  const p = leerProgreso().niveles[id] || {};
+  return {dominadas: Array.isArray(p.dominadas) ? p.dominadas : [], medallas: p.medallas || {}, partidas: p.partidas|0, victorias: p.victorias|0};
+}
+function guardarProgreso(id, prog){
+  const p = leerProgreso(); p.niveles[id] = prog;
+  try{ localStorage.setItem("progreso", JSON.stringify(p)); }catch(e){}
+}
+// Preguntas dominadas necesarias para cada medalla; el oro, si el nivel no dice otra cosa, son todas
+const umbrales = data => ({oro: data.preguntas.length, ...data.medallas});
+// Solo cuentan los ids que siguen existiendo en el nivel
+const contarDominadas = (prog, Q) => { const d = new Set(prog.dominadas); return Q.filter(q=>d.has(q.id)).length; };
+
+// NUEVAS preguntas sin dominar y el resto de repaso; si no hay bastantes de un tipo, se completa con el otro
+function elegirPreguntas(Q, dom){
+  const nuevas = shuffle(Q.filter(q=>!dom.has(q.id))), viejas = shuffle(Q.filter(q=>dom.has(q.id)));
+  const total = Math.min(ROUNDS, Q.length), n = Math.min(nuevas.length, Math.max(NUEVAS, total-viejas.length));
+  return shuffle([...nuevas.slice(0,n), ...viejas.slice(0,total-n)]);
+}
+
+// Apunta la partida. Si se ha ganado, suma los aciertos nuevos y las medallas que toquen.
+// Fallar una pregunta ya dominada no la quita, y las medallas no se pierden nunca.
+function registrarPartida(prog, log, gano, Q, umbral){
+  const dom = new Set(prog.dominadas);
+  const nuevas = gano ? log.filter(({q,good})=>good && !dom.has(q.id)).map(({q})=>q.id) : [];
+  nuevas.forEach(id=>dom.add(id));
+  const sig = {...prog, dominadas:[...dom], medallas:{...prog.medallas}, partidas:prog.partidas+1, victorias:prog.victorias+(gano?1:0)};
+  const total = contarDominadas(sig, Q), hoy = new Date().toISOString().slice(0,10);
+  const ganadas = gano ? MEDALLAS.map(([k])=>k).filter(k=>umbral[k] && !sig.medallas[k] && total>=umbral[k]) : [];
+  ganadas.forEach(k=>{ sig.medallas[k] = hoy; });
+  return {prog:sig, nuevas:nuevas.length, total, ganadas};
+}
+
+// Barra de progreso con las medallas y lo que falta para la siguiente
+function htmlProgreso(prog, total, nQ, umbral){
+  const sig = MEDALLAS.find(([k])=>umbral[k] && !prog.medallas[k]);
+  const tengo = MEDALLAS.filter(([k])=>prog.medallas[k]).map(([,,t])=>t).join(", ") || "ninguna";
+  return `<div class="prog">
+    <div class="prog-head"><span>${total}/${nQ} preguntas dominadas</span>
+      <span class="medals" role="img" aria-label="Medallas: ${tengo}">${MEDALLAS.map(([k,e])=>`<span class="${prog.medallas[k]?"":"off"}">${e}</span>`).join("")}</span></div>
+    <div class="prog-bar"><div style="width:${Math.round(100*Math.min(total,nQ)/nQ)}%"></div>${MEDALLAS.filter(([k])=>umbral[k]<nQ).map(([k])=>`<i style="left:${100*umbral[k]/nQ}%"></i>`).join("")}</div>
+    <p class="prog-next">${sig ? `Medalla de ${sig[2].toLowerCase()} a las ${umbral[sig[0]]}: te faltan ${Math.max(0,umbral[sig[0]]-total)}` : "¡Todas las medallas de este nivel!"}</p>
+  </div>`;
+}
+
 async function loadLevel(meta){
   const data = await fetchLevel(meta);
   // Formato JSON -> formato interno [texto, correcta(1/0), por_que]
   level = { meta, Q: data.preguntas.map(p=>({
-    m:p.mito, f:p.falacia, e:p.explicacion, s:[p.fuente.texto,p.fuente.url],
+    id:p.id, m:p.mito, f:p.falacia, e:p.explicacion, s:[p.fuente.texto,p.fuente.url],
+    sx:(p.fuentes_adicionales||[]).map(f=>[f.texto,f.url]),
     o:p.opciones.map(o=>[o.texto, o.correcta?1:0, o.por_que||""]) })) };
   level.img = data.cunao || null;
   level.finales = data.finales || null;
+  level.umbral = umbrales(data);
   // Precarga para que el cambio de cara sea instantáneo
   if(level.img) ["normal","acierto","fallo"].forEach(k=>{ new Image().src = level.img[k]; });
   R_OK = data.reacciones?.acierto?.length ? data.reacciones.acierto : ["Bueno... eso habría que verlo."];
@@ -406,7 +487,8 @@ async function play(meta){
 }
 
 function start(){
-  state = {qs:shuffle(level.Q).slice(0,Math.min(ROUNDS,level.Q.length)), i:0, ego:100, cups:CUPS, ok:0, ko:0, log:[]};
+  const dom = new Set(progresoNivel(level.meta.id).dominadas);
+  state = {qs:elegirPreguntas(level.Q, dom), dom, i:0, ego:100, cups:CUPS, ok:0, ko:0, log:[]};
   $("loadError").hidden = true;
   show("game", $("end").hidden ? "push" : "replace"); render();
 }
@@ -453,9 +535,10 @@ function answer(k){
     <div class="feedback ${good?"good":"bad"}">
       <h3>${good?"Argumento desmontado":"El cuñado se viene arriba"}</h3>
       ${good?"":`<p class="why">${esc(chosen[2]||"")}</p>`}
+      ${!good && state.dom.has(q.id)?`<p class="note">Esta ya la tenías dominada. No pierdes nada, pero repásala.</p>`:""}
       <span class="trick">Truco del cuñado: ${esc(q.f)}</span>
       <p>${esc(q.e)}</p>
-      <p class="source">Fuente: <a href="${q.s[1]}" target="_blank" rel="noopener">${esc(q.s[0])}</a></p>
+      <p class="source">Fuente: <a href="${q.s[1]}" target="_blank" rel="noopener">${esc(q.s[0])}</a>${q.sx.length?`<br>Más información: ${q.sx.map(([t,u])=>`<a href="${u}" target="_blank" rel="noopener">${esc(t)}</a>`).join(" · ")}`:""}</p>
       <button class="btn" id="next">${last?"Ver resultado":"Siguiente argumento"}</button>
     </div>`;
   $("next").addEventListener("click", next);
@@ -483,7 +566,18 @@ function end(){
   setMood("endCunado",mood);
   $("endBubble").textContent=f.frase; $("verdict").textContent=f.titulo; $("verdictSub").textContent=f.texto;
   $("sOk").textContent=state.ok; $("sKo").textContent=state.ko; $("sEgo").textContent=state.ego+"%";
-  $("review").innerHTML = state.log.map(({q,good})=>`<li class="${good?"ok":"ko"}"><q>${esc(q.m)}</q>${good?"Desmontado":"Se salió con la suya"}. Truco: ${esc(q.f)}. <a href="${q.s[1]}" target="_blank" rel="noopener">Fuente</a></li>`).join("");
+  const gano = state.cups>0;
+  const r = registrarPartida(progresoNivel(level.meta.id), state.log, gano, level.Q, level.umbral);
+  guardarProgreso(level.meta.id, r.prog);
+  $("progress").innerHTML = `<p class="prog-msg">${!gano ? "Esta partida no cuenta: hay que llegar al final con alguna copa. ¡La próxima, preguntas nuevas!"
+      : r.nuevas ? `<b>+${r.nuevas}</b> ${r.nuevas===1?"pregunta dominada":"preguntas dominadas"}` : "Esta vez no has dominado ninguna pregunta nueva."}</p>`
+    + r.ganadas.map(k=>{ const [,e,t] = MEDALLAS.find(m=>m[0]===k);
+        return `<div class="medal-won"><span aria-hidden="true">${e}</span><div><b>¡Medalla de ${t.toLowerCase()}!</b><br>${esc(level.meta.titulo)}</div></div>`; }).join("")
+    + htmlProgreso(r.prog, r.total, level.Q.length, level.umbral);
+  $("review").innerHTML = state.log.map(({q,good})=>{
+    const tag = !good && state.dom.has(q.id) ? "ya dominada" : good && gano && !state.dom.has(q.id) ? "nueva dominada" : "";
+    return `<li class="${good?"ok":"ko"}"><q>${esc(q.m)}</q>${good?"Desmontado":"Se salió con la suya"}. Truco: ${esc(q.f)}. <a href="${q.s[1]}" target="_blank" rel="noopener">Fuente</a>${tag?` <span class="tag-dom">${tag}</span>`:""}</li>`;
+  }).join("");
 }
 
 document.addEventListener("keydown",e=>{
@@ -517,8 +611,15 @@ function selectLevel(n){
   d.innerHTML = `<h3>${esc(n.titulo)}</h3>
     <p>${esc(n.resumen||"")}</p>
     <p class="meta">${esc(n.descripcion||"")}</p>
+    <div id="lvlProg"></div>
     <button class="btn" id="startBtn" ${n.disponible?"":"disabled"}>${n.disponible?"Empezar":"Próximamente"}</button>`;
-  if(n.disponible) $("startBtn").addEventListener("click",()=>play(n));
+  if(!n.disponible) return;
+  $("startBtn").addEventListener("click",()=>play(n));
+  fetchLevel(n).then(data=>{
+    if(sel!==n) return;
+    const prog = progresoNivel(n.id);
+    $("lvlProg").innerHTML = htmlProgreso(prog, contarDominadas(prog, data.preguntas), data.preguntas.length, umbrales(data));
+  }).catch(()=>{});
 }
 
 // Todas las fuentes de las preguntas, agrupadas por tema y sin repetir
@@ -531,8 +632,10 @@ async function renderSources(){
     const groups = await Promise.all(NIVELES.filter(n=>n.disponible && n.fichero).map(async n=>{
       const byUrl = new Map();
       for(const p of (await fetchLevel(n)).preguntas){
-        const e = byUrl.get(p.fuente.url) || {texto:p.fuente.texto, url:p.fuente.url, mitos:[]};
-        e.mitos.push(p.mito); byUrl.set(p.fuente.url, e);
+        for(const f of [p.fuente, ...(p.fuentes_adicionales||[])]){
+          const e = byUrl.get(f.url) || {texto:f.texto, url:f.url, mitos:[]};
+          e.mitos.push(p.mito); byUrl.set(f.url, e);
+        }
       }
       return {n, fuentes:[...byUrl.values()]};
     }));
@@ -555,6 +658,12 @@ document.querySelectorAll('input[name="tema"]').forEach(r=>{
     document.documentElement.dataset.theme = r.value;
     try{ localStorage.setItem("tema", r.value); }catch(e){}
   });
+});
+
+$("resetProg").addEventListener("click",()=>{
+  if(!confirm("¿Borrar todas tus preguntas dominadas y medallas? No se puede deshacer.")) return;
+  try{ localStorage.removeItem("progreso"); }catch(e){}
+  $("resetProg").textContent = "Progreso borrado";
 });
 
 document.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>show(b.dataset.go)));

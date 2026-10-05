@@ -17,6 +17,16 @@
         "fallo": { "type": "string", "description": "Imagen cuando el jugador falla (el cuñado gana)" }
       }
     },
+    "medallas": {
+      "type": "object",
+      "description": "Preguntas dominadas (acertadas en partidas ganadas) necesarias para cada medalla. Si falta oro, son todas las del nivel.",
+      "properties": {
+        "bronce": { "type": "integer", "minimum": 1 },
+        "plata": { "type": "integer", "minimum": 1 },
+        "oro": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    },
     "finales": {
       "type": "object",
       "description": "Textos de la pantalla final propios del nivel. Lo que falte usa los textos de bar por defecto de index.html.",
@@ -64,12 +74,14 @@
             }
           },
           "explicacion": { "type": "string", "description": "Desarrollo con los datos, se muestra tras responder" },
-          "fuente": {
-            "type": "object",
-            "required": ["texto", "url"],
-            "properties": { "texto": { "type": "string" }, "url": { "type": "string", "format": "uri" } }
+          "fuente": { "$ref": "#/$defs/fuente", "description": "Fuente principal, preferiblemente revisada por pares (DOI)" },
+          "fuentes_adicionales": {
+            "type": "array",
+            "description": "Opcional: fuentes de apoyo que no son artículos científicos (informes, organismos, divulgación)",
+            "items": { "$ref": "#/$defs/fuente" }
           }
-        }
+        },
+        "additionalProperties": false
       }
     }
   },
@@ -81,6 +93,11 @@
         "texto": { "type": "string" },
         "frase": { "type": "string", "description": "Lo que dice el cuñado en el bocadillo" }
       }
+    },
+    "fuente": {
+      "type": "object",
+      "required": ["texto", "url"],
+      "properties": { "texto": { "type": "string" }, "url": { "type": "string", "format": "uri" } }
     }
   }
 }
