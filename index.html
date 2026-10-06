@@ -414,7 +414,7 @@ function fetchLevel(meta){
 
 // Progreso local (solo en este dispositivo): preguntas dominadas y medallas por nivel.
 // Solo cuenta una partida ganada, es decir, llegar al final con alguna copa.
-const NUEVAS = 6; // preguntas sin dominar por partida; el resto son de repaso
+const NUEVAS = 7; // preguntas sin dominar por partida; el resto son de repaso
 const MEDALLAS = [["bronce","🥉","Bronce"],["plata","🥈","Plata"],["oro","🥇","Oro"]];
 function leerProgreso(){
   try{ const p = JSON.parse(localStorage.getItem("progreso")); if(p?.v===1 && p.niveles && typeof p.niveles==="object") return p; }catch(e){}
