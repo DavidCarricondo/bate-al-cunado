@@ -98,14 +98,14 @@ npx ajv validate --spec=draft2020 -c ajv-formats -s schema/nivel.schema.json -d 
 
 ## Parámetros de juego
 
-En `index.html`: `ROUNDS` (rondas por partida, 10), `CUPS` (fallos permitidos, 3), `HIT` (ego que pierde el cuñado por acierto, 10), `HEAL` (ego que recupera por fallo, 5) y `NUEVAS` (preguntas sin dominar por partida, 6; el resto son de repaso).
+En `index.html`: `ROUNDS` (rondas por partida, 10), `CUPS` (fallos permitidos, 3), `HIT` (ego que pierde el cuñado por acierto, 10), `HEAL` (ego que recupera por fallo, 5) y `NUEVAS` (preguntas sin dominar por partida, 7; el resto son de repaso).
 
 ## Progreso y medallas
 
 El progreso se guarda solo en el dispositivo (`localStorage`, clave `progreso`), sin cuentas ni servidor:
 
 - Una partida se gana si se llega al final de las 10 rondas con alguna copa (como mucho 2 fallos). Solo las partidas ganadas guardan algo: sus aciertos pasan a ser preguntas dominadas.
-- Cada partida trae 6 preguntas sin dominar y 4 de repaso. Si no quedan bastantes de un tipo, se completa con el otro.
+- Cada partida trae 7 preguntas sin dominar y 3 de repaso. Solo cuando quedan menos de 7 sin dominar se completa con más de repaso (y al principio, sin preguntas de repaso, las 10 son nuevas).
 - Fallar una pregunta ya dominada no la quita (el juego avisa para repasarla), y las medallas no se pierden nunca.
 - En la app Android el progreso dura hasta desinstalarla o borrar sus datos. En la web, el navegador puede borrarlo (Safari lo hace tras 7 días sin visitar la página si no está instalada como app).
 - Para probarlo sin jugar, en la consola del navegador: `localStorage.setItem("progreso", JSON.stringify({v:1, niveles:{"cambio-climatico":{dominadas:["cc-01-escarcha"], medallas:{}, partidas:1, victorias:1}}}))`. Se borra desde Setup.
