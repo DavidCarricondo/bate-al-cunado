@@ -1,0 +1,1284 @@
+{
+  "id": "terraplanismo",
+  "orden": 1,
+  "titulo": "Tierra plana, chemtrails y la Luna",
+  "vidas": {
+    "icono": "👽",
+    "nombre": "cabezas de alien"
+  },
+  "medallas": {
+    "bronce": 10,
+    "plata": 22,
+    "oro": 40
+  },
+  "cunao": {
+    "normal": "images/magufo-normal.webp",
+    "acierto": "images/magufo-lost.webp",
+    "fallo": "images/magufo-win.webp"
+  },
+  "reacciones": {
+    "acierto": [
+      "Eso es lo que pone en Wikipedia. Ahora dime quién financia Wikipedia.",
+      "No me voy a poner a discutir con alguien que todavía cree en las fotos de la NASA.",
+      "No te digo que no tengas razón. Te digo que la realidad es más compleja de lo que nos dejan ver.",
+      "¿Y la Antártida? ¿Qué me dices de la Antártida?",
+      "Vale, me has desmontado esa parte. Pero la teoría general sigue en pie.",
+      "Eso es justo lo que quieren que pienses.",
+      "Bah, tú no has visto el documental entero.",
+      "Eso es la versión oficial. Yo te estoy hablando de lo que hay detrás.",
+      "Eso es exactamente lo que dirían si quisieran que dejáramos de hacer preguntas."
+    ],
+    "fallo": [
+      "¿LO VES? ¡LO SABÍA! Otra pieza del puzle.",
+      "Mira la fecha. Mira el detalle. Mira quién lo publicó. Todo está ahí.",
+      "¡BINGO! Esto aparece en un documento desclasificado de 1978. ¿Casualidad? No lo creo.",
+      "No tienes ni idea... ¿has oído hablar de los gigantes de Tartaria? Porque esto va por ahí.",
+      "Haz tu propia investigación, chaval.",
+      "Lo que yo diga, que para eso miro al cielo.",
+      "Acabas de caer en la trampa del pensamiento convencional. Reinicia el sistema.",
+      "Guarda esta conversación. En unos años te vas a acordar de mí."
+    ]
+  },
+  "preguntas": [
+    {
+      "id": "tp-01-horizonte",
+      "mito": "Yo miro el horizonte desde la playa y es plano. Plano. ¿Qué curva ni qué curva?",
+      "falacia": "Argumento de incredulidad",
+      "opciones": [
+        {
+          "texto": "La Tierra es tan grande que a ojo no se nota.",
+          "correcta": true
+        },
+        {
+          "texto": "Si te fijas bien, desde la playa ya se ve curvado.",
+          "correcta": false,
+          "por_que": "Falso: a nivel del mar la curvatura no se aprecia a simple vista. En cuanto lo compruebe, gana él."
+        },
+        {
+          "texto": "Eso es porque el mar está siempre en movimiento.",
+          "correcta": false,
+          "por_que": "No tiene nada que ver y no explica nada."
+        },
+        {
+          "texto": "Tú lo que necesitas son gafas.",
+          "correcta": false,
+          "por_que": "Un ataque personal no desmonta nada. Solo le da munición."
+        }
+      ],
+      "explicacion": "Desde dos metros de altura el horizonte está a unos 5 km, y la curvatura en ese tramo es minúscula. Lynch calculó que para empezar a notarla a simple vista hay que subir a unos 10 km, la altura de crucero de un avión, y con un campo de visión amplio. Que el suelo parezca plano a tu escala es justo lo que predice una esfera enorme: un balón de playa se ve curvo; un estadio de fútbol, no.",
+      "fuente": {
+        "texto": "Lynch (2008). Applied Optics 47(34)",
+        "url": "https://doi.org/10.1364/AO.47.000H39"
+      }
+    },
+    {
+      "id": "tp-02-barcos-zoom",
+      "mito": "Lo de los barcos que se esconden tras la curva es mentira: con un zoom vuelven a aparecer.",
+      "falacia": "Verdad a medias",
+      "opciones": [
+        {
+          "texto": "El zoom amplía, pero no destapa lo que tapa el agua.",
+          "correcta": true
+        },
+        {
+          "texto": "Con zoom tampoco se ven, eso es un truco del vídeo.",
+          "correcta": false,
+          "por_que": "Falso: los barcos cercanos sí reaparecen enteros, porque solo se habían hecho pequeños. Pierdes credibilidad."
+        },
+        {
+          "texto": "Es la perspectiva, que hace cosas raras.",
+          "correcta": false,
+          "por_que": "Le das la razón: la perspectiva encoge las cosas, pero no las corta por abajo."
+        },
+        {
+          "texto": "Los barcos se hunden un poco al alejarse de la costa.",
+          "correcta": false,
+          "por_que": "Te lo acabas de inventar. Y él lo sabe."
+        }
+      ],
+      "explicacion": "Se mezclan dos efectos. Un barco cercano que «desaparece» solo se ha hecho pequeño, y el zoom lo recupera: en eso el cuñado tiene razón. Pero a partir de cierta distancia el casco queda oculto y solo asoman la cubierta o los mástiles, y ningún zoom lo devuelve: la parte de abajo está detrás del agua. Con unos prismáticos se ve en barcos a 15 o 20 km, y la altura oculta coincide con la que da el cálculo para una esfera de 6.371 km de radio.",
+      "fuente": {
+        "texto": "Metabunk. Calculadora de curvatura terrestre",
+        "url": "https://www.metabunk.org/curve/"
+      }
+    },
+    {
+      "id": "tp-03-eclipse",
+      "mito": "Nadie ha demostrado nunca que la Tierra sea redonda sin fotos trucadas de la NASA.",
+      "falacia": "Ignorar las pruebas disponibles",
+      "opciones": [
+        {
+          "texto": "En los eclipses de Luna su sombra siempre es redonda.",
+          "correcta": true
+        },
+        {
+          "texto": "Se demostró con el primer satélite, en los años 50.",
+          "correcta": false,
+          "por_que": "Vuelves justo a lo que él descarta, cuando hay pruebas de hace más de dos mil años."
+        },
+        {
+          "texto": "Eso no se puede demostrar, se acepta y ya.",
+          "correcta": false,
+          "por_que": "Le das la razón: lo conviertes en un dogma."
+        },
+        {
+          "texto": "Basta con mirar al cielo para darse cuenta.",
+          "correcta": false,
+          "por_que": "Demasiado vago: no le das nada concreto que comprobar."
+        }
+      ],
+      "explicacion": "Aristóteles ya lo argumentó hace 2.300 años: en los eclipses de Luna, la sombra de la Tierra sobre la Luna es siempre un arco de círculo, sea cual sea la hora y la altura de la Luna en el cielo. Solo una esfera proyecta una sombra circular desde cualquier ángulo; un disco daría a veces una elipse estrecha o casi una línea. Cualquiera puede comprobarlo en el próximo eclipse, sin satélites.",
+      "fuente": {
+        "texto": "Aristóteles, Acerca del cielo, II, 14. Resumen en Wikipedia",
+        "url": "https://es.wikipedia.org/wiki/Tierra_esf%C3%A9rica"
+      }
+    },
+    {
+      "id": "tp-04-eratostenes",
+      "mito": "Si la Tierra fuera una bola de 40.000 km, ¿cómo iban a saberlo hace siglos, sin aviones ni nada?",
+      "falacia": "Argumento de incredulidad",
+      "opciones": [
+        {
+          "texto": "Eratóstenes la midió con sombras hace 2.200 años.",
+          "correcta": true
+        },
+        {
+          "texto": "Lo calcularon al darle la vuelta en barco.",
+          "correcta": false,
+          "por_que": "Elcano completó la vuelta en 1522, pero la medida es muchísimo más antigua."
+        },
+        {
+          "texto": "Es verdad, eso se descubrió hace muy poco.",
+          "correcta": false,
+          "por_que": "Le das la razón con un dato falso."
+        },
+        {
+          "texto": "Los antiguos sabían cosas que hoy hemos olvidado.",
+          "correcta": false,
+          "por_que": "Misterio sin datos. Le das alas."
+        }
+      ],
+      "explicacion": "Hacia el 240 a. C., Eratóstenes supo que en Siena (hoy Asuán) el Sol del mediodía del solsticio no proyectaba sombra, mientras que en Alejandría la sombra formaba un ángulo de unos 7 grados. Con esa diferencia y la distancia entre las dos ciudades calculó una circunferencia cercana a los 40.000 km. Con un suelo plano y el Sol lejano, las sombras serían iguales en los dos sitios. Hoy lo repiten colegios de todo el mundo con un palo y un metro.",
+      "fuente": {
+        "texto": "Wikipedia. Eratóstenes",
+        "url": "https://es.wikipedia.org/wiki/Erat%C3%B3stenes"
+      }
+    },
+    {
+      "id": "tp-05-sol-foco",
+      "mito": "El Sol es pequeño y está cerca, dando vueltas sobre el disco como un foco. Por eso hay día y noche.",
+      "falacia": "Hipótesis a medida",
+      "opciones": [
+        {
+          "texto": "Un foco no se escondería por el horizonte.",
+          "correcta": true
+        },
+        {
+          "texto": "El Sol está a 150 millones de km, lo dice cualquier libro.",
+          "correcta": false,
+          "por_que": "Cierto, pero apelar al libro no le convence. Dale algo que pueda ver él mismo."
+        },
+        {
+          "texto": "El Sol no gira, gira la Tierra, y punto.",
+          "correcta": false,
+          "por_que": "Afirmar sin explicar no desmonta su modelo."
+        },
+        {
+          "texto": "Un foco tan cerca nos quemaría a todos.",
+          "correcta": false,
+          "por_que": "Flojo: dependería de su potencia, y él lo sabe."
+        }
+      ],
+      "explicacion": "Si el Sol fuera un foco a unos miles de km sobre un disco, nunca se pondría: se alejaría y se haría más pequeño, pero seguiría arriba en el cielo. Lo que vemos es que mantiene su tamaño aparente todo el día y desaparece por el horizonte empezando por abajo. Además, en diciembre hay sol de medianoche en la Antártida, que en el mapa plano es el borde exterior del disco: imposible con un foco que gira sobre el centro.",
+      "fuente": {
+        "texto": "Wikipedia. Sol de medianoche",
+        "url": "https://es.wikipedia.org/wiki/Sol_de_medianoche"
+      }
+    },
+    {
+      "id": "tp-06-no-se-nota",
+      "mito": "Si la Tierra girara a 1.600 km/h lo notaríamos. Y saldríamos volando.",
+      "falacia": "Argumento de incredulidad",
+      "opciones": [
+        {
+          "texto": "En un avión tampoco notas que vas a 900 km/h.",
+          "correcta": true
+        },
+        {
+          "texto": "Es que la gravedad nos pega al suelo con mucha fuerza.",
+          "correcta": false,
+          "por_que": "Media respuesta: explica que no salgamos volando, pero no que no notemos la velocidad."
+        },
+        {
+          "texto": "Gira tan despacio que no se nota.",
+          "correcta": false,
+          "por_que": "Falso: en el ecuador va a unos 1.670 km/h. Lo que no se nota es una velocidad constante."
+        },
+        {
+          "texto": "Sí que se nota, por eso a veces nos mareamos.",
+          "correcta": false,
+          "por_que": "Te lo inventas. Y te deja en mal lugar."
+        }
+      ],
+      "explicacion": "El cuerpo no detecta la velocidad, solo los cambios de velocidad: por eso en un avión de crucero te sirven un café sin que se derrame. El giro de la Tierra es muy constante y no lo sentimos. Pero sí se puede medir: el péndulo de Foucault, desde 1851, va girando su plano de oscilación a un ritmo que depende de la latitud, justo como predice una esfera que rota. Hay péndulos así en museos de ciencia de todo el mundo.",
+      "fuente": {
+        "texto": "Wikipedia. Péndulo de Foucault",
+        "url": "https://es.wikipedia.org/wiki/P%C3%A9ndulo_de_Foucault"
+      }
+    },
+    {
+      "id": "tp-07-australianos",
+      "mito": "¿Y los australianos qué, van boca abajo? ¿Por qué no se caen?",
+      "falacia": "Falsa analogía",
+      "opciones": [
+        {
+          "texto": "No hay un abajo absoluto: la gravedad tira hacia el centro.",
+          "correcta": true
+        },
+        {
+          "texto": "Los sujeta la presión del aire.",
+          "correcta": false,
+          "por_que": "Falso: te inventas un mecanismo."
+        },
+        {
+          "texto": "Sí van boca abajo, pero no lo notan.",
+          "correcta": false,
+          "por_que": "Absurdo: para ellos el cielo está arriba, como para ti."
+        },
+        {
+          "texto": "Por eso Australia tiene tan poca gente.",
+          "correcta": false,
+          "por_que": "Chiste fácil. Él se ríe y sigue a lo suyo."
+        }
+      ],
+      "explicacion": "«Arriba» y «abajo» no son direcciones fijas del universo, sino respecto a la gravedad, que tira de todo hacia el centro de la Tierra. Para un australiano, abajo es su suelo, igual que para nosotros. Newton lo explicó en 1687 con la gravitación universal, y esa misma ley predice con enorme precisión las órbitas de la Luna, los planetas y los satélites.",
+      "fuente": {
+        "texto": "NASA Space Place. ¿Qué es la gravedad?",
+        "url": "https://spaceplace.nasa.gov/what-is-gravity/sp/"
+      }
+    },
+    {
+      "id": "tp-08-antartida-muro",
+      "mito": "La Antártida es un muro de hielo que rodea el disco. Por eso hay un tratado para que nadie pueda ir.",
+      "falacia": "Dato falso",
+      "opciones": [
+        {
+          "texto": "Cada verano la visitan decenas de miles de turistas.",
+          "correcta": true
+        },
+        {
+          "texto": "El tratado solo deja ir a militares con permiso.",
+          "correcta": false,
+          "por_que": "Falso: el tratado prohíbe precisamente los usos militares."
+        },
+        {
+          "texto": "Es verdad que no se puede, pero es por los pingüinos.",
+          "correcta": false,
+          "por_que": "Le das la razón en lo principal."
+        },
+        {
+          "texto": "Si fuera un muro, se vería desde los aviones.",
+          "correcta": false,
+          "por_que": "Él dirá que por eso no dejan sobrevolarla. Te falta un dato."
+        }
+      ],
+      "explicacion": "El Tratado Antártico de 1959 reserva el continente para fines pacíficos y científicos y prohíbe las actividades militares, pero no prohíbe visitarlo: cada verano austral salen cruceros desde Ushuaia y la visitan decenas de miles de turistas. Varias expediciones la han cruzado de lado a lado, y desde 1956 hay una base permanente en el mismísimo Polo Sur, la Amundsen-Scott: un punto que en el mapa plano ni siquiera existe.",
+      "fuente": {
+        "texto": "Secretaría del Tratado Antártico. El Tratado Antártico",
+        "url": "https://www.ats.aq/e/antarctictreaty.html"
+      }
+    },
+    {
+      "id": "tp-09-vuelos-sur",
+      "mito": "Si la Tierra fuera redonda habría vuelos directos entre Chile y Australia. Y no los hay.",
+      "falacia": "Dato falso",
+      "opciones": [
+        {
+          "texto": "Los hay: Santiago–Sídney, sin escalas.",
+          "correcta": true
+        },
+        {
+          "texto": "Es que a nadie le interesa ir de Chile a Australia.",
+          "correcta": false,
+          "por_que": "Le das por bueno que esos vuelos no existen."
+        },
+        {
+          "texto": "Hacen escala en Estados Unidos para repostar.",
+          "correcta": false,
+          "por_que": "Falso, y encima le das la razón."
+        },
+        {
+          "texto": "En un mapa plano también se podría volar directo.",
+          "correcta": false,
+          "por_que": "Cambias de tema sin desmontar nada."
+        }
+      ],
+      "explicacion": "Hay vuelos directos Santiago–Sídney y Santiago–Melbourne de unas 13 horas, que cruzan el Pacífico Sur cerca de la Antártida. En el mapa plano, centrado en el polo Norte, esa ruta tendría que atravesar medio disco y duraría mucho más del doble, con un avión que no tiene autonomía para ello. Cualquiera puede seguir esos vuelos en directo en Flightradar24.",
+      "fuente": {
+        "texto": "Flightradar24. Seguimiento de vuelos en directo",
+        "url": "https://www.flightradar24.com/"
+      }
+    },
+    {
+      "id": "tp-10-estrellas",
+      "mito": "Desde cualquier sitio se ven las mismas estrellas. Normal: es un disco bajo una cúpula.",
+      "falacia": "Dato falso",
+      "opciones": [
+        {
+          "texto": "Desde Australia no se ve la estrella Polar.",
+          "correcta": true
+        },
+        {
+          "texto": "Las estrellas cambian según la estación, nada más.",
+          "correcta": false,
+          "por_que": "Cierto que cambian, pero no respondes: también cambian con la latitud."
+        },
+        {
+          "texto": "Las estrellas están tan lejos que da igual.",
+          "correcta": false,
+          "por_que": "No explica nada."
+        },
+        {
+          "texto": "Eso será por la contaminación lumínica.",
+          "correcta": false,
+          "por_que": "Nada que ver."
+        }
+      ],
+      "explicacion": "La estrella Polar va bajando en el cielo a medida que viajas hacia el sur y desaparece al cruzar el ecuador. En el hemisferio sur aparecen la Cruz del Sur y las Nubes de Magallanes, que desde la Península no se ven nunca. Además, allí las estrellas giran alrededor de otro polo celeste y en sentido contrario. Bajo una cúpula sobre un disco, todos veríamos el mismo cielo.",
+      "fuente": {
+        "texto": "Wikipedia. Estrella Polar",
+        "url": "https://es.wikipedia.org/wiki/Estrella_Polar"
+      }
+    },
+    {
+      "id": "tp-11-densidad",
+      "mito": "La gravedad no existe. Las cosas caen porque pesan más que el aire. Es la densidad.",
+      "falacia": "Explicación incompleta",
+      "opciones": [
+        {
+          "texto": "La densidad dice qué flota, no hacia dónde caer.",
+          "correcta": true
+        },
+        {
+          "texto": "La gravedad existe porque lo dijo Newton.",
+          "correcta": false,
+          "por_que": "Apelar a la autoridad no le convence. Falta el dato."
+        },
+        {
+          "texto": "Las cosas caen por el magnetismo de la Tierra.",
+          "correcta": false,
+          "por_que": "Falso: una piedra no es magnética y cae igual."
+        },
+        {
+          "texto": "La densidad lo explica casi todo, es verdad.",
+          "correcta": false,
+          "por_que": "Le das la razón."
+        }
+      ],
+      "explicacion": "Para que algo flote o se hunda tiene que haber una fuerza que tire hacia abajo: en la Estación Espacial, sin peso aparente, un globo de helio y una piedra ni suben ni bajan. La densidad no explica por qué hay una dirección de caída, ni por qué una piedra cae igual en el vacío. Además, la gravedad se mide directamente: en 1798 Henry Cavendish midió en un laboratorio la atracción entre bolas de plomo.",
+      "fuente": {
+        "texto": "Wikipedia. Experimento de Cavendish",
+        "url": "https://es.wikipedia.org/wiki/Experimento_de_Cavendish"
+      }
+    },
+    {
+      "id": "tp-12-aviones-morro",
+      "mito": "Si la Tierra fuera redonda, los pilotos tendrían que bajar el morro todo el rato para no salir al espacio.",
+      "falacia": "Argumento de incredulidad",
+      "opciones": [
+        {
+          "texto": "La curva es tan suave que el ajuste ni se nota.",
+          "correcta": true
+        },
+        {
+          "texto": "Lo hacen, cada pocos minutos, y no te lo dicen.",
+          "correcta": false,
+          "por_que": "Falso: no existe tal maniobra. Le das la razón."
+        },
+        {
+          "texto": "Van tan rápido que no les da tiempo a notarla.",
+          "correcta": false,
+          "por_que": "No explica nada; más bien al revés."
+        },
+        {
+          "texto": "Los aviones vuelan siempre en línea recta.",
+          "correcta": false,
+          "por_que": "Falso: siguen la altitud, no una recta."
+        }
+      ],
+      "explicacion": "A 900 km/h, seguir la curva exige girar unos 0,13 grados por minuto, muchísimo menos que cualquier corrección por turbulencia. Además, el avión no vuela en línea recta geométrica: el altímetro mide la presión del aire y el piloto automático mantiene la altitud constante, y eso ya sigue la curva sin que nadie tenga que pensarlo.",
+      "fuente": {
+        "texto": "Wikipedia. Altímetro",
+        "url": "https://es.wikipedia.org/wiki/Alt%C3%ADmetro"
+      }
+    },
+    {
+      "id": "ch-01-antes-no",
+      "mito": "De pequeño los aviones no dejaban esas rayas. Ahora el cielo está lleno.",
+      "falacia": "Falso recuerdo",
+      "opciones": [
+        {
+          "texto": "Ya había estelas en la Segunda Guerra Mundial.",
+          "correcta": true
+        },
+        {
+          "texto": "Antes había menos aviones, por eso no se veían.",
+          "correcta": false,
+          "por_que": "Parte de razón, pero le das por bueno que antes no había ninguna."
+        },
+        {
+          "texto": "Las estelas son por el queroseno barato de ahora.",
+          "correcta": false,
+          "por_que": "Te lo inventas."
+        },
+        {
+          "texto": "Tú de pequeño no mirabas al cielo.",
+          "correcta": false,
+          "por_que": "Ataque personal. No aporta nada."
+        }
+      ],
+      "explicacion": "AEMET sitúa las primeras estelas de condensación a finales de la Primera Guerra Mundial, cuando los aviones empezaron a volar lo bastante alto. En la Segunda Guerra Mundial, las formaciones de bombarderos llenaban el cielo de estelas y hay miles de fotos. Lo que ha cambiado es el número de vuelos y que los reactores vuelan justo a la altura donde se forman.",
+      "fuente": {
+        "texto": "AEMET. Estelas de condensación (documento divulgativo)",
+        "url": "https://www.aemet.es/documentos/es/conocermas/modificacion_artificial_tiempo/estelas_condensacion.pdf"
+      }
+    },
+    {
+      "id": "ch-02-unas-duran",
+      "mito": "Las estelas normales desaparecen enseguida. Las que duran horas y se abren son las fumigaciones.",
+      "falacia": "Falso dilema",
+      "opciones": [
+        {
+          "texto": "Duran más o menos según la humedad de allí arriba.",
+          "correcta": true
+        },
+        {
+          "texto": "Todas las estelas desaparecen en pocos minutos.",
+          "correcta": false,
+          "por_que": "Falso: con aire húmedo pueden durar horas. Él lo ha visto."
+        },
+        {
+          "texto": "Las que duran son de aviones militares.",
+          "correcta": false,
+          "por_que": "Te lo inventas, y le das media razón."
+        },
+        {
+          "texto": "Duran más por el viento.",
+          "correcta": false,
+          "por_que": "Demasiado vago: el viento las mueve, pero no explica que duren."
+        }
+      ],
+      "explicacion": "A 10 km de altura el aire está a unos 40 o 50 grados bajo cero. Si está seco, los cristales de hielo se evaporan en segundos y la estela es corta. Si está casi saturado de humedad, la estela persiste, se ensancha y puede convertirse en cirros que duran horas. Por eso las estelas largas suelen anunciar un cambio de tiempo: llega aire húmedo en altura. Dos aviones iguales dejan estelas distintas si cruzan capas de aire distintas.",
+      "fuente": {
+        "texto": "AEMET Blog (2017). Estelas de condensación: las nubes que señalan el rastro de los aviones",
+        "url": "https://aemetblog.es/2017/03/15/estelas-de-condensacion-las-nubes-que-senalan-el-rastro-de-los-aviones/"
+      }
+    },
+    {
+      "id": "ch-03-expertos",
+      "mito": "Los científicos se callan, pero los que lo han investigado de verdad saben que nos fumigan.",
+      "falacia": "Teoría de la conspiración",
+      "opciones": [
+        {
+          "texto": "Los que lo han investigado no han encontrado pruebas. ",
+          "correcta": true
+        },
+        {
+          "texto": "Los científicos nunca mienten.",
+          "correcta": false,
+          "por_que": "Ingenuo y falso. Y no hace falta: basta con los datos."
+        },
+        {
+          "texto": "Seguro que alguno sí lo ha investigado.",
+          "correcta": false,
+          "por_que": "Le das la razón."
+        },
+        {
+          "texto": "Eso lo has sacado de Telegram.",
+          "correcta": false,
+          "por_que": "Desacreditar la fuente no aporta datos."
+        }
+      ],
+      "explicacion": "En 2016, Shearer y colaboradores preguntaron a 77 especialistas en química atmosférica y en depósito de contaminantes. 76 dijeron no haber encontrado pruebas de ningún programa secreto de fumigación, y el que dudaba citó un único dato anómalo de bario en una zona remota. Analizaron también las «pruebas» típicas de las webs conspirativas y todas tenían explicaciones normales: estelas comunes, polvo del suelo o muestras mal tomadas.",
+      "fuente": {
+        "texto": "Shearer et al. (2016). Environ. Res. Lett. 11",
+        "url": "https://doi.org/10.1088/1748-9326/11/8/084011"
+      }
+    },
+    {
+      "id": "ch-04-aluminio",
+      "mito": "Lo de los chemtrails está probado: han analizado el agua de lluvia y tiene aluminio y bario. ¿De dónde sale eso?",
+      "falacia": "Dato sin contexto",
+      "opciones": [
+        {
+          "texto": "Del suelo: el aluminio es el metal más común de la corteza.",
+          "correcta": true
+        },
+        {
+          "texto": "Esos análisis son todos falsos.",
+          "correcta": false,
+          "por_que": "Seguramente el dato es real. Lo que falla es la interpretación."
+        },
+        {
+          "texto": "Es por la contaminación de las fábricas.",
+          "correcta": false,
+          "por_que": "Puede sumar algo, pero se te escapa lo principal: el polvo del suelo."
+        },
+        {
+          "texto": "El aluminio es bueno para la salud.",
+          "correcta": false,
+          "por_que": "Te lo inventas."
+        }
+      ],
+      "explicacion": "El aluminio es el metal más abundante de la corteza terrestre, alrededor del 8% de su masa, y el bario también es común. El viento levanta polvo que acaba en la lluvia, en los charcos y en el suelo, así que encontrar esos metales en una muestra es lo esperable. Para sospechar haría falta compararlos con los niveles de fondo de esa zona, y los análisis que circulan en vídeos no lo hacen.",
+      "fuente": {
+        "texto": "Wikipedia. Aluminio",
+        "url": "https://es.wikipedia.org/wiki/Aluminio"
+      }
+    },
+    {
+      "id": "ch-05-cuadricula",
+      "mito": "Hoy han dejado una cuadrícula en el cielo. Eso no es una ruta normal, es fumigar.",
+      "falacia": "Patrón aparente",
+      "opciones": [
+        {
+          "texto": "Son rutas aéreas que se cruzan sobre tu cabeza.",
+          "correcta": true
+        },
+        {
+          "texto": "Los aviones dan vueltas mientras esperan para aterrizar.",
+          "correcta": false,
+          "por_que": "Pasa cerca de los aeropuertos, pero no explica rejillas a 10 km de altura."
+        },
+        {
+          "texto": "Serán aviones de la NASA haciendo pruebas.",
+          "correcta": false,
+          "por_que": "Te lo inventas, y le das alas."
+        },
+        {
+          "texto": "Es el viento, que dibuja las estelas así.",
+          "correcta": false,
+          "por_que": "El viento las desplaza, pero no crea la cuadrícula."
+        }
+      ],
+      "explicacion": "España está atravesada por rutas aéreas que se cruzan: Europa–Canarias, Europa–norte de África, Europa–Sudamérica. Cuando el aire en altura está húmedo, las estelas duran y se van acumulando, y al cruzarse rutas distintas forman rejillas. Con Flightradar24 puedes identificar en directo cada avión que pasa, su compañía, su origen y su destino.",
+      "fuente": {
+        "texto": "Flightradar24. Seguimiento de vuelos en directo",
+        "url": "https://www.flightradar24.com/"
+      }
+    },
+    {
+      "id": "ch-06-tanques",
+      "mito": "Los aviones llevan depósitos llenos de químicos y nos fumigan desde arriba.",
+      "falacia": "Ignorar la viabilidad",
+      "opciones": [
+        {
+          "texto": "Desde 10 km de altura no puedes apuntar a nadie.",
+          "correcta": true
+        },
+        {
+          "texto": "Los aviones no pueden llevar peso extra.",
+          "correcta": false,
+          "por_que": "Falso: llevan toneladas de carga."
+        },
+        {
+          "texto": "Fumigan, pero solo en el campo.",
+          "correcta": false,
+          "por_que": "Le das la razón."
+        },
+        {
+          "texto": "Si fumigaran, los pilotos se intoxicarían.",
+          "correcta": false,
+          "por_que": "Dirá que van protegidos. No le das ningún dato."
+        }
+      ],
+      "explicacion": "Cualquier partícula soltada a 10 km tardaría días o semanas en bajar, y el viento la dispersaría cientos de kilómetros: es imposible saber dónde caería. AEMET recuerda además que para lograr algún efecto harían falta aviones cargados solo con enormes depósitos de líquido, a costa de pasajeros y carga, en un sector donde se pesa cada kilo para ahorrar combustible.",
+      "fuente": {
+        "texto": "elDiario.es. ¿Aviones misteriosos que nos fumigan en secreto? Los chemtrails no existen",
+        "url": "https://www.eldiario.es/sociedad/aviones-misteriosos-fumigan-secreto-chemtrails_1_1668697.html"
+      }
+    },
+    {
+      "id": "ch-07-bidones",
+      "mito": "Hay fotos de aviones por dentro llenos de bidones con tubos. ¡Ahí lo tienes!",
+      "falacia": "Sacar de contexto",
+      "opciones": [
+        {
+          "texto": "Es agua de lastre para los vuelos de prueba.",
+          "correcta": true
+        },
+        {
+          "texto": "Esas fotos son todas montajes.",
+          "correcta": false,
+          "por_que": "No lo son: son reales, solo que mal explicadas."
+        },
+        {
+          "texto": "Serán bidones de combustible extra.",
+          "correcta": false,
+          "por_que": "Falso, y le dejas la duda abierta."
+        },
+        {
+          "texto": "Eso será en aviones militares.",
+          "correcta": false,
+          "por_que": "Le das media razón."
+        }
+      ],
+      "explicacion": "Cuando un fabricante certifica un avión nuevo, llena la cabina de bidones de agua conectados entre sí para simular el peso de los pasajeros y moverlo durante el vuelo, y así probar el centro de gravedad. Las fotos virales son de prototipos de Boeing y Airbus en esas pruebas, y en muchas se ven también los puestos de los ingenieros con sus ordenadores. Ningún avión comercial vuela así.",
+      "fuente": {
+        "texto": "Metabunk. Explained: Chemtrail Plane Interior (Ballast Barrels)",
+        "url": "https://www.metabunk.org/goto/post?id=11179"
+      }
+    },
+    {
+      "id": "ch-08-geoingenieria",
+      "mito": "Existen patentes y proyectos de geoingeniería para echar aerosoles al cielo. ¡Lo reconocen!",
+      "falacia": "Posibilidad no es prueba",
+      "opciones": [
+        {
+          "texto": "Que se investigue no significa que se esté haciendo.",
+          "correcta": true
+        },
+        {
+          "texto": "La geoingeniería es ciencia ficción, no existe.",
+          "correcta": false,
+          "por_que": "Falso: se investiga y se debate. Pierdes credibilidad."
+        },
+        {
+          "texto": "Las patentes son secretas.",
+          "correcta": false,
+          "por_que": "Falso: las patentes son públicas por definición."
+        },
+        {
+          "texto": "Si hay patentes, algo habrá.",
+          "correcta": false,
+          "por_que": "Le das la razón."
+        }
+      ],
+      "explicacion": "La geoingeniería solar, inyectar aerosoles en la estratosfera para reflejar parte de la luz del Sol, se estudia y se discute en público, con informes, modelos y mucha oposición. Pero se plantearía a unos 20 km de altura, donde no llegan los aviones comerciales, y hasta ahora solo hay propuestas y experimentos pequeños. Patentar una idea no exige haberla usado nunca: hay miles de patentes de inventos que jamás se fabricaron.",
+      "fuente": {
+        "texto": "National Academies (2021). Reflecting Sunlight",
+        "url": "https://doi.org/10.17226/25762"
+      }
+    },
+    {
+      "id": "ch-09-tapan-sol",
+      "mito": "Las estelas tapan el sol. Es geoingeniería para enfriar el planeta.",
+      "falacia": "Verdad a medias",
+      "opciones": [
+        {
+          "texto": "En conjunto atrapan calor: calientan, no enfrían.",
+          "correcta": true
+        },
+        {
+          "texto": "Las estelas no afectan nada al clima.",
+          "correcta": false,
+          "por_que": "Falso: sí influyen, y es de lo poco que tiene fundamento."
+        },
+        {
+          "texto": "Sí, enfrían, pero eso es bueno.",
+          "correcta": false,
+          "por_que": "Le das la razón."
+        },
+        {
+          "texto": "Desaparecen antes de tapar nada.",
+          "correcta": false,
+          "por_que": "No siempre: pueden convertirse en cirros que duran horas."
+        }
+      ],
+      "explicacion": "Las estelas persistentes y los cirros que generan reflejan algo de sol de día, pero sobre todo retienen el calor que emite la Tierra, también de noche. El balance neto es de calentamiento. Lee y colaboradores calcularon que los cirros de estelas son el mayor efecto de la aviación sobre el clima, por encima incluso del CO₂ que ha emitido. Es un problema real, pero no es una conspiración.",
+      "fuente": {
+        "texto": "Lee et al. (2021). Atmospheric Environment 244",
+        "url": "https://doi.org/10.1016/j.atmosenv.2020.117834"
+      }
+    },
+    {
+      "id": "ch-10-vapor",
+      "mito": "El vapor de agua no se ve, y esas estelas son blancas y espesas. Del motor de los aviones sale otra cosa.",
+      "falacia": "Física a medias",
+      "opciones": [
+        {
+          "texto": "Es hielo: a 40 bajo cero el vapor se congela al momento.",
+          "correcta": true
+        },
+        {
+          "texto": "Es humo del queroseno, pero no es tóxico.",
+          "correcta": false,
+          "por_que": "Falso: lo que se ve no es humo, es hielo."
+        },
+        {
+          "texto": "El vapor sí se ve, mira una olla hirviendo.",
+          "correcta": false,
+          "por_que": "Lo que ves en la olla ya es agua condensada, no vapor. Te corregirá."
+        },
+        {
+          "texto": "Es blanco porque refleja las nubes.",
+          "correcta": false,
+          "por_que": "Te lo inventas."
+        }
+      ],
+      "explicacion": "Al quemar queroseno se produce más de un kilo de vapor de agua por cada kilo de combustible. Ese vapor es invisible, en eso el cuñado acierta, pero al salir a un aire a 40 bajo cero se condensa y congela casi al instante en millones de cristalitos de hielo. Es lo mismo que el vaho de tu aliento en una mañana de invierno, a lo bestia. Lo blanco no es vapor: es hielo.",
+      "fuente": {
+        "texto": "AEMET. Estelas de condensación (documento divulgativo)",
+        "url": "https://www.aemet.es/documentos/es/conocermas/modificacion_artificial_tiempo/estelas_condensacion.pdf"
+      }
+    },
+    {
+      "id": "ch-11-siembra-nubes",
+      "mito": "Si hasta reconocen que siembran nubes. Lo de fumigar es real.",
+      "falacia": "Confundir dos cosas",
+      "opciones": [
+        {
+          "texto": "Sembrar nubes es otra cosa: local y a baja altura.",
+          "correcta": true
+        },
+        {
+          "texto": "Lo de sembrar nubes es un bulo.",
+          "correcta": false,
+          "por_que": "Falso: existe y está documentado. Pierdes credibilidad."
+        },
+        {
+          "texto": "Siembran nubes, pero solo en China.",
+          "correcta": false,
+          "por_que": "Falso: también se ha hecho en otros países, España incluida."
+        },
+        {
+          "texto": "Si lo reconocen, será por algo.",
+          "correcta": false,
+          "por_que": "Le das la razón."
+        }
+      ],
+      "explicacion": "La siembra de nubes consiste en soltar pequeñas cantidades de yoduro de plata dentro de nubes que ya existen, desde avionetas o desde generadores en tierra, para intentar que precipiten. Se hace en zonas concretas, a baja altura, y su eficacia sigue siendo discutida. No deja estelas y no tiene nada que ver con lo que hacen los aviones comerciales a 10 km.",
+      "fuente": {
+        "texto": "Wikipedia. Siembra de nubes",
+        "url": "https://es.wikipedia.org/wiki/Siembra_de_nubes"
+      }
+    },
+    {
+      "id": "ch-12-expiloto",
+      "mito": "Lo de las fumigaciones lo ha contado un expiloto en un vídeo. Él lo ha visto con sus propios ojos.",
+      "falacia": "Falsa autoridad",
+      "opciones": [
+        {
+          "texto": "Pilotar aviones no te hace experto en química del aire.",
+          "correcta": true
+        },
+        {
+          "texto": "Los pilotos no tienen ni idea de aviones.",
+          "correcta": false,
+          "por_que": "Falso y ofensivo. De aviones sí saben."
+        },
+        {
+          "texto": "Si lo dice un piloto, habrá que creerlo.",
+          "correcta": false,
+          "por_que": "Le das la razón."
+        },
+        {
+          "texto": "Seguro que lo echaron por loco.",
+          "correcta": false,
+          "por_que": "Ataque personal. No aporta datos."
+        }
+      ],
+      "explicacion": "Un piloto sabe volar, pero no analiza la composición de las estelas. Ni las asociaciones de pilotos ni las autoridades de aviación respaldan la teoría, y no existe ninguna prueba física, ni análisis, ni documentos, ni equipos instalados, pese a los miles de técnicos que revisan esos aviones cada día. Cuando se consultó a los especialistas en química atmosférica, 76 de 77 no vieron ninguna prueba.",
+      "fuente": {
+        "texto": "Shearer et al. (2016). Environ. Res. Lett. 11",
+        "url": "https://doi.org/10.1088/1748-9326/11/8/084011"
+      }
+    },
+    {
+      "id": "lu-01-bandera",
+      "mito": "La bandera puesta en la luna ondea en el vídeo. ¡En la Luna no hay aire! Pillados.",
+      "falacia": "Interpretar mal una imagen",
+      "opciones": [
+        {
+          "texto": "Se movía al clavarla, y sin aire tardaba en pararse.",
+          "correcta": true
+        },
+        {
+          "texto": "En la Luna sí hay un poco de aire.",
+          "correcta": false,
+          "por_que": "A efectos prácticos es vacío. Error."
+        },
+        {
+          "texto": "La bandera no se mueve en ningún vídeo.",
+          "correcta": false,
+          "por_que": "Sí se mueve mientras la manipulan. Niegas lo que él ha visto."
+        },
+        {
+          "texto": "Se movía por el viento solar.",
+          "correcta": false,
+          "por_que": "Te lo inventas."
+        }
+      ],
+      "explicacion": "La bandera llevaba una varilla horizontal arriba para mantenerla desplegada, y como no se extendió del todo, quedó con arrugas que parecen ondas. Solo se mueve mientras los astronautas la giran para clavarla en el suelo; sin aire que la frene, oscila un rato más que en la Tierra y luego se queda quieta. En los vídeos, cuando nadie la toca, no se mueve ni un milímetro.",
+      "fuente": {
+        "texto": "Wikipedia. Moon landing conspiracy theories",
+        "url": "https://en.wikipedia.org/wiki/Moon_landing_conspiracy_theories"
+      }
+    },
+    {
+      "id": "lu-02-estrellas",
+      "mito": "En las fotos de la Luna no sale ni una estrella. Se les olvidó ponerlas en el decorado.",
+      "falacia": "Interpretar mal una imagen",
+      "opciones": [
+        {
+          "texto": "Con el suelo tan iluminado, las estrellas no salen.",
+          "correcta": true
+        },
+        {
+          "texto": "Sin atmósfera, en la Luna no se ven estrellas.",
+          "correcta": false,
+          "por_que": "Al revés: sin atmósfera se ven mejor, si no te deslumbra nada."
+        },
+        {
+          "texto": "Las borraron para que no se supiera dónde estaban.",
+          "correcta": false,
+          "por_que": "Le das la razón: admites un retoque."
+        },
+        {
+          "texto": "Sí que salen, mira bien las fotos.",
+          "correcta": false,
+          "por_que": "Falso: no salen. Lo va a comprobar."
+        }
+      ],
+      "explicacion": "Las fotos se hicieron de día lunar, con el suelo, los trajes y el módulo muy iluminados por el Sol. Para no quemar la imagen, se usaban exposiciones cortas y el diafragma cerrado, y con esos ajustes las estrellas, mucho más débiles, no llegan a impresionar la película. Pasa lo mismo si intentas fotografiar estrellas desde una calle bien iluminada, o en las fotos diurnas de la Estación Espacial.",
+      "fuente": {
+        "texto": "Wikipedia. Moon landing conspiracy theories",
+        "url": "https://en.wikipedia.org/wiki/Moon_landing_conspiracy_theories"
+      }
+    },
+    {
+      "id": "lu-03-sombras",
+      "mito": "En las fotos de la Luna las sombras van en direcciones distintas. Eso es que había varios focos.",
+      "falacia": "Interpretar mal una imagen",
+      "opciones": [
+        {
+          "texto": "Con terreno irregular y perspectiva, las sombras se abren.",
+          "correcta": true
+        },
+        {
+          "texto": "Sí había varios focos: los de la propia nave.",
+          "correcta": false,
+          "por_que": "Le das la razón."
+        },
+        {
+          "texto": "En la Luna hay dos soles.",
+          "correcta": false,
+          "por_que": "Disparate."
+        },
+        {
+          "texto": "Es por la mala calidad de las fotos.",
+          "correcta": false,
+          "por_que": "No explica nada."
+        }
+      ],
+      "explicacion": "Con varios focos, cada objeto tendría varias sombras, y en las fotos del Apolo hay una sola por objeto. Que no sean paralelas se debe a la perspectiva, como las vías del tren que parecen juntarse a lo lejos, y a las cuestas y cráteres del terreno, que alargan o tuercen las sombras. Puedes comprobarlo al atardecer en un campo con piedras: un solo Sol y sombras en ángulos distintos.",
+      "fuente": {
+        "texto": "Wikipedia. Moon landing conspiracy theories",
+        "url": "https://en.wikipedia.org/wiki/Moon_landing_conspiracy_theories"
+      }
+    },
+    {
+      "id": "lu-04-van-allen",
+      "mito": "Para ir a la Luna hay que cruzar los cinturones de Van Allen. Los habría frito la radiación.",
+      "falacia": "Exagerar un riesgo",
+      "opciones": [
+        {
+          "texto": "Los cruzaron en pocas horas y por la zona más débil.",
+          "correcta": true
+        },
+        {
+          "texto": "Los cinturones de Van Allen son un invento.",
+          "correcta": false,
+          "por_que": "Existen: los descubrió Van Allen en 1958 con el Explorer 1."
+        },
+        {
+          "texto": "La nave tenía un blindaje de plomo de un metro.",
+          "correcta": false,
+          "por_que": "Te lo inventas: no habría podido despegar."
+        },
+        {
+          "texto": "Se llevaron mucha radiación, pero aguantaron.",
+          "correcta": false,
+          "por_que": "Exageras: la dosis fue moderada."
+        }
+      ],
+      "explicacion": "Los cinturones de Van Allen son zonas de partículas atrapadas por el campo magnético terrestre. Las trayectorias del Apolo los atravesaban en pocas horas y esquivando las regiones más intensas. Los dosímetros de los astronautas registraron en cada misión dosis de menos de 1 rad, del orden de un TAC. En 2026, la tripulación de Artemis II volvió a cruzarlos sin problemas.",
+      "fuente": {
+        "texto": "Bailey (1975). Biomedical Results of Apollo, NASA SP-368, cap. 3",
+        "url": "https://history.nasa.gov/SP-368/s2ch3.htm"
+      }
+    },
+    {
+      "id": "lu-05-no-vuelven",
+      "mito": "Si llegaron a la Luna en 1969, ¿por qué no han vuelto en más de 50 años? Porque no se puede.",
+      "falacia": "Conclusión precipitada",
+      "opciones": [
+        {
+          "texto": "En 2026, la Artemis II ha rodeado la Luna.",
+          "correcta": true
+        },
+        {
+          "texto": "Han vuelto muchas veces, pero no lo cuentan.",
+          "correcta": false,
+          "por_que": "Te lo inventas, y él se ríe."
+        },
+        {
+          "texto": "No han vuelto porque allí no hay nada que hacer.",
+          "correcta": false,
+          "por_que": "Parte de razón, pero te quedas corto."
+        },
+        {
+          "texto": "La tecnología de 1969 era mejor que la de hoy.",
+          "correcta": false,
+          "por_que": "Falso, y le das alas."
+        }
+      ],
+      "explicacion": "El programa Apolo se canceló por dinero: llegó a consumir más del 4% del presupuesto federal de EE. UU., y, ganada la carrera espacial, el Congreso recortó. Sin presupuesto se desmontó la cadena de producción del cohete Saturno V. En abril de 2026, la misión Artemis II llevó a cuatro astronautas alrededor de la Luna, el primer viaje tripulado hasta allí desde 1972, y el programa prepara volver a posarse.",
+      "fuente": {
+        "texto": "NASA. Artemis II",
+        "url": "https://www.nasa.gov/mission/artemis-ii/"
+      }
+    },
+    {
+      "id": "lu-06-ordenador",
+      "mito": "El ordenador del Apolo tenía menos potencia que una calculadora. ¿Con eso fueron a la Luna?",
+      "falacia": "Argumento de incredulidad",
+      "opciones": [
+        {
+          "texto": "Para calcular rutas no hace falta un móvil.",
+          "correcta": true
+        },
+        {
+          "texto": "En realidad era más potente que un ordenador de hoy.",
+          "correcta": false,
+          "por_que": "Falso. Y fácil de comprobar."
+        },
+        {
+          "texto": "Lo pilotaron todo a mano, sin ordenador.",
+          "correcta": false,
+          "por_que": "Falso: el ordenador era clave en la navegación y el alunizaje."
+        },
+        {
+          "texto": "Antes se programaba mejor.",
+          "correcta": false,
+          "por_que": "Vago, y no responde."
+        }
+      ],
+      "explicacion": "El ordenador de a bordo hacía tareas muy concretas: integrar datos de navegación y controlar los motores en tiempo real, y para eso bastaba. Los cálculos pesados de trayectoria se hacían en tierra, en los grandes ordenadores del centro de control, y se enviaban a la nave por radio. Las sondas Voyager, lanzadas en 1977 con ordenadores aún más modestos, siguen enviando datos desde fuera del sistema solar.",
+      "fuente": {
+        "texto": "Wikipedia. Apollo Guidance Computer",
+        "url": "https://en.wikipedia.org/wiki/Apollo_Guidance_Computer"
+      }
+    },
+    {
+      "id": "lu-07-kubrick",
+      "mito": "Lo de la llegada a la Luna lo grabó Kubrick en un estudio. Si hizo 2001, pudo hacer esto.",
+      "falacia": "Posibilidad no es prueba",
+      "opciones": [
+        {
+          "texto": "En un plató el polvo flota; en la Luna cae en arco.",
+          "correcta": true
+        },
+        {
+          "texto": "Kubrick nunca hizo ciencia ficción.",
+          "correcta": false,
+          "por_que": "Falso: 2001 es de 1968."
+        },
+        {
+          "texto": "Kubrick no pudo porque ya había muerto.",
+          "correcta": false,
+          "por_que": "Falso: murió en 1999."
+        },
+        {
+          "texto": "Si lo hubiera hecho Kubrick, estaría mejor rodado.",
+          "correcta": false,
+          "por_que": "Chiste fácil. No prueba nada."
+        }
+      ],
+      "explicacion": "En los vídeos, el polvo que levantan las ruedas del rover sale en arcos limpios y cae de golpe, sin formar nubes: es lo que pasa en el vacío y con un sexto de la gravedad terrestre. En un plató con aire, el polvo fino se queda flotando. Simularlo en 1969 habría exigido una cámara de vacío del tamaño de un estudio de cine. Que alguien pudiera fingir algo no demuestra que lo hiciera.",
+      "fuente": {
+        "texto": "Wikipedia. Moon landing conspiracy theories",
+        "url": "https://en.wikipedia.org/wiki/Moon_landing_conspiracy_theories"
+      }
+    },
+    {
+      "id": "lu-08-sovieticos",
+      "mito": "La NASA puede engañar a todo el mundo si quiere. Tiene medios de sobra. No llegaron a la luna.",
+      "falacia": "Teoría de la conspiración",
+      "opciones": [
+        {
+          "texto": "La URSS los vigilaba y jamás dijo que fuera falso.",
+          "correcta": true
+        },
+        {
+          "texto": "La NASA nunca ha mentido en nada.",
+          "correcta": false,
+          "por_que": "Ingenuo, y fácil de rebatir."
+        },
+        {
+          "texto": "Los rusos también estaban compinchados.",
+          "correcta": false,
+          "por_que": "Le das la razón: amplías la conspiración."
+        },
+        {
+          "texto": "Es imposible engañar a todo el mundo.",
+          "correcta": false,
+          "por_que": "Vago: no das ningún dato."
+        }
+      ],
+      "explicacion": "En plena guerra fría, la Unión Soviética tenía todos los motivos para desmentir a EE. UU. y medios para seguir las naves por radio, y nunca lo puso en duda. Además, el programa Apolo implicó a unas 400.000 personas. Grimes calculó que una conspiración de ese tamaño se habría destapado en menos de cuatro años; han pasado más de cincuenta.",
+      "fuente": {
+        "texto": "Grimes (2016). PLOS ONE 11(1)",
+        "url": "https://doi.org/10.1371/journal.pone.0147905"
+      }
+    },
+    {
+      "id": "lu-09-hubble",
+      "mito": "¿Por qué no apuntan el Hubble a la Luna y nos enseñan la bandera? Porque no hay nada.",
+      "falacia": "Exigir una prueba imposible",
+      "opciones": [
+        {
+          "texto": "El Hubble no distingue nada menor que un campo de fútbol.",
+          "correcta": true
+        },
+        {
+          "texto": "El Hubble no puede apuntar a la Luna.",
+          "correcta": false,
+          "por_que": "Falso: puede y lo ha hecho. El problema es el detalle."
+        },
+        {
+          "texto": "El Hubble es de la NASA, así que lo esconderían.",
+          "correcta": false,
+          "por_que": "Le das la razón."
+        },
+        {
+          "texto": "La bandera se ha caído, por eso no se ve.",
+          "correcta": false,
+          "por_que": "No responde: aunque estuviera de pie, no se vería."
+        }
+      ],
+      "explicacion": "El Hubble está pensado para ver objetos enormes muy lejanos, no detalles pequeños cercanos. Desde su órbita, el detalle más pequeño que puede distinguir en la Luna mide unos 90 metros. El módulo lunar medía unos 9 metros de ancho, y la bandera, poco más de uno. Para verlos hace falta una sonda en órbita lunar, como la LRO, que sí los ha fotografiado.",
+      "fuente": {
+        "texto": "Wikipedia. Hubble Space Telescope",
+        "url": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope"
+      }
+    },
+    {
+      "id": "lu-10-espejos",
+      "mito": "No queda ni una prueba que se pueda comprobar hoy. Todo son fotos de la NASA.",
+      "falacia": "Ignorar las pruebas disponibles",
+      "opciones": [
+        {
+          "texto": "Dejaron espejos que hoy se usan con láseres.",
+          "correcta": true
+        },
+        {
+          "texto": "La huella de Armstrong se ve con prismáticos.",
+          "correcta": false,
+          "por_que": "Falso. Lo intentará y te lo restregará."
+        },
+        {
+          "texto": "Las pruebas están en un museo y ya está.",
+          "correcta": false,
+          "por_que": "Vago: no le das nada comprobable."
+        },
+        {
+          "texto": "Los espejos los dejaron sondas rusas.",
+          "correcta": false,
+          "por_que": "Media verdad: los soviéticos dejaron otros, pero los del Apolo los colocaron astronautas."
+        }
+      ],
+      "explicacion": "Los astronautas del Apolo 11, 14 y 15 dejaron paneles de retrorreflectores en la superficie. Observatorios de varios países, como el de Grasse en Francia o Apache Point en EE. UU., disparan láseres contra ellos y miden el tiempo que tarda la luz en volver, lo que permite calcular la distancia a la Luna con precisión milimétrica. Así sabemos que la Luna se aleja unos 3,8 cm al año.",
+      "fuente": {
+        "texto": "Murphy (2013). Rep. Prog. Phys. 76",
+        "url": "https://doi.org/10.1088/0034-4885/76/7/076901"
+      }
+    },
+    {
+      "id": "lu-11-roca-holanda",
+      "mito": "Las rocas lunares son falsas. Una que regalaron a Holanda resultó ser madera petrificada.",
+      "falacia": "Generalizar desde un caso",
+      "opciones": [
+        {
+          "texto": "Esa nunca fue una muestra: la regaló un embajador.",
+          "correcta": true
+        },
+        {
+          "texto": "Eso es un bulo, nunca pasó.",
+          "correcta": false,
+          "por_que": "Sí pasó: se descubrió en 2009 en el Rijksmuseum."
+        },
+        {
+          "texto": "Las rocas lunares son meteoritos, todas.",
+          "correcta": false,
+          "por_que": "Falso, y le das la razón a medias."
+        },
+        {
+          "texto": "Una roca falsa no importa, hay muchas más.",
+          "correcta": false,
+          "por_que": "Cierto, pero vago: no explicas el caso."
+        }
+      ],
+      "explicacion": "La pieza del Rijksmuseum se la dio en 1969 el embajador estadounidense a un ex primer ministro neerlandés durante una gira de los astronautas, sin ningún certificado de la NASA, y nadie la analizó hasta 2009. Las muestras auténticas, 382 kg traídas por las misiones Apolo, están catalogadas una a una, y laboratorios de todo el mundo, incluidos los soviéticos, las han estudiado durante más de cincuenta años.",
+      "fuente": {
+        "texto": "Wikipedia. Moon rock",
+        "url": "https://en.wikipedia.org/wiki/Moon_rock"
+      }
+    },
+    {
+      "id": "lu-12-camara",
+      "mito": "Si Armstrong fue el primero en pisar la Luna, ¿quién le grababa desde fuera?",
+      "falacia": "Pregunta trampa",
+      "opciones": [
+        {
+          "texto": "Una cámara montada en el módulo, que él mismo activó.",
+          "correcta": true
+        },
+        {
+          "texto": "Le grabó Aldrin desde abajo.",
+          "correcta": false,
+          "por_que": "Falso: Aldrin bajó después."
+        },
+        {
+          "texto": "Le grabaron desde la Tierra con un telescopio.",
+          "correcta": false,
+          "por_que": "Imposible: no hay telescopio que vea eso."
+        },
+        {
+          "texto": "No le grabó nadie, eso es una recreación.",
+          "correcta": false,
+          "por_que": "Falso: la emisión fue en directo."
+        }
+      ],
+      "explicacion": "La cámara de televisión iba en un compartimento plegable del costado del módulo lunar. Al bajar por la escalera, Armstrong tiró de una anilla que lo desplegó y dejó la cámara apuntando a la escalera. Por eso la imagen es fija y de baja calidad. La señal llegó a la Tierra por radio y la recibieron antenas en Australia y EE. UU.",
+      "fuente": {
+        "texto": "Wikipedia. Apollo TV camera",
+        "url": "https://en.wikipedia.org/wiki/Apollo_TV_camera"
+      }
+    },
+    {
+      "id": "lu-13-huella",
+      "mito": "La huella de la bota es perfecta. Eso solo pasa con barro, y en la Luna no hay agua.",
+      "falacia": "Falsa analogía",
+      "opciones": [
+        {
+          "texto": "El polvo lunar tiene granos afilados que se traban.",
+          "correcta": true
+        },
+        {
+          "texto": "La Luna está hecha de arena de playa.",
+          "correcta": false,
+          "por_que": "Al contrario: la arena de playa es redondeada y no guarda huellas así."
+        },
+        {
+          "texto": "Hay algo de humedad durante la noche lunar.",
+          "correcta": false,
+          "por_que": "Falso."
+        },
+        {
+          "texto": "La huella está retocada.",
+          "correcta": false,
+          "por_que": "Le das la razón: admites un retoque."
+        }
+      ],
+      "explicacion": "El polvo lunar, el regolito, nunca ha sufrido la erosión del viento ni del agua, así que sus granos son angulosos y con aristas, como cristal machacado. Al pisar, esos granos se traban entre sí y mantienen la forma sin necesidad de humedad. En la Tierra pasa algo parecido con la harina o el talco: también guardan huellas nítidas estando secos.",
+      "fuente": {
+        "texto": "Wikipedia. Regolito",
+        "url": "https://es.wikipedia.org/wiki/Regolito"
+      }
+    },
+    {
+      "id": "lu-14-crater",
+      "mito": "El módulo lunar aterrizó con un motor cohete y no hizo ni un agujero debajo. Imposible.",
+      "falacia": "Argumento de incredulidad",
+      "opciones": [
+        {
+          "texto": "Al posarse, el motor iba casi al mínimo.",
+          "correcta": true
+        },
+        {
+          "texto": "Sí hizo un cráter enorme, pero no sale en las fotos.",
+          "correcta": false,
+          "por_que": "Falso: no lo hay, y él tiene las fotos."
+        },
+        {
+          "texto": "Aterrizó con paracaídas.",
+          "correcta": false,
+          "por_que": "En la Luna no hay aire: un paracaídas no sirve de nada."
+        },
+        {
+          "texto": "El suelo lunar es duro como el cemento.",
+          "correcta": false,
+          "por_que": "Falso: arriba hay varios centímetros de polvo suelto."
+        }
+      ],
+      "explicacion": "En la fase final, el motor de descenso iba muy reducido, porque en la Luna el módulo pesaba la sexta parte que en la Tierra. Además, sin aire, los gases se dispersan en todas direcciones en vez de formar un chorro concentrado. Lo que hizo fue barrer el polvo suelto de la superficie, y en las fotos se ve el suelo alisado bajo la tobera. Debajo de esos centímetros de polvo, el regolito está muy compactado.",
+      "fuente": {
+        "texto": "Wikipedia. Moon landing conspiracy theories",
+        "url": "https://en.wikipedia.org/wiki/Moon_landing_conspiracy_theories"
+      }
+    },
+    {
+      "id": "lu-15-mismo-fondo",
+      "mito": "En dos fotos de la Luna de sitios distintos sale el mismo fondo de montañas. ¡Es el mismo decorado!",
+      "falacia": "Interpretar mal una imagen",
+      "opciones": [
+        {
+          "texto": "Las montañas lejanas no cambian si te mueves un poco.",
+          "correcta": true
+        },
+        {
+          "texto": "En la Luna todas las montañas son iguales.",
+          "correcta": false,
+          "por_que": "Disparate."
+        },
+        {
+          "texto": "Sería la misma foto repetida por error.",
+          "correcta": false,
+          "por_que": "Le das la razón a medias."
+        },
+        {
+          "texto": "Las montañas lunares se mueven con la rotación.",
+          "correcta": false,
+          "por_que": "Te lo inventas."
+        }
+      ],
+      "explicacion": "Las montañas del fondo estaban a varios kilómetros. Si te desplazas unos cientos de metros, el primer plano cambia por completo, pero el horizonte lejano casi no se mueve, igual que la sierra que ves desde dos calles distintas de tu pueblo. Además, sin aire no hay bruma que delate la distancia, y las montañas parecen mucho más cerca de lo que están.",
+      "fuente": {
+        "texto": "Wikipedia. Moon landing conspiracy theories",
+        "url": "https://en.wikipedia.org/wiki/Moon_landing_conspiracy_theories"
+      }
+    },
+    {
+      "id": "lu-16-calor",
+      "mito": "Al sol, la Luna pasa de 100 grados. Los carretes de fotos se habrían derretido.",
+      "falacia": "Dato sin contexto",
+      "opciones": [
+        {
+          "texto": "Alunizaron por la mañana lunar, con el suelo templado.",
+          "correcta": true
+        },
+        {
+          "texto": "En la Luna hace frío siempre.",
+          "correcta": false,
+          "por_que": "Falso: al mediodía lunar el suelo supera los 100 grados."
+        },
+        {
+          "texto": "Las cámaras eran de metal, no se derriten.",
+          "correcta": false,
+          "por_que": "No responde: el problema sería la película, no la carcasa."
+        },
+        {
+          "texto": "Alunizaron de noche para evitar el calor.",
+          "correcta": false,
+          "por_que": "Falso: de noche no habrían visto nada."
+        }
+      ],
+      "explicacion": "Los más de 100 grados se alcanzan en el suelo tras muchos días terrestres de sol. Las misiones alunizaron al principio del día lunar, con el Sol bajo y el suelo aún templado. Además, en el vacío no hay aire caliente que transmita el calor: una cámara solo se calienta por la radiación que absorbe, y las Hasselblad del Apolo llevaban carcasa plateada para reflejarla.",
+      "fuente": {
+        "texto": "Wikipedia. Moon landing conspiracy theories",
+        "url": "https://en.wikipedia.org/wiki/Moon_landing_conspiracy_theories"
+      }
+    }
+  ]
+}

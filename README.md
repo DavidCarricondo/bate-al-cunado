@@ -7,6 +7,7 @@ Juego educativo: el cuñado suelta un bulo en la barra del bar y tú eliges la r
 ```
 index.html                  Juego completo (HTML + CSS + JS, sin dependencias en runtime)
 data/niveles.json           Lista de niveles del menú
+data/terraplanismo-chemtrails-luna.json  Banco de preguntas del nivel 1
 data/cambio-climatico.json  Banco de preguntas del nivel 2
 schema/nivel.schema.json    Esquema JSON para validar los ficheros de nivel
 images/                     Fondo del menú (cunao-barra-menu.webp), imágenes del cuñado por nivel y fondos provisionales
@@ -67,7 +68,7 @@ cd android && ./gradlew assembleDebug
 
 1. Crea `data/<id-del-nivel>.json` siguiendo `schema/nivel.schema.json`.
 2. En `data/niveles.json`, pon `"disponible": true` y `"fichero": "data/<id-del-nivel>.json"` en ese nivel.
-   Cada nivel de `niveles.json` lleva también `resumen` (una frase que se muestra al elegirlo) y `fondo` (la imagen de fondo de la pantalla de selección; los niveles sin arte usan `images/placeholder-<id>.webp`).
+   Cada nivel de `niveles.json` lleva también `dificultad` (p. ej. "Nivel iniciado", se muestra en el botón del nivel), `resumen` (una frase que se muestra al elegirlo) y `fondo` (la imagen de fondo de la pantalla de selección; los niveles sin arte usan `images/placeholder-<id>.webp`).
 3. (Opcional) Añade el bloque `cunao` al JSON del nivel con tres imágenes: `normal` (por defecto), `acierto` (cuando el jugador acierta: el cuñado pierde) y `fallo` (cuando falla: el cuñado gana). Si no hay bloque `cunao`, se usa el dibujo SVG. Usa imágenes 5:3 en WebP de ~1000 px de ancho (unos 120 KB) para que carguen rápido en el móvil.
 4. (Opcional) Añade `finales` para cambiar los textos de la pantalla final (`sin_paciencia`, `fuera_de_combate`, `empate`, `gana_cunao`, cada uno con `titulo`, `texto` y `frase`). Por defecto son textos de bar. Ejemplo pensado para el nivel de vacunas, ambientado en la cena de Nochebuena:
 
@@ -79,7 +80,8 @@ cd android && ./gradlew assembleDebug
      "gana_cunao": { "titulo": "El cuñado sigue en su salsa", "texto": "Esta vez ganó él. Lee los trucos que usó y vuelve a intentarlo.", "frase": "Si es que en esta familia el único que lee soy yo." }
    }
    ```
-5. (Opcional) Añade `medallas` con las preguntas dominadas necesarias para cada una, por ejemplo `{ "bronce": 10, "plata": 22, "oro": 40 }`. Si falta `oro`, son todas las preguntas del nivel. Los `id` de las preguntas no deben cambiar una vez publicadas: el progreso de los jugadores se guarda por `id`.
+5. (Opcional) Añade `vidas` para cambiar el icono de la paciencia del jugador, por ejemplo `{ "icono": "👽", "nombre": "cabezas de alien" }`. Por defecto son copas de vino (🍷).
+6. (Opcional) Añade `medallas` con las preguntas dominadas necesarias para cada una, por ejemplo `{ "bronce": 10, "plata": 22, "oro": 40 }`. Si falta `oro`, son todas las preguntas del nivel. Los `id` de las preguntas no deben cambiar una vez publicadas: el progreso de los jugadores se guarda por `id`.
 
 Validación opcional:
 
