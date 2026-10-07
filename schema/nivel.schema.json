@@ -17,6 +17,16 @@
         "fallo": { "type": "string", "description": "Imagen cuando el jugador falla (el cuñado gana)" }
       }
     },
+    "vidas": {
+      "type": "object",
+      "description": "Cómo se dibuja la paciencia del jugador. Si falta, son copas de vino.",
+      "required": ["icono", "nombre"],
+      "properties": {
+        "icono": { "type": "string", "description": "Emoji de cada vida, p. ej. 🍷" },
+        "nombre": { "type": "string", "description": "Nombre en plural para lectores de pantalla, p. ej. copas" }
+      },
+      "additionalProperties": false
+    },
     "medallas": {
       "type": "object",
       "description": "Preguntas dominadas (acertadas en partidas ganadas) necesarias para cada medalla. Si falta oro, son todas las del nivel.",

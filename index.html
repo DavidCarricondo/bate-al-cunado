@@ -474,6 +474,7 @@ async function loadLevel(meta){
     o:p.opciones.map(o=>[o.texto, o.correcta?1:0, o.por_que||""]) })) };
   level.img = data.cunao || null;
   level.finales = data.finales || null;
+  level.vidas = {icono:"🍷", nombre:"copas", ...data.vidas};
   level.umbral = umbrales(data);
   // Precarga para que el cambio de cara sea instantáneo
   if(level.img) ["normal","acierto","fallo"].forEach(k=>{ new Image().src = level.img[k]; });
@@ -498,8 +499,8 @@ function hud(){
   $("egoFill").style.width = state.ego+"%";
   $("egoNum").textContent = state.ego+"%";
   $("egoBar").setAttribute("aria-valuenow", state.ego);
-  $("cups").innerHTML = Array.from({length:CUPS},(_,k)=>`<span class="${k<state.cups?"":"gone"}">🍷</span>`).join("");
-  $("cups").setAttribute("aria-label", `Paciencia: ${state.cups} de ${CUPS} copas`);
+  $("cups").innerHTML = Array.from({length:CUPS},(_,k)=>`<span class="${k<state.cups?"":"gone"}">${level.vidas.icono}</span>`).join("");
+  $("cups").setAttribute("aria-label", `Paciencia: ${state.cups} de ${CUPS} ${level.vidas.nombre}`);
 }
 
 function render(){
@@ -569,7 +570,7 @@ function end(){
   const gano = state.cups>0;
   const r = registrarPartida(progresoNivel(level.meta.id), state.log, gano, level.Q, level.umbral);
   guardarProgreso(level.meta.id, r.prog);
-  $("progress").innerHTML = `<p class="prog-msg">${!gano ? "Esta partida no cuenta: hay que llegar al final con alguna copa. ¡La próxima, preguntas nuevas!"
+  $("progress").innerHTML = `<p class="prog-msg">${!gano ? `Esta partida no cuenta: hay que llegar al final con al menos un ${level.vidas.icono}. ¡La próxima, preguntas nuevas!`
       : r.nuevas ? `<b>+${r.nuevas}</b> ${r.nuevas===1?"pregunta dominada":"preguntas dominadas"}` : "Esta vez no has dominado ninguna pregunta nueva."}</p>`
     + r.ganadas.map(k=>{ const [,e,t] = MEDALLAS.find(m=>m[0]===k);
         return `<div class="medal-won"><span aria-hidden="true">${e}</span><div><b>¡Medalla de ${t.toLowerCase()}!</b><br>${esc(level.meta.titulo)}</div></div>`; }).join("")
@@ -597,7 +598,7 @@ async function loadNiveles(){
   NIVELES.forEach(n=>{ if(n.fondo) new Image().src = n.fondo; });
   $("lvls").innerHTML = NIVELES.map(n=>`
     <li><button class="lvl" data-id="${n.id}" aria-pressed="false">
-      <span class="n">${n.orden}</span><span class="t">${esc(n.titulo)}${n.disponible?"":`<span class="tag">Próximamente</span>`}</span>
+      <span class="n">${n.orden}</span><span class="t">${n.dificultad?`<span class="tag">${esc(n.dificultad)}</span>`:""}${esc(n.titulo)}${n.disponible?"":`<span class="tag">Próximamente</span>`}</span>
       </button></li>`).join("");
   $("lvls").querySelectorAll(".lvl").forEach(b=>b.addEventListener("click",()=>selectLevel(NIVELES.find(n=>n.id===b.dataset.id))));
 }
@@ -610,7 +611,7 @@ function selectLevel(n){
   const d = $("detail"); d.hidden = false;
   d.innerHTML = `<h3>${esc(n.titulo)}</h3>
     <p>${esc(n.resumen||"")}</p>
-    <p class="meta">${esc(n.descripcion||"")}</p>
+    <p class="meta">${esc([n.dificultad, n.descripcion].filter(Boolean).join(" · "))}</p>
     <div id="lvlProg"></div>
     <button class="btn" id="startBtn" ${n.disponible?"":"disabled"}>${n.disponible?"Empezar":"Próximamente"}</button>`;
   if(!n.disponible) return;

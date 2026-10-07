@@ -3,16 +3,19 @@
     {
       "id": "terraplanismo",
       "orden": 1,
-      "titulo": "La Tierra es plana",
+      "titulo": "Tierra plana, chemtrails y la Luna",
+      "dificultad": "Nivel iniciado",
       "descripcion": "Para calentar motores",
-      "resumen": "Tu cuñado ha visto un documental en YouTube y jura que el horizonte siempre está recto.",
-      "fondo": "images/placeholder-terraplanismo.webp",
-      "disponible": false
+      "resumen": "Tu cuñado ha visto un documental en YouTube y jura que el horizonte siempre está recto, que los aviones nos fumigan y que lo de la Luna se rodó en un plató.",
+      "fondo": "images/magufo-normal.webp",
+      "disponible": true,
+      "fichero": "data/terraplanismo-chemtrails-luna.json"
     },
     {
       "id": "cambio-climatico",
       "orden": 2,
       "titulo": "Cambio climático",
+      "dificultad": "Nivel normal",
       "descripcion": "10 rondas, 3 copas de paciencia",
       "resumen": "Acodado en la barra con su gin-tonic, tu cuñado ha decidido que el calentamiento global es un cuento.",
       "fondo": "images/cunao-barra-normal.webp",
@@ -22,7 +25,8 @@
     {
       "id": "vacunas-homeopatia",
       "orden": 3,
-      "titulo": "Vacunas y homeopatía",
+      "titulo": "Homeopatía y vacunas",
+      "dificultad": "Nivel medio",
       "descripcion": "El cuñado se pone serio",
       "resumen": "En la cena de Nochebuena, entre turrón y polvorones, tu cuñado se lo cura todo con bolitas de azúcar.",
       "fondo": "images/placeholder-vacunas-homeopatia.webp",
@@ -31,8 +35,9 @@
     {
       "id": "energia",
       "orden": 4,
-      "titulo": "Energía",
-      "descripcion": "Nivel experto: nucleares, renovables y la factura de la luz",
+      "titulo": "Energías",
+      "dificultad": "Nivel experto",
+      "descripcion": "Nucleares, renovables y la factura de la luz",
       "resumen": "Nucleares, renovables y la factura de la luz: tu cuñado tiene una solución para todo.",
       "fondo": "images/placeholder-energia.webp",
       "disponible": false
