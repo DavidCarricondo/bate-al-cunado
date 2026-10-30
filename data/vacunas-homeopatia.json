@@ -41,7 +41,7 @@
   "preguntas": [
     {
       "id": "hv-01-catarro",
-      "mito": "Me tomé unas bolitas para el catarro y en una semana estaba como nuevo.",
+      "mito": "Me tomé unas bolitas homeopáticas para el catarro y en una semana estaba como nuevo.",
       "falacia": "Después de, luego a causa de",
       "opciones": [
         {
@@ -233,7 +233,7 @@
     },
     {
       "id": "hv-07-huella-del-agua",
-      "mito": "El agua guarda la huella de la sustancia aunque ya no quede nada.",
+      "mito": "En la homeopatía, el agua guarda la huella de la sustancia aunque ya no quede ni una molécula.",
       "falacia": "Explicación ad hoc",
       "opciones": [
         {
@@ -295,7 +295,7 @@
     },
     {
       "id": "hv-09-mal-no-hace",
-      "mito": "Bueno, aunque no funcione, mal tampoco hace.",
+      "mito": "Bueno, aunque la homeopatía no funcione, mal tampoco hace.",
       "falacia": "Ignorar el coste de oportunidad",
       "opciones": [
         {
@@ -363,7 +363,7 @@
     },
     {
       "id": "hv-11-farmacias",
-      "mito": "Si no funcionara, no la venderían en las farmacias.",
+      "mito": "Si la homeopatía no funcionara, no la venderían en las farmacias.",
       "falacia": "Apelación a la autoridad",
       "opciones": [
         {
@@ -555,7 +555,7 @@
     },
     {
       "id": "hv-17-oscillococcinum",
-      "mito": "Para la gripe, Oscillococcinum. Mano de santo.",
+      "mito": "Para la gripe, Oscillococcinum, que es homeopático. Mano de santo.",
       "falacia": "Testimonio frente a evidencia",
       "opciones": [
         {
@@ -586,7 +586,7 @@
     },
     {
       "id": "hv-18-notificaciones",
-      "mito": "En la base de datos oficial de EE. UU. hay miles de muertes por vacunas.",
+      "mito": "En la base de datos oficial de efectos adversos de EE. UU. hay miles de muertes por vacunas.",
       "falacia": "Confundir notificación con causa",
       "opciones": [
         {
@@ -617,7 +617,7 @@
     },
     {
       "id": "hv-19-suiza",
-      "mito": "En Suiza la paga la sanidad pública. Si no funcionara, los suizos no la pagarían.",
+      "mito": "En Suiza, la homeopatía la paga la sanidad pública. Si no funcionara, los suizos no la pagarían.",
       "falacia": "Apelación a la autoridad",
       "opciones": [
         {
@@ -751,7 +751,7 @@
     },
     {
       "id": "hv-23-arnica",
-      "mito": "Me di un golpe, tomé árnica y ni moratón. Eso funciona.",
+      "mito": "Me di un golpe, tomé árnica homeopática y ni moratón. Eso funciona.",
       "falacia": "Anécdota frente a evidencia",
       "opciones": [
         {
@@ -819,7 +819,7 @@
     },
     {
       "id": "hv-25-me-siento-mejor",
-      "mito": "A mí me sienta genial. Si me encuentro mejor, es que funciona.",
+      "mito": "A mí la homeopatía me sienta genial. Si me encuentro mejor, es que funciona.",
       "falacia": "Confundir sensación con curación",
       "opciones": [
         {
@@ -912,7 +912,7 @@
     },
     {
       "id": "hv-28-formaldehido",
-      "mito": "Llevan formaldehído, lo mismo que usan para conservar cadáveres.",
+      "mito": "Las vacunas llevan formaldehído, lo mismo que usan para conservar cadáveres.",
       "falacia": "Quimiofobia",
       "opciones": [
         {
@@ -949,7 +949,7 @@
     },
     {
       "id": "hv-29-sobredosis",
-      "mito": "Ojo con las bolitas, no te pases de dosis, que son medicina potente.",
+      "mito": "Ojo con las bolitas homeopáticas, no te pases de dosis, que son medicina potente.",
       "falacia": "Contradicción interna",
       "opciones": [
         {
@@ -1135,7 +1135,7 @@
     },
     {
       "id": "hv-35-estudios-escondidos",
-      "mito": "Hay estudios que demuestran que funciona, pero las revistas los esconden.",
+      "mito": "Hay estudios que demuestran que la homeopatía funciona, pero las revistas los esconden.",
       "falacia": "Teoría de la conspiración",
       "opciones": [
         {
@@ -1259,7 +1259,7 @@
     },
     {
       "id": "hv-39-bebes-y-animales",
-      "mito": "En bebés y animales también funciona, y ahí no hay placebo que valga.",
+      "mito": "La homeopatía también funciona en bebés y animales, y ahí no hay placebo que valga.",
       "falacia": "Placebo por persona interpuesta",
       "opciones": [
         {
