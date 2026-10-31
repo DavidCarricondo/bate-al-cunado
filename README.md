@@ -9,6 +9,7 @@ index.html                  Juego completo (HTML + CSS + JS, sin dependencias en
 data/niveles.json           Lista de niveles del menú
 data/terraplanismo-chemtrails-luna.json  Banco de preguntas del nivel 1
 data/cambio-climatico.json  Banco de preguntas del nivel 2
+data/vacunas-homeopatia.json  Banco de preguntas del nivel 3
 schema/nivel.schema.json    Esquema JSON para validar los ficheros de nivel
 images/                     Fondo del menú (cunao-barra-menu.webp), imágenes del cuñado por nivel y fondos provisionales
 ```
@@ -70,7 +71,7 @@ cd android && ./gradlew assembleDebug
 2. En `data/niveles.json`, pon `"disponible": true` y `"fichero": "data/<id-del-nivel>.json"` en ese nivel.
    Cada nivel de `niveles.json` lleva también `dificultad` (p. ej. "Nivel iniciado", se muestra en el botón del nivel), `resumen` (una frase que se muestra al elegirlo) y `fondo` (la imagen de fondo de la pantalla de selección; los niveles sin arte usan `images/placeholder-<id>.webp`).
 3. (Opcional) Añade el bloque `cunao` al JSON del nivel con tres imágenes: `normal` (por defecto), `acierto` (cuando el jugador acierta: el cuñado pierde) y `fallo` (cuando falla: el cuñado gana). Si no hay bloque `cunao`, se usa el dibujo SVG. Usa imágenes 5:3 en WebP de ~1000 px de ancho (unos 120 KB) para que carguen rápido en el móvil.
-4. (Opcional) Añade `finales` para cambiar los textos de la pantalla final (`sin_paciencia`, `fuera_de_combate`, `empate`, `gana_cunao`, cada uno con `titulo`, `texto` y `frase`). Por defecto son textos de bar. Ejemplo pensado para el nivel de vacunas, ambientado en la cena de Nochebuena:
+4. (Opcional) Añade `finales` para cambiar los textos de la pantalla final (`sin_paciencia`, `fuera_de_combate`, `empate`, `gana_cunao`, cada uno con `titulo`, `texto` y `frase`). Por defecto son textos de bar. Ejemplo del nivel de vacunas, ambientado en la cena de Nochebuena:
 
    ```json
    "finales": {

@@ -1,0 +1,1323 @@
+{
+  "id": "vacunas-homeopatia",
+  "orden": 3,
+  "titulo": "Vacunas y homeopatía",
+  "medallas": {
+    "bronce": 10,
+    "plata": 22,
+    "oro": 40
+  },
+  "cunao": {
+    "normal": "images/cuna-dinner-normal.webp",
+    "acierto": "images/cuna-dinner-lost.webp",
+    "fallo": "images/cuna-dinner-win.webp"
+  },
+  "finales": {
+    "sin_paciencia": { "titulo": "Te mandan a fregar los platos", "texto": "Te has quedado sin paciencia antes del postre. Revisa sus trucos y vuelve a por la revancha.", "frase": "Ya lo decía yo. Venga, que esos platos no se friegan solos." },
+    "fuera_de_combate": { "titulo": "Cuñada fuera de combate", "texto": "Se ha ido al salón a ver el discurso sin decir ni mu. Nochebuena salvada.", "frase": "...¿Alguien quiere más polvorones?" },
+    "empate": { "titulo": "Empate técnico", "texto": "Le has cerrado varias bocas, pero aún le quedan argumentos para la cena de Nochevieja.", "frase": "Bueno, cada uno tiene su opinión, ¿no?" },
+    "gana_cunao": { "titulo": "La cuñada sigue en su salsa", "texto": "Esta vez ganó ella. Lee los trucos que usó y vuelve a intentarlo.", "frase": "Si es que en esta familia el único que lee soy yo." }
+  },
+  "reacciones": {
+    "acierto": [
+      "Bueno, bueno... eso será en tu estudio.",
+      "Pues mi cuñada dice que a ella le va de maravilla.",
+      "Lola!, traeme otra cerveza, que esto se alarga.",
+      "Yo no digo que no, solo digo que hay que informarse.",
+      "Vale, vale. ¿Y el partido qué, lo viste?",
+      "Eso te lo ha dicho una farmacéutica, seguro.",
+      "Hmm. Me lo miro en un grupo de WhatsApp y te digo."
+    ],
+    "fallo": [
+      "¡Ja! ¿Lo ves? Infórmate un poco, hombre.",
+      "Vamos a cantar unos villancicos, anda",
+      "Niña!, ¿a que tengo razón? ¡Pues eso!",
+      "Lo vi en un vídeo de un médico que sabe más que todos.",
+      "A mí las farmacéuticas no me la cuelan.",
+      "Yo es que pienso por mí mismo, no como otros.",
+      "Saca los polvorones, que me los he ganado."
+    ]
+  },
+  "preguntas": [
+    {
+      "id": "hv-01-catarro",
+      "mito": "Me tomé unas bolitas homeopáticas para el catarro y en una semana estaba como nuevo.",
+      "falacia": "Después de, luego a causa de",
+      "opciones": [
+        {
+          "texto": "El catarro se cura solo en una semana.",
+          "correcta": true
+        },
+        {
+          "texto": "Con antibióticos te habrías curado antes.",
+          "correcta": false,
+          "por_que": "Los antibióticos no sirven contra los virus del catarro. Le das un motivo para desconfiar de ti."
+        },
+        {
+          "texto": "Eso es porque las bolitas llevan vitamina C.",
+          "correcta": false,
+          "por_que": "Te inventas un mecanismo: las bolitas homeopáticas son, básicamente, azúcar."
+        },
+        {
+          "texto": "Seguro que también le pusiste una vela a San Blas.",
+          "correcta": false,
+          "por_que": "Burlarte no explica nada. La clave es que el catarro se pasa solo."
+        }
+      ],
+      "explicacion": "Si algo se cura solo, cualquier cosa que tomes por el camino parecerá funcionar. El resfriado común lo causan virus y suele pasarse sin tratamiento en una o dos semanas. Para saber si unas bolitas ayudan hay que comparar con gente que toma bolitas de azúcar sin saberlo, y en esas comparaciones la homeopatía no gana.",
+      "fuente": {
+        "texto": "NHS. Resfriado común",
+        "url": "https://www.nhs.uk/conditions/common-cold/"
+      }
+    },
+    {
+      "id": "hv-02-autismo",
+      "mito": "Las vacunas causan autismo. Eso lo sabe todo el mundo.",
+      "falacia": "Causa falsa",
+      "opciones": [
+        {
+          "texto": "Se estudió en 650.000 niños y no hay relación.",
+          "correcta": true
+        },
+        {
+          "texto": "El autismo lo causan los móviles.",
+          "correcta": false,
+          "por_que": "Cambias un bulo por otro. Y te quedas sin argumento."
+        },
+        {
+          "texto": "Solo lo causan en niños que ya eran propensos.",
+          "correcta": false,
+          "por_que": "Tampoco: se miró a niños con hermanos autistas y otros grupos de riesgo, y nada."
+        },
+        {
+          "texto": "Algún caso habrá, pero compensa vacunar.",
+          "correcta": false,
+          "por_que": "Concedes una relación que los datos no muestran."
+        }
+      ],
+      "explicacion": "El estudio danés de Hviid y colaboradores siguió a 657.461 niños nacidos entre 1999 y 2010. El autismo apareció con la misma frecuencia en los vacunados con la triple vírica que en los no vacunados, también en los grupos de riesgo. La sospecha nace de una coincidencia: los primeros signos de autismo suelen notarse a la edad en que se ponen esas vacunas.",
+      "fuente": {
+        "texto": "Hviid et al. (2019). Ann. Intern. Med. 170",
+        "url": "https://doi.org/10.7326/M18-2101"
+      }
+    },
+    {
+      "id": "hv-03-benveniste",
+      "mito": "Un científico francés publicó en Nature que el agua tiene memoria. ¡En Nature!",
+      "falacia": "Apelación a la autoridad",
+      "opciones": [
+        {
+          "texto": "Nature lo comprobó después: no se sostenía.",
+          "correcta": true
+        },
+        {
+          "texto": "Nature es una revista de pago, no cuenta.",
+          "correcta": false,
+          "por_que": "Nature es de las revistas más serias del mundo. Lo importante es lo que pasó después."
+        },
+        {
+          "texto": "Ese científico era un farsante sin estudios.",
+          "correcta": false,
+          "por_que": "Jacques Benveniste era un inmunólogo reconocido. El problema fueron esos experimentos concretos."
+        },
+        {
+          "texto": "Si salió en Nature, algo de verdad tendrá.",
+          "correcta": false,
+          "por_que": "Le das la razón. Publicar un resultado no es lo mismo que confirmarlo."
+        }
+      ],
+      "explicacion": "En 1988 Nature publicó el trabajo de Benveniste con una nota del editor pidiendo prudencia. Después envió a su laboratorio un equipo formado por el propio editor, John Maddox, un investigador de fraudes científicos y el mago James Randi. Con controles ciegos el efecto desapareció, y concluyeron que no había base para la supuesta memoria del agua. Ningún otro laboratorio logró reproducirlo.",
+      "fuente": {
+        "texto": "Maddox, Randi y Stewart (1988). Nature 334",
+        "url": "https://doi.org/10.1038/334287a0"
+      }
+    },
+    {
+      "id": "hv-04-higiene",
+      "mito": "Las enfermedades desaparecieron por la higiene y el agua corriente, no por las vacunas.",
+      "falacia": "Causa falsa",
+      "opciones": [
+        {
+          "texto": "El sarampión ha vuelto, y la higiene sigue igual.",
+          "correcta": true
+        },
+        {
+          "texto": "La higiene no sirvió para nada.",
+          "correcta": false,
+          "por_que": "Falso: el agua potable frenó el cólera o el tifus. Lo que no explica es el sarampión."
+        },
+        {
+          "texto": "Las enfermedades siguen igual que hace un siglo.",
+          "correcta": false,
+          "por_que": "Falso: muchas cayeron en picado tras introducir sus vacunas."
+        },
+        {
+          "texto": "Eso lo dices porque nunca has estado enfermo de verdad.",
+          "correcta": false,
+          "por_que": "Ataque personal. No responde al argumento."
+        }
+      ],
+      "explicacion": "El agua limpia frena las enfermedades que se transmiten por agua, pero el sarampión se contagia por el aire. En la Región Europea de la OMS los casos bajaron hasta 4.440 en 2016 y subieron a 127.350 en 2024, la cifra más alta desde 1997. Lo que cambió no fue la higiene, sino la caída de la vacunación durante la pandemia.",
+      "fuente": {
+        "texto": "OMS Europa y UNICEF (2025). Récord de casos de sarampión en más de 25 años",
+        "url": "https://www.who.int/europe/news/item/13-03-2025-european-region-reports-highest-number-of-measles-cases-in-more-than-25-years---unicef--who-europe"
+      }
+    },
+    {
+      "id": "hv-05-diluido",
+      "mito": "Cuanto más diluido, más potente. Así funciona la homeopatía.",
+      "falacia": "Afirmación sin base",
+      "opciones": [
+        {
+          "texto": "A partir de 12C no queda ni una molécula.",
+          "correcta": true
+        },
+        {
+          "texto": "Por eso hay que tomar más bolitas cada vez.",
+          "correcta": false,
+          "por_que": "Aceptas la premisa. Y si lo diluido es más potente, menos sería más."
+        },
+        {
+          "texto": "Diluido sí, pero queda un poco de sustancia.",
+          "correcta": false,
+          "por_que": "Falso en las diluciones habituales: no queda nada de la sustancia original."
+        },
+        {
+          "texto": "Son diluciones como las de cualquier jarabe.",
+          "correcta": false,
+          "por_que": "Al contrario: son muchísimo más extremas que las de cualquier medicamento."
+        }
+      ],
+      "explicacion": "Cada \"C\" de la etiqueta es una dilución de 1 a 100. Por el número de Avogadro, a partir de 12C lo normal es que no quede ni una sola molécula de la sustancia de partida. Una dilución 30C, de las más habituales, es una parte en un 1 seguido de 60 ceros: lo que queda es agua, alcohol o azúcar.",
+      "fuente": {
+        "texto": "Can. Fam. Physician (2007). Homeopatía: ¿ayuda una cucharada de miel?",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1948865/"
+      }
+    },
+    {
+      "id": "hv-06-pasarlo-de-pequeno",
+      "mito": "Mejor pasar el sarampión de pequeño, que así te inmunizas de verdad.",
+      "falacia": "Apelación a la naturaleza",
+      "opciones": [
+        {
+          "texto": "Esa inmunidad natural se paga con muertes.",
+          "correcta": true
+        },
+        {
+          "texto": "El sarampión no deja ninguna inmunidad.",
+          "correcta": false,
+          "por_que": "Sí la deja. El problema es el precio que se paga por ella."
+        },
+        {
+          "texto": "La vacuna te da el mismo sarampión, pero flojito.",
+          "correcta": false,
+          "por_que": "No: la vacuna no provoca la enfermedad ni sus complicaciones."
+        },
+        {
+          "texto": "Antes era grave, pero hoy el sarampión es leve.",
+          "correcta": false,
+          "por_que": "Falso: sigue matando a decenas de miles de niños cada año."
+        }
+      ],
+      "explicacion": "En 2023 murieron por sarampión unas 107.500 personas en el mundo, la mayoría menores de cinco años. Además, el virus borra entre el 11% y el 73% de los anticuerpos que el niño tenía contra otras infecciones, una \"amnesia inmunitaria\" que lo deja expuesto durante meses o años. La vacuna no produce ese efecto.",
+      "fuente": {
+        "texto": "Mina et al. (2019). Science 366",
+        "url": "https://doi.org/10.1126/science.aay6485"
+      },
+      "fuentes_adicionales": [
+        {
+          "texto": "OMS y CDC (2024). Muertes por sarampión en 2023",
+          "url": "https://www.who.int/news/item/14-11-2024-measles-cases-surge-worldwide--infecting-10.3-million-people-in-2023"
+        }
+      ]
+    },
+    {
+      "id": "hv-07-huella-del-agua",
+      "mito": "En la homeopatía, el agua guarda la huella de la sustancia aunque ya no quede ni una molécula.",
+      "falacia": "Explicación ad hoc",
+      "opciones": [
+        {
+          "texto": "El agua olvida en una fracción de segundo.",
+          "correcta": true
+        },
+        {
+          "texto": "El agua no tiene ninguna estructura.",
+          "correcta": false,
+          "por_que": "Sí la tiene: forma enlaces entre moléculas. Lo que no tiene es memoria duradera."
+        },
+        {
+          "texto": "Eso solo pasa si la agitas muy fuerte.",
+          "correcta": false,
+          "por_que": "Le das por buena la memoria. Agitar no la crea."
+        },
+        {
+          "texto": "Eso es física cuántica y no lo entiende nadie.",
+          "correcta": false,
+          "por_que": "Le cedes el terreno. Lo que sí se ha medido contradice esa memoria."
+        }
+      ],
+      "explicacion": "Las moléculas de agua se unen y se separan sin parar. Cowan y colaboradores midieron que el agua pierde la memoria de su estructura en unos 50 femtosegundos, una millonésima de milmillonésima de segundo. Y si el agua recordara todo lo que ha tocado, el grifo de tu casa sería un cóctel homeopático de todo lo que ha pasado por las tuberías.",
+      "fuente": {
+        "texto": "Cowan et al. (2005). Nature 434",
+        "url": "https://doi.org/10.1038/nature03383"
+      }
+    },
+    {
+      "id": "hv-08-demasiadas-vacunas",
+      "mito": "Ahora les ponen tantas vacunas a los bebés que les saturan las defensas.",
+      "falacia": "Intuición sin datos",
+      "opciones": [
+        {
+          "texto": "Llevan más vacunas, pero muchos menos antígenos.",
+          "correcta": true
+        },
+        {
+          "texto": "Por eso es mejor espaciarlas más.",
+          "correcta": false,
+          "por_que": "Espaciarlas solo alarga el tiempo en que el bebé está desprotegido."
+        },
+        {
+          "texto": "Los bebés nacen sin defensas, por eso se vacunan.",
+          "correcta": false,
+          "por_que": "Falso: su sistema inmune funciona desde que nacen y se enfrenta a miles de microbios a diario."
+        },
+        {
+          "texto": "Antes se ponían más vacunas que ahora.",
+          "correcta": false,
+          "por_que": "Falso: ahora se ponen más vacunas. Lo que ha bajado es lo que llevan dentro."
+        }
+      ],
+      "explicacion": "Lo que estimula las defensas no es el número de pinchazos, sino los antígenos: las piezas del microbio que el cuerpo aprende a reconocer. Con el calendario de 2012 un niño recibía como máximo 315 antígenos hasta los dos años, frente a varios miles a finales de los 90, porque las vacunas son ahora más precisas. Y no hubo diferencia en la exposición a antígenos entre niños con y sin autismo.",
+      "fuente": {
+        "texto": "DeStefano et al. (2013). J. Pediatr. 163",
+        "url": "https://doi.org/10.1016/j.jpeds.2013.02.001"
+      }
+    },
+    {
+      "id": "hv-09-mal-no-hace",
+      "mito": "Bueno, aunque la homeopatía no funcione, mal tampoco hace.",
+      "falacia": "Ignorar el coste de oportunidad",
+      "opciones": [
+        {
+          "texto": "El daño está en lo que dejas de tomar.",
+          "correcta": true
+        },
+        {
+          "texto": "Sí hace daño: las bolitas son tóxicas.",
+          "correcta": false,
+          "por_que": "Normalmente son azúcar. El peligro no está en la bolita."
+        },
+        {
+          "texto": "Tienes razón: que cada uno tome lo que quiera.",
+          "correcta": false,
+          "por_que": "Te rindes ante un argumento que no se sostiene."
+        },
+        {
+          "texto": "Solo hace daño al bolsillo, y ya está.",
+          "correcta": false,
+          "por_que": "Cierto, pero te quedas corto: puede costar la salud."
+        }
+      ],
+      "explicacion": "El riesgo es sustituir un tratamiento eficaz por uno que no lo es. En 2017 murió en Italia Francesco Bonifazi, de siete años: tenía una otitis bacteriana que se trató solo con homeopatía y degeneró en encefalitis. Sus padres fueron condenados por homicidio imprudente. La Agencia Española del Medicamento señala el abandono o el retraso de tratamientos eficaces como el principal peligro de la homeopatía.",
+      "fuente": {
+        "texto": "ANSA (2019). Condenados los padres del niño tratado con homeopatía",
+        "url": "https://www.ansa.it/english/news/general_news/2019/06/06/parents-rapped-over-son-homeopathy-death_3f5359bd-f4c0-460f-9144-cc26376735d9.html"
+      },
+      "fuentes_adicionales": [
+        {
+          "texto": "Ministerio de Sanidad (2026). Informe de la AEMPS sobre homeopatía",
+          "url": "https://www.sanidad.gob.es/gabinete/notasPrensa.do?id=6893"
+        }
+      ]
+    },
+    {
+      "id": "hv-10-aluminio",
+      "mito": "Las vacunas llevan aluminio. ¡Le estás metiendo metal a tu hijo!",
+      "falacia": "Quimiofobia",
+      "opciones": [
+        {
+          "texto": "La leche le da más aluminio que las vacunas.",
+          "correcta": true
+        },
+        {
+          "texto": "Las vacunas no llevan nada de aluminio.",
+          "correcta": false,
+          "por_que": "Algunas sí lo llevan, como adyuvante. Negarlo te deja en evidencia."
+        },
+        {
+          "texto": "Es aluminio del bueno, no como el de las latas.",
+          "correcta": false,
+          "por_que": "Te inventas una distinción. Lo que importa es la cantidad."
+        },
+        {
+          "texto": "El cuerpo lo elimina entero en una hora.",
+          "correcta": false,
+          "por_que": "Exageración: los riñones lo eliminan, pero poco a poco."
+        }
+      ],
+      "explicacion": "Las sales de aluminio se usan desde hace más de 70 años para reforzar la respuesta a algunas vacunas. En los seis primeros meses, un bebé recibe unos 4 mg de aluminio de las vacunas, frente a unos 7 mg de la leche materna, unos 40 de la leche de fórmula y unos 120 de la fórmula de soja. El aluminio está en el suelo, el agua y los alimentos.",
+      "fuente": {
+        "texto": "Hospital Infantil de Filadelfia (CHOP). Aluminio en las vacunas",
+        "url": "https://www.chop.edu/vaccine-education-center/vaccine-safety/vaccine-ingredients/aluminum"
+      }
+    },
+    {
+      "id": "hv-11-farmacias",
+      "mito": "Si la homeopatía no funcionara, no la venderían en las farmacias.",
+      "falacia": "Apelación a la autoridad",
+      "opciones": [
+        {
+          "texto": "Se registran sin demostrar que curen nada.",
+          "correcta": true
+        },
+        {
+          "texto": "En España está prohibido venderla.",
+          "correcta": false,
+          "por_que": "Falso: se vende legalmente. La cuestión es con qué requisitos."
+        },
+        {
+          "texto": "Las farmacias solo venden lo que receta el médico.",
+          "correcta": false,
+          "por_que": "Falso: venden muchísimos productos sin receta, desde cremas hasta caramelos."
+        },
+        {
+          "texto": "Será que algo funciona, aunque sea poco.",
+          "correcta": false,
+          "por_que": "Le das la razón sin ningún dato."
+        }
+      ],
+      "explicacion": "La AEMPS publicó en abril de 2026 un informe que concluye que la homeopatía no supera al placebo en ninguna de las patologías analizadas. En España quedan 976 productos homeopáticos registrados por un procedimiento simplificado que no exige demostrar ningún efecto y que les prohíbe poner indicaciones terapéuticas en la etiqueta. No hay ninguno autorizado para tratar nada.",
+      "fuente": {
+        "texto": "Ministerio de Sanidad (2026). Informe de la AEMPS sobre homeopatía",
+        "url": "https://www.sanidad.gob.es/gabinete/notasPrensa.do?id=6893"
+      }
+    },
+    {
+      "id": "hv-12-mercurio",
+      "mito": "Las vacunas llevan mercurio, como el pescado contaminado.",
+      "falacia": "Dato desactualizado",
+      "opciones": [
+        {
+          "texto": "Las del calendario infantil ya no lo llevan.",
+          "correcta": true
+        },
+        {
+          "texto": "El mercurio del pescado no hace ningún daño.",
+          "correcta": false,
+          "por_que": "Falso: el metilmercurio del pescado se acumula y a dosis altas es tóxico."
+        },
+        {
+          "texto": "Llevan mercurio, pero muy poquito.",
+          "correcta": false,
+          "por_que": "Le das por bueno el dato: las del calendario infantil ya no lo usan."
+        },
+        {
+          "texto": "El mercurio es bueno para el cerebro.",
+          "correcta": false,
+          "por_que": "Falso y peligroso. Acabas de perder la discusión."
+        }
+      ],
+      "explicacion": "El tiomersal es un conservante que contiene etilmercurio, que el cuerpo elimina mucho más rápido que el metilmercurio del pescado. No se ha encontrado relación con el autismo ni con otros daños, y en los países que lo retiraron el autismo no bajó. Aun así, por precaución, las vacunas del calendario infantil español no lo llevan.",
+      "fuente": {
+        "texto": "Ministerio de Sanidad. Tiomersal y vacunas",
+        "url": "https://www.sanidad.gob.es/areas/promocionPrevencion/vacunaciones/seguridad/mitos/docs/tiomersalyVacunas.pdf"
+      },
+      "fuentes_adicionales": [
+        {
+          "texto": "Rev. Pediatr. Aten. Primaria (2010). Mercurio y vacunas",
+          "url": "https://scielo.isciii.es/pdf/pap/v12n48/pap48_12.pdf"
+        }
+      ]
+    },
+    {
+      "id": "hv-13-no-se-ha-estudiado",
+      "mito": "La homeopatía no se ha estudiado en serio. Por eso no hay pruebas.",
+      "falacia": "Falso supuesto",
+      "opciones": [
+        {
+          "texto": "Se ha estudiado mucho, y no funciona.",
+          "correcta": true
+        },
+        {
+          "texto": "Es que la homeopatía no se puede estudiar.",
+          "correcta": false,
+          "por_que": "Sí se puede: se compara con placebo, como cualquier medicamento."
+        },
+        {
+          "texto": "No hay estudios porque son carísimos.",
+          "correcta": false,
+          "por_que": "Falso: se han hecho cientos de ensayos."
+        },
+        {
+          "texto": "Faltan estudios, pero algo habrá.",
+          "correcta": false,
+          "por_que": "Le das la razón en lo que no la tiene."
+        }
+      ],
+      "explicacion": "El Consejo Nacional de Salud e Investigación Médica de Australia revisó en 2015 los ensayos sobre homeopatía: 176 estudios para 61 problemas de salud, del asma a la ansiedad. No encontró ninguna enfermedad para la que hubiera pruebas fiables de que funcione. Y advirtió que quien la elige puede poner en riesgo su salud si retrasa tratamientos eficaces.",
+      "fuente": {
+        "texto": "NHMRC (2015). Evidencia sobre la eficacia de la homeopatía",
+        "url": "https://www.nhmrc.gov.au/about-us/publications/evidence-effectiveness-homeopathy-treating-health-conditions"
+      }
+    },
+    {
+      "id": "hv-14-mi-abuelo",
+      "mito": "Mi abuelo no se vacunó de nada y llegó a los noventa.",
+      "falacia": "Sesgo del superviviente",
+      "opciones": [
+        {
+          "texto": "Tu abuelo es de los que sobrevivieron.",
+          "correcta": true
+        },
+        {
+          "texto": "Seguro que tu abuelo estaba vacunado y no lo sabe.",
+          "correcta": false,
+          "por_que": "Te lo inventas. No hace falta: el problema está en quién no llegó a contarlo."
+        },
+        {
+          "texto": "Es que antes la gente era más fuerte.",
+          "correcta": false,
+          "por_que": "Le das la razón, y no es cierto: morían muchos más niños."
+        },
+        {
+          "texto": "Noventa años tampoco es para tanto.",
+          "correcta": false,
+          "por_que": "Chiste fácil. No desmonta nada."
+        }
+      ],
+      "explicacion": "Solo oímos hablar de los que sobrevivieron: los niños que murieron no pueden contarlo. Un estudio publicado en The Lancet estima que la vacunación ha evitado 154 millones de muertes desde 1974, 101 millones de ellas en bebés de menos de un año. Hoy un niño menor de diez años tiene un 40% más de probabilidades de llegar a su próximo cumpleaños que si no existieran las vacunas.",
+      "fuente": {
+        "texto": "Shattock et al. (2024). The Lancet 403",
+        "url": "https://doi.org/10.1016/S0140-6736(24)00850-X"
+      }
+    },
+    {
+      "id": "hv-15-cientos-de-ensayos",
+      "mito": "Hay cientos de ensayos clínicos que dicen que la homeopatía funciona.",
+      "falacia": "Cantidad frente a calidad",
+      "opciones": [
+        {
+          "texto": "Los pequeños sí; los grandes y buenos, no.",
+          "correcta": true
+        },
+        {
+          "texto": "No existe ni un solo ensayo a favor.",
+          "correcta": false,
+          "por_que": "Falso: hay muchos con resultado positivo, casi todos pequeños o de baja calidad."
+        },
+        {
+          "texto": "Esos ensayos los pagan los homeópatas, no cuentan.",
+          "correcta": false,
+          "por_que": "Descalificar al que paga no basta. El problema está en la calidad de los estudios."
+        },
+        {
+          "texto": "Con tantos ensayos, algo de razón tendrás.",
+          "correcta": false,
+          "por_que": "Te dejas llevar por la cantidad. Cien estudios malos no hacen uno bueno."
+        }
+      ],
+      "explicacion": "Shang y colaboradores compararon 110 ensayos de homeopatía con 110 de medicamentos convencionales. En ambos grupos, los ensayos pequeños y de peor calidad exageraban los beneficios. Al quedarse solo con los grandes y mejor hechos, la homeopatía no se distinguía del placebo, mientras que los medicamentos convencionales mantenían su efecto.",
+      "fuente": {
+        "texto": "Shang et al. (2005). The Lancet 366",
+        "url": "https://doi.org/10.1016/S0140-6736(05)67177-2"
+      }
+    },
+    {
+      "id": "hv-16-contagiados-vacunados",
+      "mito": "En el último brote, la mayoría de contagiados estaban vacunados. ¿Para qué sirve entonces?",
+      "falacia": "Ignorar la tasa base",
+      "opciones": [
+        {
+          "texto": "Si casi todos están vacunados, es normal.",
+          "correcta": true
+        },
+        {
+          "texto": "Mentira: ningún vacunado se contagia nunca.",
+          "correcta": false,
+          "por_que": "Falso: ninguna vacuna protege al 100%. Te pilla en un renuncio."
+        },
+        {
+          "texto": "Es que la vacuna caduca a los pocos meses.",
+          "correcta": false,
+          "por_que": "Falso para el sarampión: dos dosis protegen de por vida a la inmensa mayoría."
+        },
+        {
+          "texto": "Los vacunados contagian más que los demás.",
+          "correcta": false,
+          "por_que": "Afirmación sin base. Le das la vuelta al problema."
+        }
+      ],
+      "explicacion": "Dos dosis de la vacuna del sarampión protegen en torno al 97%, y el virus contagia a cerca del 90% de las personas sin protección que lo rodean. Imagina 1.000 expuestos, 990 vacunados y 10 sin vacunar: enfermarían unos 30 vacunados y unos 9 sin vacunar. Hay más vacunados enfermos solo porque son muchísimos más, pero su riesgo es unas 30 veces menor.",
+      "fuente": {
+        "texto": "CDC. Recomendaciones sobre la vacuna del sarampión",
+        "url": "https://www.cdc.gov/measles/hcp/vaccine-considerations/index.html"
+      }
+    },
+    {
+      "id": "hv-17-oscillococcinum",
+      "mito": "Para la gripe, Oscillococcinum, que es homeopático. Mano de santo.",
+      "falacia": "Testimonio frente a evidencia",
+      "opciones": [
+        {
+          "texto": "Es hígado de pato diluido hasta la nada.",
+          "correcta": true
+        },
+        {
+          "texto": "Eso es un antiviral de los de farmacia.",
+          "correcta": false,
+          "por_que": "No: es un producto homeopático, sin ningún principio activo medible."
+        },
+        {
+          "texto": "Solo funciona si lo tomas a la primera señal.",
+          "correcta": false,
+          "por_que": "Excusa que le das tú mismo. No hay pruebas de que funcione en ningún momento."
+        },
+        {
+          "texto": "Para la gripe lo mejor son los antibióticos.",
+          "correcta": false,
+          "por_que": "La gripe la causa un virus. Los antibióticos no sirven contra ella."
+        }
+      ],
+      "explicacion": "El Oscillococcinum se fabrica con un extracto de corazón e hígado de pato diluido 200C: una parte en un 1 seguido de 400 ceros, muchísimo más que el número de moléculas del universo. Una revisión Cochrane de 2015, hecha además por autores favorables a la homeopatía, no encontró pruebas suficientes de que prevenga ni trate la gripe.",
+      "fuente": {
+        "texto": "Mathie et al. (2015). Cochrane Database Syst. Rev.",
+        "url": "https://doi.org/10.1002/14651858.CD001957.pub6"
+      }
+    },
+    {
+      "id": "hv-18-notificaciones",
+      "mito": "En la base de datos oficial de efectos adversos de EE. UU. hay miles de muertes por vacunas.",
+      "falacia": "Confundir notificación con causa",
+      "opciones": [
+        {
+          "texto": "Ahí cualquiera notifica cualquier cosa.",
+          "correcta": true
+        },
+        {
+          "texto": "Esa base de datos no existe, te la inventas.",
+          "correcta": false,
+          "por_que": "Existe: se llama VAERS. El problema es cómo se interpreta."
+        },
+        {
+          "texto": "Las borran todas para tapar el escándalo.",
+          "correcta": false,
+          "por_que": "Respondes a una conspiración con otra. Sin datos."
+        },
+        {
+          "texto": "Serán todas de gente muy mayor.",
+          "correcta": false,
+          "por_que": "No responde al fallo de fondo: notificar algo no prueba que lo causara la vacuna."
+        }
+      ],
+      "explicacion": "VAERS es un sistema de alerta abierto: cualquiera puede comunicar lo que le pasó después de vacunarse, y nadie comprueba antes si la vacuna fue la causa. Un anestesista, Jim Laidler, notificó que una vacuna le había convertido en el increíble Hulk, y su informe fue aceptado. Sirve para detectar señales que luego se investigan con estudios, no para contar víctimas.",
+      "fuente": {
+        "texto": "PolitiFact (2017). VAERS acepta todo tipo de notificaciones",
+        "url": "https://www.politifact.com/factchecks/2017/may/11/bill-zedler/bill-zedler-insists-program-doesnt-collect-wide-ra/"
+      }
+    },
+    {
+      "id": "hv-19-suiza",
+      "mito": "En Suiza, la homeopatía la paga la sanidad pública. Si no funcionara, los suizos no la pagarían.",
+      "falacia": "Apelación a la autoridad",
+      "opciones": [
+        {
+          "texto": "Fue por un referéndum, no por pruebas.",
+          "correcta": true
+        },
+        {
+          "texto": "En Suiza la homeopatía está prohibida.",
+          "correcta": false,
+          "por_que": "Falso: allí se cubre en el seguro básico."
+        },
+        {
+          "texto": "Los suizos la pagan solo para animales.",
+          "correcta": false,
+          "por_que": "Te lo inventas. Y no responde a por qué la pagan."
+        },
+        {
+          "texto": "Si los suizos la pagan, por algo será.",
+          "correcta": false,
+          "por_que": "Le das la razón sin mirar cómo se tomó la decisión."
+        }
+      ],
+      "explicacion": "Suiza la cubrió de forma provisional en 1999 y la retiró en 2005 porque no cumplía los criterios de eficacia de su ley. En 2009, dos tercios de los votantes apoyaron en referéndum incluir las medicinas complementarias. Tras otro periodo de prueba, el Gobierno admitió que era imposible demostrar su eficacia en conjunto, y aun así las mantuvo. Fue una decisión política, no científica.",
+      "fuente": {
+        "texto": "Swissinfo (2005). La medicina alternativa sale del seguro básico",
+        "url": "https://www.swissinfo.ch/eng/science/alternative-medicine-catches-a-cold/964848"
+      },
+      "fuentes_adicionales": [
+        {
+          "texto": "Commonwealth Fund (2011). Suiza financia la medicina complementaria seis años",
+          "url": "https://www.commonwealthfund.org/publications/newsletter-article/government-fund-complementary-medicine-six-years"
+        },
+        {
+          "texto": "Optimist Daily (2016). Suiza equipara la homeopatía en el seguro",
+          "url": "https://www.optimistdaily.com/2016/04/switzerland-to-recognize-homeopathy-as-legitimate-medicine"
+        }
+      ]
+    },
+    {
+      "id": "hv-20-arn-adn",
+      "mito": "La vacuna de ARN mensajero te cambia el ADN. Te deja transgénico.",
+      "falacia": "Confusión de conceptos",
+      "opciones": [
+        {
+          "texto": "El ARNm no entra donde está tu ADN.",
+          "correcta": true
+        },
+        {
+          "texto": "Entra en el núcleo, pero no hace nada.",
+          "correcta": false,
+          "por_que": "Falso: el ARN de la vacuna no entra en el núcleo de la célula."
+        },
+        {
+          "texto": "Estas vacunas no llevan material genético.",
+          "correcta": false,
+          "por_que": "Sí lo llevan: ARN mensajero. Lo que no hacen es tocar tu ADN."
+        },
+        {
+          "texto": "Solo cambia el ADN de los glóbulos rojos.",
+          "correcta": false,
+          "por_que": "Te lo inventas. Y los glóbulos rojos maduros ni siquiera tienen núcleo."
+        }
+      ],
+      "explicacion": "Tu ADN está guardado en el núcleo de la célula. El ARN mensajero de la vacuna se queda fuera, en el citoplasma, donde sirve de instrucciones para fabricar la proteína del virus que entrena a tus defensas, y luego la célula lo degrada. Tus células no tienen un mecanismo para convertir ese ARN en ADN e integrarlo en tus genes.",
+      "fuente": {
+        "texto": "Science Feedback (2022). Las vacunas de ARNm no alteran el ADN",
+        "url": "https://science.feedback.org/review/covid-19-mrna-vaccines-dont-alter-dna-arent-subjected-to-federal-regulation-bioweapons-david-martin/"
+      }
+    },
+    {
+      "id": "hv-21-farmaceuticas",
+      "mito": "A la homeopatía la persiguen las farmacéuticas porque no les deja negocio.",
+      "falacia": "Teoría de la conspiración",
+      "opciones": [
+        {
+          "texto": "La homeopatía también es un gran negocio.",
+          "correcta": true
+        },
+        {
+          "texto": "La homeopatía es gratis, por eso no interesa.",
+          "correcta": false,
+          "por_que": "Falso: se vende, y con muy buen margen."
+        },
+        {
+          "texto": "Las farmacéuticas venden homeopatía a escondidas.",
+          "correcta": false,
+          "por_que": "Te lo inventas. No hace falta: hay laboratorios homeopáticos enormes."
+        },
+        {
+          "texto": "Las farmacéuticas no tienen poder para eso.",
+          "correcta": false,
+          "por_que": "Discutir su poder no responde a si la homeopatía funciona."
+        }
+      ],
+      "explicacion": "Boiron, líder mundial de la homeopatía, facturó 501 millones de euros en 2025, con un margen bruto del 73% y 32,6 millones de beneficio neto. Y los informes que concluyen que no funciona no los firman farmacéuticas, sino organismos públicos como el australiano NHMRC o la Agencia Española del Medicamento.",
+      "fuente": {
+        "texto": "Laboratorios Boiron (2026). Cifra de negocio y resultados 2025",
+        "url": "https://echanges.dila.gouv.fr/OPENDATA/AMF/ACT/2026/04/FCACT078975_20260402.pdf"
+      }
+    },
+    {
+      "id": "hv-22-covid-mato-mas",
+      "mito": "La vacuna del COVID ha matado a más gente que el propio COVID.",
+      "falacia": "Dato inventado",
+      "opciones": [
+        {
+          "texto": "Evitó unos 14 millones de muertes en un año.",
+          "correcta": true
+        },
+        {
+          "texto": "La vacuna no ha causado nunca ningún problema.",
+          "correcta": false,
+          "por_que": "Exageración: hubo efectos graves muy raros. Te pilla en un renuncio."
+        },
+        {
+          "texto": "Eso no se sabrá nunca, hay datos para todo.",
+          "correcta": false,
+          "por_que": "Sí se ha estimado, y con datos de casi todo el mundo."
+        },
+        {
+          "texto": "El COVID tampoco mató a tanta gente.",
+          "correcta": false,
+          "por_que": "Falso: causó millones de muertes. Le das la razón al minimizarlo."
+        }
+      ],
+      "explicacion": "Watson y colaboradores modelaron la pandemia en 185 países durante el primer año de vacunación, de diciembre de 2020 a diciembre de 2021. Con las muertes oficiales por COVID, las vacunas evitaron unos 14,4 millones de muertes; con el exceso de mortalidad, que capta mejor las no registradas, unos 19,8 millones.",
+      "fuente": {
+        "texto": "Watson et al. (2022). Lancet Infect. Dis. 22",
+        "url": "https://doi.org/10.1016/S1473-3099(22)00417-0"
+      }
+    },
+    {
+      "id": "hv-23-arnica",
+      "mito": "Me di un golpe, tomé árnica homeopática y ni moratón. Eso funciona.",
+      "falacia": "Anécdota frente a evidencia",
+      "opciones": [
+        {
+          "texto": "En los ensayos, el árnica no gana al placebo.",
+          "correcta": true
+        },
+        {
+          "texto": "A mí el árnica me dejó el moratón igual.",
+          "correcta": false,
+          "por_que": "Respondes a una anécdota con otra. No prueba nada en ningún sentido."
+        },
+        {
+          "texto": "Si la crema de árnica funciona, las bolitas también.",
+          "correcta": false,
+          "por_que": "Mezclas cosas distintas: la homeopática está diluida hasta no dejar nada."
+        },
+        {
+          "texto": "Los moratones salen o no salen, no hay más.",
+          "correcta": false,
+          "por_que": "No explicas nada. La pregunta es si el árnica cambia algo, y eso se mide."
+        }
+      ],
+      "explicacion": "Un solo golpe no dice nada: no sabes qué habría pasado sin árnica. El árnica es el remedio homeopático más estudiado. Ernst y Pittler revisaron los ensayos controlados con placebo: la mayoría tenían fallos graves de diseño y, en conjunto, no mostraban que funcionara mejor que el placebo.",
+      "fuente": {
+        "texto": "Ernst y Pittler (1998). Arch. Surg. 133",
+        "url": "https://doi.org/10.1001/archsurg.133.11.1187"
+      }
+    },
+    {
+      "id": "hv-24-miocarditis",
+      "mito": "La vacuna del COVID da miocarditis. Está reconocido.",
+      "falacia": "Riesgo sin comparar",
+      "opciones": [
+        {
+          "texto": "Sí, pero el COVID la da mucho más.",
+          "correcta": true
+        },
+        {
+          "texto": "Eso es un bulo, nunca ha dado miocarditis.",
+          "correcta": false,
+          "por_que": "Falso: está reconocida, aunque es rara. Negarlo te quita credibilidad."
+        },
+        {
+          "texto": "Solo la da en gente muy mayor.",
+          "correcta": false,
+          "por_que": "Al contrario: el riesgo aumentó sobre todo en hombres menores de 40 años."
+        },
+        {
+          "texto": "Si da miocarditis, mejor no vacunarse.",
+          "correcta": false,
+          "por_que": "Le das la razón sin comparar con el riesgo de la infección."
+        }
+      ],
+      "explicacion": "Un estudio con toda la población vacunada de Inglaterra contó los casos de miocarditis extra en los 28 días siguientes. Tras las vacunas fueron de 1 a 10 casos extra por millón de personas, según la vacuna y la dosis. Tras un test positivo de COVID fueron unos 40 casos extra por millón. El riesgo de la vacuna existe, pero el del virus es mayor.",
+      "fuente": {
+        "texto": "Patone et al. (2022). Nature Medicine 28",
+        "url": "https://nottingham-repository.worktribe.com/output/7053364/risks-of-myocarditis-pericarditis-and-cardiac-arrhythmias-associated-with-covid-19-vaccination-or-sars-cov-2-infection"
+      },
+      "fuentes_adicionales": [
+        {
+          "texto": "American Heart Association (2022). Más riesgo de miocarditis por COVID que por la vacuna",
+          "url": "https://www.heart.org/en/news/2022/08/22/COVID-19-infection-poses-higher-risk-for-myocarditis-than-vaccines"
+        }
+      ]
+    },
+    {
+      "id": "hv-25-me-siento-mejor",
+      "mito": "A mí la homeopatía me sienta genial. Si me encuentro mejor, es que funciona.",
+      "falacia": "Confundir sensación con curación",
+      "opciones": [
+        {
+          "texto": "El placebo alivia, pero no cura.",
+          "correcta": true
+        },
+        {
+          "texto": "El placebo no hace absolutamente nada.",
+          "correcta": false,
+          "por_que": "Falso: puede aliviar un poco síntomas como el dolor o las náuseas."
+        },
+        {
+          "texto": "Si te encuentras mejor, no hay más que hablar.",
+          "correcta": false,
+          "por_que": "Le das la razón. Encontrarse mejor no significa que la enfermedad mejore."
+        },
+        {
+          "texto": "Eso es que te sugestionas con todo.",
+          "correcta": false,
+          "por_que": "Ataque personal. Además, el placebo nos afecta a todos."
+        }
+      ],
+      "explicacion": "La revisión Cochrane de Hróbjartsson y Gøtzsche analizó ensayos que comparaban placebo con no hacer nada. En general, el placebo no producía beneficios importantes para la salud. Solo tenía un efecto modesto en lo que el paciente cuenta, como el dolor o las náuseas, y parte de ese efecto puede deberse a cómo se informa. Sentirse algo mejor no es lo mismo que curarse.",
+      "fuente": {
+        "texto": "Hróbjartsson y Gøtzsche. Cochrane: placebo en todas las enfermedades",
+        "url": "https://www.cochrane.org/CD003974/PLACEBO_placebo-interventions-clinical-conditions"
+      }
+    },
+    {
+      "id": "hv-26-papiloma",
+      "mito": "La vacuna del papiloma es un experimento. No hay pruebas de que evite ningún cáncer.",
+      "falacia": "Ignorar la evidencia",
+      "opciones": [
+        {
+          "texto": "Las vacunadas de jóvenes tienen un 88% menos.",
+          "correcta": true
+        },
+        {
+          "texto": "Solo sirve para las verrugas genitales.",
+          "correcta": false,
+          "por_que": "Falso: también previene el cáncer de cuello de útero."
+        },
+        {
+          "texto": "El papiloma no tiene nada que ver con el cáncer.",
+          "correcta": false,
+          "por_que": "Falso: el virus del papiloma causa la mayoría de cánceres de cuello de útero."
+        },
+        {
+          "texto": "Habrá que esperar cincuenta años para saberlo.",
+          "correcta": false,
+          "por_que": "Le das la razón, y ya hay datos de cáncer invasivo."
+        }
+      ],
+      "explicacion": "Un estudio sueco siguió a casi 1,7 millones de mujeres de 10 a 30 años entre 2006 y 2017. Hubo 19 casos de cáncer de cuello de útero entre unas 528.000 vacunadas, frente a 538 entre las no vacunadas. Las que se vacunaron antes de los 17 años tuvieron un 88% menos de riesgo, y las vacunadas entre los 17 y los 30, alrededor de la mitad.",
+      "fuente": {
+        "texto": "Lei et al. (2020). N. Engl. J. Med. 383",
+        "url": "https://doi.org/10.1056/NEJMoa1917338"
+      }
+    },
+    {
+      "id": "hv-27-la-oms",
+      "mito": "La OMS reconoce la homeopatía como medicina.",
+      "falacia": "Falsa autoridad",
+      "opciones": [
+        {
+          "texto": "La OMS la desaconseja para cosas graves.",
+          "correcta": true
+        },
+        {
+          "texto": "La OMS nunca ha dicho nada de la homeopatía.",
+          "correcta": false,
+          "por_que": "Falso: se pronunció en 2009, y no a favor."
+        },
+        {
+          "texto": "La OMS solo la recomienda para niños.",
+          "correcta": false,
+          "por_que": "Al revés: la desaconsejó expresamente para la diarrea infantil."
+        },
+        {
+          "texto": "Si la OMS la reconoce, por algo será.",
+          "correcta": false,
+          "por_que": "Le das por bueno un dato falso."
+        }
+      ],
+      "explicacion": "En 2009, tras una carta de jóvenes médicos e investigadores, varios departamentos de la OMS declararon que no recomiendan la homeopatía para tratar el VIH, la tuberculosis, la malaria, la gripe o la diarrea infantil. Sobre la diarrea añadieron que la homeopatía no se ocupa de la deshidratación, que es lo que mata. La oficina de la directora general confirmó que esa era la posición de la OMS.",
+      "fuente": {
+        "texto": "Society for Endocrinology (2009). La OMS no recomienda la homeopatía",
+        "url": "https://www.endocrinology.org/news/item/13363/who-does-not-recommend-the-use-of-homeopathy-for-hiv-malaria-tb-influenza-and-infant-diarrhoea"
+      }
+    },
+    {
+      "id": "hv-28-formaldehido",
+      "mito": "Las vacunas llevan formaldehído, lo mismo que usan para conservar cadáveres.",
+      "falacia": "Quimiofobia",
+      "opciones": [
+        {
+          "texto": "Tu cuerpo ya fabrica mucho más del que lleva.",
+          "correcta": true
+        },
+        {
+          "texto": "Ninguna vacuna lleva formaldehído.",
+          "correcta": false,
+          "por_que": "Algunas llevan restos mínimos. Negarlo te deja en evidencia."
+        },
+        {
+          "texto": "El formaldehído es inofensivo a cualquier dosis.",
+          "correcta": false,
+          "por_que": "Falso: a dosis altas es tóxico. La clave es la cantidad."
+        },
+        {
+          "texto": "Lo quitan del todo antes de envasarla.",
+          "correcta": false,
+          "por_que": "No siempre: pueden quedar trazas. El argumento bueno es la cantidad."
+        }
+      ],
+      "explicacion": "El formaldehído se usa para inactivar virus y toxinas, y en algunas vacunas quedan trazas. Pero el cuerpo lo produce de forma natural en su metabolismo. Según la FDA, un recién nacido tiene en el cuerpo entre 50 y 70 veces más formaldehído del que podría recibir de las vacunas. Una pera lleva más que cualquier vacuna.",
+      "fuente": {
+        "texto": "FDA. Ingredientes comunes de las vacunas",
+        "url": "https://www.fda.gov/vaccines-blood-biologics/safety-availability-biologics/common-ingredients-us-licensed-vaccines"
+      },
+      "fuentes_adicionales": [
+        {
+          "texto": "Full Fact. Los supuestos neurotóxicos de las vacunas infantiles",
+          "url": "https://fullfact.org/health/vaccines-infants-neurotoxins-honey"
+        }
+      ]
+    },
+    {
+      "id": "hv-29-sobredosis",
+      "mito": "Ojo con las bolitas homeopáticas, no te pases de dosis, que son medicina potente.",
+      "falacia": "Contradicción interna",
+      "opciones": [
+        {
+          "texto": "Hay quien se ha tragado botes enteros.",
+          "correcta": true
+        },
+        {
+          "texto": "Una sobredosis homeopática puede matarte.",
+          "correcta": false,
+          "por_que": "Falso en las bien diluidas: no llevan nada que pueda intoxicar."
+        },
+        {
+          "texto": "Por eso solo se venden con receta.",
+          "correcta": false,
+          "por_que": "Falso: la mayoría se venden sin receta."
+        },
+        {
+          "texto": "Si te pasas de dosis, se anula el efecto.",
+          "correcta": false,
+          "por_que": "Te inventas una regla y le das por bueno el efecto."
+        }
+      ],
+      "explicacion": "El 30 de enero de 2010, más de 300 personas se tomaron a la vez botes enteros de remedios homeopáticos frente a farmacias de Reino Unido, en la campaña 10:23, y no les pasó nada. El nombre alude al número de Avogadro, de unas 10²³ moléculas, el límite que las diluciones homeopáticas sobrepasan. La protesta se repitió en 2011 en decenas de ciudades.",
+      "fuente": {
+        "texto": "BBC (2010). Protesta de la sobredosis contra la homeopatía",
+        "url": "https://news.bbc.co.uk/2/hi/uk_news/scotland/glasgow_and_west/8488286.stm"
+      }
+    },
+    {
+      "id": "hv-30-gripe",
+      "mito": "Me vacuné de la gripe y a la semana tenía gripe. La vacuna te la pega.",
+      "falacia": "Después de, luego a causa de",
+      "opciones": [
+        {
+          "texto": "El virus de la vacuna está inactivado.",
+          "correcta": true
+        },
+        {
+          "texto": "Eso es que la vacuna de ese año era mala.",
+          "correcta": false,
+          "por_que": "Puede ser menos eficaz algunos años, pero nunca causa la gripe."
+        },
+        {
+          "texto": "La vacuna te da una gripe flojita para entrenarte.",
+          "correcta": false,
+          "por_que": "Falso: la vacuna inyectable no puede provocar la infección."
+        },
+        {
+          "texto": "Lo que tú tenías era un catarro, no gripe.",
+          "correcta": false,
+          "por_que": "Puede ser, pero no lo sabes. Lo seguro es que la vacuna no te la pudo pegar."
+        }
+      ],
+      "explicacion": "Las vacunas inyectables de la gripe llevan virus inactivados o solo una proteína del virus, así que no pueden causar la infección. En invierno circulan muchos otros virus con síntomas parecidos, y la protección tarda unas dos semanas en aparecer. Lo que sí puede notarse es dolor en el brazo o algo de fiebre, que pasan pronto.",
+      "fuente": {
+        "texto": "Science Feedback. La vacuna de la gripe no contagia la gripe",
+        "url": "https://science.feedback.org/review/misleading-article-claiming-flu-shots-spread-the-flu-conflates-facts-and-opinions/"
+      }
+    },
+    {
+      "id": "hv-31-natural",
+      "mito": "La homeopatía es natural, así que no puede hacer daño.",
+      "falacia": "Apelación a la naturaleza",
+      "opciones": [
+        {
+          "texto": "Natural no quiere decir inofensivo.",
+          "correcta": true
+        },
+        {
+          "texto": "La homeopatía es química pura, nada natural.",
+          "correcta": false,
+          "por_que": "Muchas parten de plantas o minerales. Lo que falla es la idea de que natural es seguro."
+        },
+        {
+          "texto": "Es natural, y por eso funciona mejor.",
+          "correcta": false,
+          "por_que": "Le das la razón y encima subes la apuesta."
+        },
+        {
+          "texto": "Todo lo natural es peligroso.",
+          "correcta": false,
+          "por_que": "Generalizas al revés. Ni todo lo natural es malo ni todo es bueno."
+        }
+      ],
+      "explicacion": "La cicuta, el arsénico o la belladona son naturales. En 2017 la FDA encontró en unas tabletas homeopáticas para la dentición de bebés cantidades de belladona muy variables, a veces muy por encima de lo que decía la etiqueta, y el fabricante acabó retirándolas. Bien diluida, la homeopatía es agua y azúcar; mal fabricada, puede llevar veneno de verdad.",
+      "fuente": {
+        "texto": "FDA (2017). Retirada de las tabletas homeopáticas Hyland's",
+        "url": "https://www.fda.gov/Drugs/DrugSafety/ucm552924.htm"
+      }
+    },
+    {
+      "id": "hv-32-polio",
+      "mito": "La vacuna de la polio puede provocar polio. Lo reconoce hasta la OMS.",
+      "falacia": "Verdad a medias",
+      "opciones": [
+        {
+          "texto": "La que se pone en España no puede.",
+          "correcta": true
+        },
+        {
+          "texto": "Ninguna vacuna de la polio puede causarla.",
+          "correcta": false,
+          "por_que": "Falso: la vacuna oral, en casos muy raros, sí. Te pilla."
+        },
+        {
+          "texto": "Por eso en España ya no se vacuna de polio.",
+          "correcta": false,
+          "por_que": "Falso: se sigue vacunando, con otra vacuna."
+        },
+        {
+          "texto": "Pues mejor arriesgarse con la polio de verdad.",
+          "correcta": false,
+          "por_que": "Te rindes ante una verdad a medias."
+        }
+      ],
+      "explicacion": "La vacuna oral lleva virus vivos debilitados y, en casos muy raros, puede causar parálisis o dar lugar a virus derivados de la vacuna. Por eso, desde 2004 España, como el resto de la Unión Europea, solo usa la vacuna inyectable inactivada, que no puede provocar polio. La oral se sigue usando donde aún circula el virus salvaje, porque es barata y frena mejor la transmisión.",
+      "fuente": {
+        "texto": "Gobierno Vasco (2025). Manual de vacunaciones: poliomielitis",
+        "url": "https://www.euskadi.eus/contenidos/informacion/manual_vacunaciones/es_def/adjuntos/2025/Capitulo-4-4.pdf"
+      }
+    },
+    {
+      "id": "hv-33-montagnier",
+      "mito": "Un premio Nobel demostró que el agua emite ondas del ADN. ¡Un Nobel!",
+      "falacia": "Apelación a la autoridad",
+      "opciones": [
+        {
+          "texto": "Un Nobel no hace buena cualquier idea.",
+          "correcta": true
+        },
+        {
+          "texto": "Ese señor nunca ganó el Nobel.",
+          "correcta": false,
+          "por_que": "Sí lo ganó: Luc Montagnier, en 2008, por descubrir el VIH."
+        },
+        {
+          "texto": "Seguro que el Nobel se lo dieron de chiripa.",
+          "correcta": false,
+          "por_que": "Su Nobel fue merecido. El problema son sus ideas posteriores."
+        },
+        {
+          "texto": "Si lo dice un Nobel, habrá que creerlo.",
+          "correcta": false,
+          "por_que": "Le das la razón. Un premio no sustituye a las pruebas."
+        }
+      ],
+      "explicacion": "Luc Montagnier ganó el Nobel por descubrir el virus del sida. En 2009 publicó que el ADN muy diluido en agua emitía señales electromagnéticas, en una revista en la que él mismo estaba en el comité editorial y donde el artículo se aceptó tres días después de recibirse. Nadie lo reprodujo y se considera pseudociencia. Saber mucho de virus no te hace experto en física del agua.",
+      "fuente": {
+        "texto": "McGill Office for Science and Society. ¿Teletransporte de ADN?",
+        "url": "https://www.mcgill.ca/oss/article/health-and-nutrition/dna-teleportation-really"
+      }
+    },
+    {
+      "id": "hv-34-celulas-fetales",
+      "mito": "Las vacunas llevan células de fetos abortados.",
+      "falacia": "Tergiversación",
+      "opciones": [
+        {
+          "texto": "Se cultivan en células, pero no las llevan.",
+          "correcta": true
+        },
+        {
+          "texto": "Las vacunas no tienen nada que ver con fetos.",
+          "correcta": false,
+          "por_que": "Algunas se cultivan en líneas celulares de origen fetal. Negarlo te pilla."
+        },
+        {
+          "texto": "Se hacen abortos cada año para fabricarlas.",
+          "correcta": false,
+          "por_que": "Falso: se usan las mismas líneas celulares desde hace décadas."
+        },
+        {
+          "texto": "Eso solo pasa con las del COVID.",
+          "correcta": false,
+          "por_que": "Al contrario: se usan desde hace décadas, por ejemplo para la rubéola o la varicela."
+        }
+      ],
+      "explicacion": "Algunos virus de vacunas se cultivan en dos líneas celulares, WI-38 y MRC-5, obtenidas de dos fetos abortados en los años 60. Desde entonces esas células se han multiplicado en laboratorio, sin usar tejido nuevo. El virus crece en ellas y después la vacuna se purifica, así que no contiene esas células.",
+      "fuente": {
+        "texto": "Maldita Ciencia (2021). Las vacunas no llevan células de fetos abortados",
+        "url": "https://maldita.es/malditaciencia/20210302/vacuna-covid-astrazeneca-tejido-pulmonar-varon-caucasico-abortado/"
+      }
+    },
+    {
+      "id": "hv-35-estudios-escondidos",
+      "mito": "Hay estudios que demuestran que la homeopatía funciona, pero las revistas los esconden.",
+      "falacia": "Teoría de la conspiración",
+      "opciones": [
+        {
+          "texto": "Lo que se esconde suelen ser negativos.",
+          "correcta": true
+        },
+        {
+          "texto": "No se ha publicado ni un estudio a favor.",
+          "correcta": false,
+          "por_que": "Falso: se han publicado muchos, casi todos pequeños o de baja calidad."
+        },
+        {
+          "texto": "Las revistas publican todo lo que les llega.",
+          "correcta": false,
+          "por_que": "Falso: rechazan muchos trabajos. Lo importante es qué se queda sin publicar."
+        },
+        {
+          "texto": "Que los suban a internet y asunto arreglado.",
+          "correcta": false,
+          "por_que": "No responde a nada. El problema no es dónde se publican, sino cuáles."
+        }
+      ],
+      "explicacion": "Gartlehner y colaboradores revisaron los registros internacionales de ensayos de homeopatía desde 2002. Casi el 38% de los ensayos registrados nunca se publicó, más de la mitad de los publicados no se había registrado antes, y en uno de cada cuatro se cambió el resultado principal. Los ensayos sin registrar mostraban más efecto, así que lo publicado exagera los beneficios.",
+      "fuente": {
+        "texto": "Gartlehner et al. (2022). BMJ Evid. Based Med. 27",
+        "url": "https://doi.org/10.1136/bmjebm-2021-111846"
+      }
+    },
+    {
+      "id": "hv-36-pediatras",
+      "mito": "Los médicos no vacunan a sus propios hijos. Ellos saben lo que hay.",
+      "falacia": "Rumor sin datos",
+      "opciones": [
+        {
+          "texto": "Los pediatras vacunan a sus hijos, y más.",
+          "correcta": true
+        },
+        {
+          "texto": "Los médicos no saben nada de vacunas.",
+          "correcta": false,
+          "por_que": "Descalificas a quien más sabe del tema. No ayuda."
+        },
+        {
+          "texto": "Vacunan porque la ley les obliga.",
+          "correcta": false,
+          "por_que": "Falso: en España vacunar a los hijos no es obligatorio."
+        },
+        {
+          "texto": "Algunos no vacunarán a sus hijos, y por algo será.",
+          "correcta": false,
+          "por_que": "Le das la razón con un rumor."
+        }
+      ],
+      "explicacion": "Posfay-Barbe y colaboradores encuestaron a médicos suizos sobre cómo vacunaban a sus hijos. El 92% de los pediatras seguía el calendario oficial con sus propios hijos, y muchos les ponían además vacunas que aún no eran rutinarias, como la del neumococo o la del meningococo C.",
+      "fuente": {
+        "texto": "Posfay-Barbe et al. (2005). Pediatrics 116",
+        "url": "https://doi.org/10.1542/peds.2005-0885"
+      }
+    },
+    {
+      "id": "hv-37-vacunas-homeopatia",
+      "mito": "Las vacunas son como la homeopatía: lo semejante cura lo semejante. ¡Ja!",
+      "falacia": "Falsa analogía",
+      "opciones": [
+        {
+          "texto": "Las vacunas llevan algo dentro, y se mide.",
+          "correcta": true
+        },
+        {
+          "texto": "Las vacunas tampoco llevan nada, solo agua.",
+          "correcta": false,
+          "por_que": "Falso: llevan antígenos en cantidades conocidas."
+        },
+        {
+          "texto": "Tienes razón, se basan en la misma idea.",
+          "correcta": false,
+          "por_que": "Le das la razón. El parecido es solo superficial."
+        },
+        {
+          "texto": "Las vacunas curan y la homeopatía previene.",
+          "correcta": false,
+          "por_que": "Al revés: las vacunas previenen, no curan."
+        }
+      ],
+      "explicacion": "Las vacunas llevan antígenos en cantidades que se cuentan y se miden, y producen anticuerpos que también se miden en sangre. Se prueban en ensayos grandes frente a placebo y funcionan. Un remedio homeopático 30C no lleva ni una molécula de la sustancia original y, en los ensayos buenos, no supera al placebo. Se parecen tanto como un coche a una foto de un coche.",
+      "fuente": {
+        "texto": "DeStefano et al. (2013). J. Pediatr. 163",
+        "url": "https://doi.org/10.1016/j.jpeds.2013.02.001"
+      }
+    },
+    {
+      "id": "hv-38-muerte-subita",
+      "mito": "Hay bebés que mueren de muerte súbita justo después de vacunarlos.",
+      "falacia": "Coincidencia temporal",
+      "opciones": [
+        {
+          "texto": "Los vacunados tienen la mitad de riesgo.",
+          "correcta": true
+        },
+        {
+          "texto": "La muerte súbita del bebé no existe.",
+          "correcta": false,
+          "por_que": "Falso: existe y es una tragedia. Negarlo es cruel y no ayuda."
+        },
+        {
+          "texto": "Pasa a veces, pero es el precio de vacunar.",
+          "correcta": false,
+          "por_que": "Concedes una relación que los estudios no encuentran."
+        },
+        {
+          "texto": "Por eso hay que vacunar después de los dos años.",
+          "correcta": false,
+          "por_que": "Retrasar las vacunas deja al bebé desprotegido justo cuando más lo necesita."
+        }
+      ],
+      "explicacion": "La muerte súbita del lactante es más frecuente en los primeros meses de vida, justo cuando se ponen muchas vacunas, así que algunas coincidencias son inevitables. Un metaanálisis de estudios de casos y controles encontró que los bebés vacunados tenían la mitad de riesgo de muerte súbita. Puede que parte de esa diferencia se deba a otros factores, pero lo que no aparece es más riesgo.",
+      "fuente": {
+        "texto": "Vennemann et al. (2007). Vaccine 25",
+        "url": "https://doi.org/10.1016/j.vaccine.2007.02.077"
+      }
+    },
+    {
+      "id": "hv-39-bebes-y-animales",
+      "mito": "La homeopatía también funciona en bebés y animales, y ahí no hay placebo que valga.",
+      "falacia": "Placebo por persona interpuesta",
+      "opciones": [
+        {
+          "texto": "El que los observa sí se sugestiona.",
+          "correcta": true
+        },
+        {
+          "texto": "En animales nunca se ha probado.",
+          "correcta": false,
+          "por_que": "Falso: hay decenas de ensayos en ganado."
+        },
+        {
+          "texto": "Será que los animales creen en la homeopatía.",
+          "correcta": false,
+          "por_que": "Chiste fácil. Al cuñado le resbala."
+        },
+        {
+          "texto": "Si funciona en animales, algo tendrá.",
+          "correcta": false,
+          "por_que": "Le das por bueno que funciona, y no está demostrado."
+        }
+      ],
+      "explicacion": "Quien decide si el bebé o el animal mejora es un padre, un ganadero o un veterinario que espera verlo mejorar. Además, muchas dolencias se curan solas. Doehring y Sundrum revisaron 52 ensayos de homeopatía en vacas, cerdos y aves publicados entre 1981 y 2014: resultados dispares, ninguno reproducido, y concluyeron que no se puede recomendar para sustituir a los antibióticos.",
+      "fuente": {
+        "texto": "Doehring y Sundrum (2016). Veterinary Record 179",
+        "url": "https://doi.org/10.1136/vr.103779"
+      }
+    },
+    {
+      "id": "hv-40-wakefield",
+      "mito": "Un médico inglés publicó en The Lancet que la triple vírica causaba autismo.",
+      "falacia": "Fraude como fuente",
+      "opciones": [
+        {
+          "texto": "Era un fraude, y perdió la licencia.",
+          "correcta": true
+        },
+        {
+          "texto": "Eso nunca se publicó, es un invento.",
+          "correcta": false,
+          "por_que": "Sí se publicó, en 1998. Lo que pasó después es lo importante."
+        },
+        {
+          "texto": "The Lancet es una revista antivacunas.",
+          "correcta": false,
+          "por_que": "Falso: es una de las revistas médicas más prestigiosas, y retiró el artículo."
+        },
+        {
+          "texto": "Si se publicó, algo de cierto tendrá.",
+          "correcta": false,
+          "por_que": "Le das la razón a un estudio retirado por fraude."
+        }
+      ],
+      "explicacion": "Andrew Wakefield publicó en 1998 un estudio con solo 12 niños. En 2010 el colegio de médicos británico concluyó que había actuado de forma deshonesta, The Lancet retiró el artículo y Wakefield perdió la licencia para ejercer. El periodista Brian Deer demostró en el BMJ que había manipulado los datos de los niños, y la revista lo calificó de fraude elaborado.",
+      "fuente": {
+        "texto": "Godlee et al. (2011). BMJ 342. El artículo de Wakefield era fraudulento",
+        "url": "https://doi.org/10.1136/bmj.c7452"
+      }
+    }
+  ]
+}

@@ -2,6 +2,7 @@
   "id": "cambio-climatico",
   "orden": 2,
   "titulo": "Cambio climático",
+  "vidas": { "icono": "🍺", "nombre": "cañas" },
   "medallas": {
     "bronce": 10,
     "plata": 22,

@@ -16,7 +16,7 @@
       "orden": 2,
       "titulo": "Cambio climático",
       "dificultad": "Nivel normal",
-      "descripcion": "10 rondas, 3 copas de paciencia",
+      "descripcion": "10 rondas, 3 cañas de paciencia",
       "resumen": "Acodado en la barra con su gin-tonic, tu cuñado ha decidido que el calentamiento global es un cuento.",
       "fondo": "images/cunao-barra-normal.webp",
       "disponible": true,
@@ -25,12 +25,13 @@
     {
       "id": "vacunas-homeopatia",
       "orden": 3,
-      "titulo": "Homeopatía y vacunas",
+      "titulo": "Vacunas y homeopatía",
       "dificultad": "Nivel medio",
-      "descripcion": "El cuñado se pone serio",
-      "resumen": "En la cena de Nochebuena, entre turrón y polvorones, tu cuñado se lo cura todo con bolitas de azúcar.",
-      "fondo": "images/placeholder-vacunas-homeopatia.webp",
-      "disponible": false
+      "descripcion": "La cuñada se pone seria",
+      "resumen": "En la cena de Nochebuena, entre turrón y polvorones, tu cuñada se lo cura todo con bolitas de azúcar.",
+      "fondo": "images/cuna-dinner-normal.webp",
+      "disponible": true,
+      "fichero": "data/vacunas-homeopatia.json"
     },
     {
       "id": "energia",
